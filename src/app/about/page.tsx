@@ -44,9 +44,9 @@ export default function About() {
             </p>
             <p>
               So things drift. The commercial narrative pulls one way, the product roadmap
-              another, and the evidence lands somewhere else entirely.{' '}
-              <b>Clinical value gets lost in translation</b>, and teams move fast, just not
-              towards what actually matters for people.
+              another, and the evidence lands somewhere else entirely. Clinical value gets
+              lost in translation, and teams move fast, just not towards what actually
+              matters for people.
             </p>
             <p>
               When users and buyers see bold claims without the evidence to back them,
@@ -175,13 +175,6 @@ export default function About() {
                 <Link href="/thinking">Shubstack newsletter</Link> on digital health
                 strategy, evidence, and equity.
               </p>
-            </div>
-            <div className="chips" style={{ marginTop: 30 }}>
-              <span>MBBS</span>
-              <span>MSc Global Health</span>
-              <span>Ex-Medical Director, Ada Health</span>
-              <span>WHO AI Evaluation Co-chair</span>
-              <span>npj Digital Medicine Guest Editor</span>
             </div>
             <div className="plinks">
               <ExtLink href="https://linkedin.com/in/shubs-upadhyay">

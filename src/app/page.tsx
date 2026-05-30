@@ -58,10 +58,10 @@ export default async function Home() {
               <em>Clinical rigour</em> at product speed.
             </h1>
             <p className="hero-lead">
-              After a decade inside <b>venture-backed digital health</b>, the <b>NHS</b>,
-              and <b>global health agencies</b>, I know what separates the products that
-              hold up from the ones that don&apos;t. I set up independently to put that
-              experience in your corner.
+              After a decade inside venture-backed digital health, the NHS, and global
+              health agencies, I know what separates the products that hold up from the
+              ones that don&apos;t. I set up independently to put that experience in your
+              corner.
             </p>
             <div className="hero-cta">
               <Link href="/contact" className="btn btn-clay">
