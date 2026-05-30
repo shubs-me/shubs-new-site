@@ -869,7 +869,7 @@ section {
 .lived-photo .tag {
   position: absolute;
   left: 20px;
-  top: 20px;
+  bottom: 20px;
   z-index: 2;
   color: var(--ink);
   background: var(--cream);
