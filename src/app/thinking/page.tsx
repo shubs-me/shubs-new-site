@@ -142,7 +142,7 @@ export default async function Thinking() {
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
-            Read the newsletter →
+            Keep in touch →
           </ExtLink>
         </div>
       </section>
