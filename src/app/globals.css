@@ -1633,7 +1633,7 @@ footer {
 /* testimonials */
 .tst-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(16px, 2vw, 28px);
 }
 .tcard {

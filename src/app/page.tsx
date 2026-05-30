@@ -18,21 +18,29 @@ const STATS = [
 ]
 
 const TESTIMONIALS = [
-  // TODO: replace with real client testimonials (content coming from Shubs).
   {
-    quote: 'Client testimonial coming soon.',
-    name: 'Name',
-    role: 'Title, Organisation',
+    quote:
+      'Shubs always brings a huge amount of positive energy and enthusiasm to his work, is a strong connector and collaborator, a creative thinker, and a wonderful culture contributor.',
+    name: 'Dr Claire Novorol',
+    role: 'Ada Health',
   },
   {
-    quote: 'Client testimonial coming soon.',
-    name: 'Name',
-    role: 'Title, Organisation',
+    quote:
+      'Shubs helped us bring clarity and focus to both our value messaging and evidence generation strategy. We highly recommend working with Shubs.',
+    name: 'CEO',
+    role: 'Sanome',
   },
   {
-    quote: 'Client testimonial coming soon.',
-    name: 'Name',
-    role: 'Title, Organisation',
+    quote:
+      'Your work was valued across our clinical, product, AI scientist and engineering leaders. We now use the ‘clinical value’ and ‘measure what matters’ framework in our day to day work.',
+    name: 'Medical Leader',
+    role: 'Doctolib',
+  },
+  {
+    quote:
+      'Shubs helped shape a clear narrative drawing on first-hand experience and real-world implementation, one that we can take away into our discussions with researchers, policy makers, and other funders and that will inform our investment strategy going forwards.',
+    name: 'Guy Parsons',
+    role: 'Technology Lead, Wellcome Trust',
   },
 ]
 
