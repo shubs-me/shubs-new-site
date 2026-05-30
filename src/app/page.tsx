@@ -23,7 +23,7 @@ export default function Home() {
           <div className="hero-l">
             <span className="label">Dr Shubs Upadhyay, Digital Health Advisor</span>
             <h1>
-              Clinical <em>rigour</em> at product speed.
+              <em>Clinical rigour</em> at product speed.
             </h1>
             <p className="hero-lead">
               After a decade inside <b>venture-backed digital health</b>, the <b>NHS</b>,
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
         <div className="hero-photo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/shubs-cutout.png" alt="Dr Shubs Upadhyay" />
+          <img src="/images/shubs-pink.webp" alt="Dr Shubs Upadhyay" />
         </div>
       </header>
 
@@ -290,20 +290,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* QUOTE */}
-      <section className="quote">
-        <div className="wrap">
-          <span className="label" style={{ marginBottom: 30 }}>
-            In their words
-          </span>
-          <blockquote>
-            “Very few advisors can hold all of those conversations. That is why founders,
-            product leaders, and the investors who back them <em>bring me in.”</em>
-          </blockquote>
-          <cite>Dr Shubs Upadhyay</cite>
-        </div>
-      </section>
-
       {/* LIVED */}
       <section className="light">
         <div className="wrap lived">
@@ -339,6 +325,20 @@ export default function Home() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/shubs-cutout.png" alt="Dr Shubs Upadhyay" />
           </div>
+        </div>
+      </section>
+
+      {/* QUOTE */}
+      <section className="quote">
+        <div className="wrap">
+          <span className="label" style={{ marginBottom: 30 }}>
+            In their words
+          </span>
+          <blockquote>
+            “Very few advisors can hold all of those conversations. That is why founders,
+            product leaders, and the investors who back them <em>bring me in.”</em>
+          </blockquote>
+          <cite>Dr Shubs Upadhyay</cite>
         </div>
       </section>
 
