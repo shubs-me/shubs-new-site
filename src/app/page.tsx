@@ -122,12 +122,6 @@ export default async function Home() {
                 equipped to make it. Clinical input arrives at the end to sign off rather
                 than at the start to shape decisions.
               </p>
-              <div className="chips">
-                <span>What good looks like</span>
-                <span>For which patients</span>
-                <span>Against what counterfactual</span>
-                <span>Over what horizon</span>
-              </div>
             </div>
           </div>
           <div className="narr-row">
