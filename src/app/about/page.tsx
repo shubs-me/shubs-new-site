@@ -21,9 +21,9 @@ export default function About() {
             The thinking behind <em>the practice.</em>
           </h1>
           <p className="sub">
-            Most digital health fails not because of bad technology. It fails because it
-            is built against the wrong definition of value, and I set up my practice to
-            fix that.
+            Most digital health doesn&apos;t fall short because of bad technology. It
+            falls short because it is built against the wrong definition of value, and I
+            set up my practice to fix that.
           </p>
         </div>
       </header>
@@ -34,53 +34,93 @@ export default function About() {
           <div className="sec-head">
             <span className="label">Why I exist</span>
             <h2 className="sec-title wide">
-              Founded on an honest answer to an inconvenient question.
+              Real clinical value doesn&apos;t have to be <em>elusive.</em>
             </h2>
           </div>
           <div className="prose">
             <p>
-              What I&apos;ve seen, across the NHS, multilateral agencies, and
-              venture-backed companies, is that the industry builds well. It is less good
-              at building things that <b>hold up</b>: products that work as intended in
-              clinical practice, investment theses that survive contact with real health
-              systems, policies that do more than signal intent.
+              People building and implementing digital health know that clinical outcomes
+              matter. But those outcomes can feel far off, and hard to move directly.
             </p>
             <p>
-              I think that gap matters more as AI moves to the centre of health products
-              and health decisions. Clinical expertise in those conversations, from
-              someone who can speak honestly to what these systems actually do in a care
-              context, across commercial, product, investor, and policy rooms, is the
-              difference between a well-funded assumption and something that lasts.
+              So things drift. The commercial narrative pulls one way, the product roadmap
+              another, and the evidence lands somewhere else entirely.{' '}
+              <b>Clinical value gets lost in translation</b>, and teams move fast, just not
+              towards what actually matters for people.
             </p>
             <p>
-              I built my practice around that. Not to sign off at the end, but to be in
-              the room from the start.
+              When users and buyers see bold claims without the evidence to back them,
+              trust wanes. Clients churn. Funding dries up.
+            </p>
+            <p>
+              After a decade inside venture-backed digital health companies and global
+              institutions, I set up my practice to change that: to bring sharp focus back
+              to clinical outcomes, and to what really matters.
             </p>
           </div>
         </div>
       </section>
 
-      {/* MANIFESTO */}
+      {/* EXPERIENCE */}
       <section>
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">How I work</span>
+            <span className="label">Experience</span>
+            <h2 className="sec-title">I&apos;ve lived the challenges.</h2>
           </div>
-          <div className="mani dark">
-            <blockquote>
-              “Digital health must be built around clinical reality, not around what is
-              easy to build or easy to <em>sell.”</em>
-            </blockquote>
-            <ul>
-              <li>I don&apos;t accept that speed and rigour are in tension.</li>
-              <li>I don&apos;t accept that evidence is only for academics.</li>
-              <li>
-                I don&apos;t accept that commercial success and genuine clinical value are
-                different goals.
-              </li>
-            </ul>
-            <div className="close">
-              The organisations that understand this are the ones that last.
+          <div className="exp-grid">
+            <div className="exp-card">
+              <div className="kicker">Frontline clinician</div>
+              <h3>Senior clinical experience</h3>
+              <ul>
+                <li>NHS primary and urgent care, UK</li>
+                <li>Rural medicine, Australia</li>
+                <li>Global health and primary care strengthening, Sierra Leone</li>
+              </ul>
+            </div>
+            <div className="exp-card">
+              <div className="kicker">Industry leadership</div>
+              <h3>Senior leadership in health tech</h3>
+              <ul>
+                <li>
+                  Former Medical Director at Ada Health, with clinical leadership advisory
+                  for some of Europe&apos;s biggest health tech companies.
+                </li>
+                <li>
+                  <b>Medical quality &amp; AI evaluation.</b> Built a regulatory-compliant
+                  medical quality function covering model evaluation, post-deployment
+                  monitoring, and clinical evaluation.
+                </li>
+                <li>
+                  <b>Enterprise-grade clinical trust.</b> Led cross-functional teams
+                  putting regulated clinical AI into health systems across the US, Europe,
+                  and Africa, earning lasting trust with clinical leaders through
+                  demonstrable outcomes.
+                </li>
+                <li>
+                  <b>Business and clinical outcomes, aligned.</b> Commercial, product, and
+                  clinical leadership that sharpened go-to-market and evidence generation,
+                  with narratives that won and retained multi-million-dollar partnerships.
+                </li>
+              </ul>
+            </div>
+            <div className="exp-card">
+              <div className="kicker">Convening the field</div>
+              <h3>Shaping policy and the last mile of care</h3>
+              <ul>
+                <li>
+                  Former Co-chair, Clinical Evaluation Group, WHO initiative on AI for
+                  Health, developing global guidelines for evaluating AI in healthcare.
+                </li>
+                <li>
+                  Keynotes and talks at HLTH, HIMSS, WHO, the Wellcome Trust, Doctolib, and
+                  the Global Digital Health Forum.
+                </li>
+                <li>
+                  Guest Editor, Nature npj Digital Medicine, special collection on
+                  implementation in low-resource settings.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -118,20 +158,17 @@ export default function About() {
             </h2>
             <div className="prose">
               <p>
-                I&apos;m a physician and digital health strategist with fifteen years of
-                experience across clinical practice, health technology, and health system
-                strategy. I&apos;ve led clinical and strategic initiatives across the NHS,
-                international health agencies, and private sector organisations, from
-                early-stage startups through to multilateral programmes.
+                I&apos;m a physician and digital health strategist with fifteen years
+                across clinical practice, health technology, and health system strategy,
+                from frontline care in the NHS, Australia, and Sierra Leone to medical
+                leadership inside venture-backed health tech.
               </p>
               <p>
-                I&apos;ve served as a clinical lead at the International Telecommunication
-                Union (ITU) and co-chaired a WHO working group on clinical AI evaluation,
-                leading a guideline publication on digital health standards. I set up
-                independently to provide the kind of senior clinical and strategic counsel
-                that digital health organisations rarely have access to: the perspective
-                of someone who has sat on both the clinical and the commercial side of the
-                table.
+                As former Medical Director at Ada Health and co-chair of the WHO Clinical
+                Evaluation Group for AI in healthcare, I&apos;ve sat on both the clinical
+                and the commercial side of the table. I set up independently to give
+                digital health organisations the kind of senior clinical and strategic
+                counsel they rarely have access to.
               </p>
               <p>
                 I host the <Link href="/thinking">GPODH podcast</Link> and write the{' '}
@@ -142,9 +179,9 @@ export default function About() {
             <div className="chips" style={{ marginTop: 30 }}>
               <span>MBBS</span>
               <span>MSc Global Health</span>
-              <span>Former ITU Clinical Lead</span>
-              <span>WHO Contributor</span>
-              <span>NHS Digital Health Advisor</span>
+              <span>Ex-Medical Director, Ada Health</span>
+              <span>WHO AI Evaluation Co-chair</span>
+              <span>npj Digital Medicine Guest Editor</span>
             </div>
             <div className="plinks">
               <ExtLink href="https://linkedin.com/in/shubs-upadhyay">
@@ -152,6 +189,32 @@ export default function About() {
               </ExtLink>
               <ExtLink href="https://shubstack.substack.com">Shubstack →</ExtLink>
               <ExtLink href="https://gpodh.org">GPODH Podcast →</ExtLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MANIFESTO */}
+      <section>
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">How I work</span>
+          </div>
+          <div className="mani dark">
+            <blockquote>
+              “Digital health must be built around clinical reality, not around what is
+              easy to build or easy to <em>sell.”</em>
+            </blockquote>
+            <ul>
+              <li>I don&apos;t accept that speed and rigour are in tension.</li>
+              <li>I don&apos;t accept that evidence is only for academics.</li>
+              <li>
+                I don&apos;t accept that commercial success and genuine clinical value are
+                different goals.
+              </li>
+            </ul>
+            <div className="close">
+              The organisations that understand this are the ones that last.
             </div>
           </div>
         </div>
