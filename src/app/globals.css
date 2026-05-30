@@ -252,8 +252,8 @@ a {
   justify-content: center;
 }
 .hero-photo img {
-  width: 104%;
-  height: 100%;
+  width: 96%;
+  height: 90%;
   object-fit: cover;
   object-position: center top;
 }
