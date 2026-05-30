@@ -111,7 +111,7 @@ export default function Services() {
           <div className="sec-head">
             <span className="label">My services</span>
             <h2 className="sec-title wide">
-              Invest in what it takes to build demonstrable clinical value, at speed.
+              Build clinical value while shipping quality at speed.
             </h2>
           </div>
           <div className="pillar" id="pillar-clinical-product-integration">
