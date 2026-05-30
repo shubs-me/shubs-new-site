@@ -109,23 +109,6 @@ export default function HomePage() {
         className="relative min-h-[95vh] flex items-center overflow-hidden"
         style={{ backgroundColor: "var(--sq-bg)" }}
       >
-        {/* Watermark: huge faint name in background */}
-        <div
-          className="absolute inset-0 flex items-end justify-end overflow-hidden pointer-events-none select-none"
-          aria-hidden
-        >
-          <span
-            className="text-[28vw] leading-none translate-x-[5%] translate-y-[8%]"
-            style={{
-              fontFamily: "var(--font-cormorant)",
-              fontWeight: 700,
-              color: "rgba(9,9,11,0.028)",
-            }}
-          >
-            Shubs.
-          </span>
-        </div>
-
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 w-full grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-16 items-center">
           {/* Left */}
           <div className="flex flex-col gap-10">
