@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
 import { getEssays } from '@/lib/substack'
 
@@ -64,8 +65,13 @@ export default async function Home() {
           </div>
         </div>
         <div className="hero-photo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/shubs-pink.webp" alt="Dr Shubs Upadhyay" />
+          <Image
+            src="/images/shubs-pink.webp"
+            alt="Dr Shubs Upadhyay"
+            fill
+            priority
+            sizes="(max-width: 820px) 82vw, 34vw"
+          />
         </div>
       </header>
 
@@ -344,16 +350,12 @@ export default async function Home() {
           </div>
           <div className="lived-photo">
             <span className="tag mono">Physician · Advisor · Host</span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/shubs-keynote.jpg"
               alt="Dr Shubs Upadhyay delivering a keynote"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center',
-              }}
+              fill
+              sizes="(max-width: 820px) 100vw, 40vw"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </div>
         </div>
@@ -462,8 +464,12 @@ export default async function Home() {
             Read all essays →
           </Link>
           <div className="pod">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/shubs-pink.webp" alt="Shubs, host" />
+            <Image
+              src="/images/shubs-pink.webp"
+              alt="Shubs, host"
+              width={88}
+              height={88}
+            />
             <div className="pod-txt">
               <div className="k">Hosted by Dr Shubs Upadhyay · The GPODH Podcast</div>
               <h3>Global Perspectives on Digital Health</h3>
@@ -486,6 +492,18 @@ export default async function Home() {
           <h2>
             Ready to build something <em>the right way?</em>
           </h2>
+          <p
+            style={{
+              maxWidth: '46ch',
+              margin: '0 auto 38px',
+              fontSize: 18,
+              lineHeight: 1.5,
+            }}
+          >
+            Whether you are building digital health that has to hold up, or backing the
+            people who do, every conversation starts with what you are actually trying to
+            achieve.
+          </p>
           <Link
             href="/contact"
             className="btn btn-clay"

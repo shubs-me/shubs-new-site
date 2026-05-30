@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
 import { getEssays } from '@/lib/substack'
 
 export const metadata: Metadata = {
-  title: 'Thinking | Shubs Upadhyay',
+  title: 'Thinking',
+  alternates: { canonical: '/thinking' },
   description:
     'Essays on digital health strategy, evidence, and equity, plus the GPODH podcast, recorded with leaders across 60+ countries.',
 }
@@ -47,16 +49,12 @@ export default async function Thinking() {
                 <div className="more">Read on Shubstack →</div>
               </div>
               <div className="fr">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/images/shubs-podcast-booth.jpg"
                   alt="Dr Shubs Upadhyay at a podcast booth"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                  }}
+                  fill
+                  sizes="(max-width: 760px) 100vw, 50vw"
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
                 />
               </div>
             </ExtLink>
@@ -87,8 +85,12 @@ export default async function Thinking() {
             <h2 className="sec-title">Global Perspectives on Digital Health.</h2>
           </div>
           <div className="pod">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/shubs-pink.webp" alt="Shubs, host" />
+            <Image
+              src="/images/shubs-pink.webp"
+              alt="Shubs, host"
+              width={88}
+              height={88}
+            />
             <div className="pod-txt">
               <div className="k">Hosted by Dr Shubs Upadhyay</div>
               <h3>Candid conversations across 60+ countries</h3>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SiteMotion from "@/components/SiteMotion";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -26,10 +27,45 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
+const SITE_TITLE = "Shubs Upadhyay · Clinical rigour at product speed";
+
 export const metadata: Metadata = {
-  title: "Shubs Upadhyay, Clinical rigour at product speed",
-  description:
-    "Dr Shubs Upadhyay helps founders, product leaders, and medical leaders build digital health that holds up, clinically, commercially, and at scale.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s | Shubs Upadhyay",
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: "Dr Shubs Upadhyay" }],
+  creator: "Dr Shubs Upadhyay",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    url: SITE_URL,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    locale: "en_GB",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Dr Shubs Upadhyay, Clinical rigour at product speed",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

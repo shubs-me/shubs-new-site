@@ -1140,15 +1140,14 @@ footer {
   border-bottom-right-radius: clamp(60px, 9vw, 120px);
   overflow: hidden;
   aspect-ratio: 4 / 4.5;
+  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 .photo-card img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: bottom;
+  object-fit: cover;
+  object-position: center top;
 }
 
 /* manifesto (about) */
@@ -1551,10 +1550,8 @@ footer {
   justify-content: center;
 }
 .feat .fr img {
-  width: 90%;
-  height: auto;
-  object-fit: contain;
-  object-position: bottom;
+  object-fit: cover;
+  object-position: center;
 }
 .feat .date {
   font-family: var(--mono);
@@ -1697,6 +1694,36 @@ footer {
     transform: none !important;
     transition: none !important;
   }
+  .ticker-track {
+    animation: none !important;
+  }
+}
+
+/* ============ FOCUS VISIBILITY (keyboard a11y) ============ */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* On the pink CTA band and pink fills, the clay ring would vanish — use ink. */
+.contact a:focus-visible,
+.contact button:focus-visible,
+.stats a:focus-visible,
+.ak:focus-visible {
+  outline-color: var(--ink);
+}
+/* Form fields already shift border colour on focus; give them a ring too. */
+.field input:focus-visible,
+.field textarea:focus-visible,
+.field select:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
 }
 
 /* ============ Legal-page token compatibility ============

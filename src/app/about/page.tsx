@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
 
 export const metadata: Metadata = {
-  title: 'About | Shubs Upadhyay',
+  title: 'About',
+  alternates: { canonical: '/about' },
   description:
     'The thinking behind the practice, a physician and digital health strategist building clinical rigour into health technology from the start.',
 }
@@ -89,16 +91,12 @@ export default function About() {
         <div className="wrap lived">
           <div>
             <div className="photo-card">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/images/shubs-speaking.jpg"
                 alt="Dr Shubs Upadhyay speaking on stage"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center top',
-                }}
+                fill
+                sizes="(max-width: 820px) 100vw, 40vw"
+                style={{ objectFit: 'cover', objectPosition: 'center top' }}
               />
             </div>
           </div>
