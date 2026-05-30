@@ -179,7 +179,7 @@ export default async function Home() {
         <div className="wrap">
           <div className="sec-head">
             <span className="label">What I do</span>
-            <h2 className="sec-title">Two practice areas. One discipline.</h2>
+            <h2 className="sec-title">Where I focus.</h2>
           </div>
           <div className="pblock">
             <div className="pnum">01</div>
@@ -345,7 +345,16 @@ export default async function Home() {
           <div className="lived-photo">
             <span className="tag mono">Physician · Advisor · Host</span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/shubs-cutout.png" alt="Dr Shubs Upadhyay" />
+            <img
+              src="/images/shubs-keynote.jpg"
+              alt="Dr Shubs Upadhyay delivering a keynote"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+            />
           </div>
         </div>
       </section>
@@ -404,7 +413,7 @@ export default async function Home() {
           </div>
           <div className="out-list">
             <div className="out-item">
-              <h4>NHS-grade clinical credibility</h4>
+              <h3>NHS-grade clinical credibility</h3>
               <p>
                 Embedded clinical leadership helped a Series B digital therapeutics
                 company restructure its evidence strategy, resulting in a successful NHS
@@ -412,7 +421,7 @@ export default async function Home() {
               </p>
             </div>
             <div className="out-item">
-              <h4>Policy positioning, internationally</h4>
+              <h3>Policy positioning, internationally</h3>
               <p>
                 Strategic counsel shaped national digital health roadmaps in partnership
                 with ITU and WHO, securing institutional buy-in across multiple health
@@ -420,7 +429,7 @@ export default async function Home() {
               </p>
             </div>
             <div className="out-item">
-              <h4>From pilot to scale in 18 months</h4>
+              <h3>From pilot to scale in 18 months</h3>
               <p>
                 Implementation science support transformed a promising maternal health
                 pilot into a government-endorsed programme reaching 200,000 women.
@@ -435,23 +444,26 @@ export default async function Home() {
         <div className="wrap">
           <div className="sec-head">
             <span className="label">From Shubs</span>
-            <h2 className="sec-title">The industry talks to itself. I don&apos;t.</h2>
+            <h2 className="sec-title">Notes from the field.</h2>
           </div>
           <div className="think-list">
             {essays.map((e) => (
               <ExtLink className="think-row" href={e.url} key={e.title}>
                 <div className="date">{e.date}</div>
                 <div>
-                  <h4>{e.title}</h4>
+                  <h3>{e.title}</h3>
                   <p>{e.blurb}</p>
                 </div>
                 <div className="go">Read →</div>
               </ExtLink>
             ))}
           </div>
+          <Link href="/thinking" className="sec-more">
+            Read all essays →
+          </Link>
           <div className="pod">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/shubs-headshot.webp" alt="Shubs, host" />
+            <img src="/images/shubs-pink.webp" alt="Shubs, host" />
             <div className="pod-txt">
               <div className="k">Hosted by Dr Shubs Upadhyay · The GPODH Podcast</div>
               <h3>Global Perspectives on Digital Health</h3>

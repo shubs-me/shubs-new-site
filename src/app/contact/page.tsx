@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import ExtLink from '@/components/ExtLink'
 
@@ -8,6 +8,13 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const nameRef = useRef<HTMLInputElement>(null)
   const emailRef = useRef<HTMLInputElement>(null)
+  const doneRef = useRef<HTMLHeadingElement>(null)
+
+  // Move focus to the confirmation once the form is replaced, so keyboard and
+  // screen-reader users are taken to the success message.
+  useEffect(() => {
+    if (submitted) doneRef.current?.focus()
+  }, [submitted])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -47,6 +54,7 @@ export default function Contact() {
         <div className="wrap contact-grid">
           {/* form */}
           <div>
+            <h2 className="sr-only">Send a message</h2>
             {!submitted ? (
               <form className="form" onSubmit={handleSubmit} noValidate>
                 <div className="frow">
@@ -104,11 +112,13 @@ export default function Contact() {
                 </button>
               </form>
             ) : (
-              <div className="cdone">
+              <div className="cdone" role="status" aria-live="polite">
                 <div className="label" style={{ marginBottom: 18 }}>
                   Message sent
                 </div>
-                <h3>Thanks, I&apos;ll be in touch.</h3>
+                <h3 ref={doneRef} tabIndex={-1} style={{ outline: 'none' }}>
+                  Thanks, I&apos;ll be in touch.
+                </h3>
                 <p>
                   Every message reaches me directly. Expect an honest reply within a
                   couple of working days.
@@ -119,9 +129,10 @@ export default function Contact() {
 
           {/* info */}
           <div className="cinfo">
+            <h2 className="sr-only">Other ways to reach me</h2>
             <div className="row">
               <div className="k">What to expect</div>
-              <h4>An honest conversation</h4>
+              <h3>An honest conversation</h3>
               <p>
                 No pitch, no hard sell. We start by understanding what you&apos;re trying
                 to achieve and whether I&apos;m the right person to help.
@@ -129,7 +140,7 @@ export default function Contact() {
             </div>
             <div className="row">
               <div className="k">Prefer to book directly?</div>
-              <h4>Grab a time that works</h4>
+              <h3>Grab a time that works</h3>
               <p>
                 Skip the form and put a slot in the diary.{' '}
                 <a className="inl" href="#">
@@ -139,7 +150,7 @@ export default function Contact() {
             </div>
             <div className="row">
               <div className="k">Engagements</div>
-              <h4>Three ways to work together</h4>
+              <h3>Three ways to work together</h3>
               <p>
                 Retainer advisory · Three-month sprint · Workshop &amp; keynote.{' '}
                 <Link className="inl" href="/services">
@@ -149,7 +160,7 @@ export default function Contact() {
             </div>
             <div className="row">
               <div className="k">Connect</div>
-              <h4>Find me elsewhere</h4>
+              <h3>Find me elsewhere</h3>
               <p>
                 <ExtLink className="inl" href="https://linkedin.com/in/shubs-upadhyay">
                   LinkedIn

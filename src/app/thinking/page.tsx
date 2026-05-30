@@ -48,7 +48,16 @@ export default async function Thinking() {
               </div>
               <div className="fr">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/shubs-cutout.png" alt="Dr Shubs Upadhyay" />
+                <img
+                  src="/images/shubs-podcast-booth.jpg"
+                  alt="Dr Shubs Upadhyay at a podcast booth"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                  }}
+                />
               </div>
             </ExtLink>
           )}
@@ -59,7 +68,7 @@ export default async function Thinking() {
                 <ExtLink className="think-row" href={e.url} key={e.title}>
                   <div className="date">{e.date}</div>
                   <div>
-                    <h4>{e.title}</h4>
+                    <h3>{e.title}</h3>
                     <p>{e.blurb}</p>
                   </div>
                   <div className="go">Read →</div>
@@ -79,7 +88,7 @@ export default async function Thinking() {
           </div>
           <div className="pod">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/shubs-headshot.webp" alt="Shubs, host" />
+            <img src="/images/shubs-pink.webp" alt="Shubs, host" />
             <div className="pod-txt">
               <div className="k">Hosted by Dr Shubs Upadhyay</div>
               <h3>Candid conversations across 60+ countries</h3>
