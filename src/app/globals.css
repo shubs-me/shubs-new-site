@@ -272,7 +272,7 @@ a {
   min-height: clamp(560px, 84vh, 880px);
 }
 .hero-l {
-  max-width: min(820px, 64%);
+  max-width: min(1000px, 72%);
   position: relative;
   z-index: 2;
   padding: clamp(16px, 2vw, 34px) 0 clamp(56px, 8vw, 120px);
