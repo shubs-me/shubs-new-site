@@ -1430,14 +1430,11 @@ footer {
 .idl-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--line-d);
-  border: 1px solid var(--line-d);
+  gap: 14px 40px;
   max-width: 780px;
 }
 .idl-grid span {
-  background: var(--ink);
-  padding: 16px 20px;
+  padding: 4px 0;
   font-size: 15.5px;
   color: var(--cream);
   display: flex;
