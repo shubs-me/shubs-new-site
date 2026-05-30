@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Thinking',
   alternates: { canonical: '/thinking' },
   description:
-    'Essays on digital health strategy, evidence, and equity, plus the GPODH podcast, recorded with leaders across 60+ countries.',
+    'Insights on digital health strategy, evidence, and equity, plus the GPODH podcast, recorded with leaders across 60+ countries.',
 }
 
 export default async function Thinking() {
@@ -26,13 +26,13 @@ export default async function Thinking() {
               The industry talks to itself. <em>I don&apos;t.</em>
             </h1>
             <p className="sub">
-              Essays on digital health strategy, evidence, and equity, plus the GPODH
+              Insights on digital health strategy, evidence, and equity, plus the GPODH
               podcast, recorded with leaders across 60+ countries.
             </p>
           </div>
           <div className="think-hero-photo">
             <Image
-              src="/images/Shubs.gif"
+              src="/images/Shubs.webp"
               alt="Dr Shubs Upadhyay"
               fill
               unoptimized
@@ -44,18 +44,18 @@ export default async function Thinking() {
         </div>
       </header>
 
-      {/* ESSAYS */}
+      {/* INSIGHTS */}
       <section className="light">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Essays</span>
+            <span className="label">Insights</span>
             <h2 className="sec-title">Writing from the Shubstack.</h2>
           </div>
           {featured && (
             <ExtLink className="feat" href={featured.url}>
               <div className="fl">
                 <div className="date">
-                  {featured.date ? `${featured.date} · Essay` : 'Latest essay'}
+                  {featured.date ? `${featured.date} · Insight` : 'Latest insight'}
                 </div>
                 <h3>{featured.title}</h3>
                 <p>{featured.blurb}</p>
@@ -134,7 +134,7 @@ export default async function Thinking() {
               lineHeight: 1.5,
             }}
           >
-            Essays on what it actually takes to build digital health that holds up,
+            Insights on what it actually takes to build digital health that holds up,
             clinically, commercially, and at scale.
           </p>
           <ExtLink

@@ -475,7 +475,7 @@ export default async function Home() {
             ))}
           </div>
           <Link href="/thinking" className="sec-more">
-            Read all essays →
+            Read all insights →
           </Link>
           <div className="pod">
             <Image

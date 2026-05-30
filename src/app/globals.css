@@ -1655,7 +1655,7 @@ footer {
   color: var(--clay);
 }
 
-/* featured essay (thinking) */
+/* featured insight (thinking) */
 .feat {
   display: grid;
   grid-template-columns: 1fr 1fr;
