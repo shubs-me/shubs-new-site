@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import ExtLink from '@/components/ExtLink'
+import { getEssays } from '@/lib/substack'
 
 export const metadata: Metadata = {
   title: 'Thinking | Shubs Upadhyay',
@@ -6,7 +8,11 @@ export const metadata: Metadata = {
     'Essays on digital health strategy, evidence, and equity, plus the GPODH podcast, recorded with leaders across 60+ countries.',
 }
 
-export default function Thinking() {
+export default async function Thinking() {
+  const essays = await getEssays(6)
+  const featured = essays[0]
+  const archive = essays.slice(1)
+
   return (
     <>
       {/* HERO */}
@@ -30,62 +36,37 @@ export default function Thinking() {
             <span className="label">Essays</span>
             <h2 className="sec-title">Writing from the Shubstack.</h2>
           </div>
-          <a
-            className="feat"
-            href="https://shubstack.substack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="fl">
-              <div className="date">Mar 2026 · Essay</div>
-              <h3>On solving actual problems in healthcare</h3>
-              <p>
-                Don&apos;t start with what tech or dataset you have. Start with the actual
-                outcome and goal, and work with the people who have the problem.
-              </p>
-              <div className="more">Read on Shubstack →</div>
-            </div>
-            <div className="fr">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/shubs-cutout.png" alt="Dr Shubs Upadhyay" />
-            </div>
-          </a>
+          {featured && (
+            <ExtLink className="feat" href={featured.url}>
+              <div className="fl">
+                <div className="date">
+                  {featured.date ? `${featured.date} · Essay` : 'Latest essay'}
+                </div>
+                <h3>{featured.title}</h3>
+                <p>{featured.blurb}</p>
+                <div className="more">Read on Shubstack →</div>
+              </div>
+              <div className="fr">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/shubs-cutout.png" alt="Dr Shubs Upadhyay" />
+              </div>
+            </ExtLink>
+          )}
 
-          <div className="think-list" style={{ marginTop: 'clamp(40px,5vw,64px)' }}>
-            <a
-              className="think-row"
-              href="https://shubstack.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="date">Mar 2026</div>
-              <div>
-                <h4>Same same, but different</h4>
-                <p>
-                  On choosing what matters and defining better health outcomes in digital
-                  health, and why ambitious claims about AI deserve more scepticism than
-                  they usually get.
-                </p>
-              </div>
-              <div className="go">Read →</div>
-            </a>
-            <a
-              className="think-row"
-              href="https://shubstack.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="date">Nov 2025</div>
-              <div>
-                <h4>Evaluating tech in healthcare: measuring what matters</h4>
-                <p>
-                  Why most digital health evaluation frameworks miss the point, and what
-                  rigorous value measurement actually looks like.
-                </p>
-              </div>
-              <div className="go">Read →</div>
-            </a>
-          </div>
+          {archive.length > 0 && (
+            <div className="think-list" style={{ marginTop: 'clamp(40px,5vw,64px)' }}>
+              {archive.map((e) => (
+                <ExtLink className="think-row" href={e.url} key={e.title}>
+                  <div className="date">{e.date}</div>
+                  <div>
+                    <h4>{e.title}</h4>
+                    <p>{e.blurb}</p>
+                  </div>
+                  <div className="go">Read →</div>
+                </ExtLink>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -107,14 +88,9 @@ export default function Thinking() {
                 doesn&apos;t, and what we keep getting wrong.
               </p>
             </div>
-            <a
-              href="https://gpodh.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-line"
-            >
+            <ExtLink href="https://gpodh.org" className="btn btn-line">
               Listen on gpodh.org →
-            </a>
+            </ExtLink>
           </div>
         </div>
       </section>
@@ -137,15 +113,13 @@ export default function Thinking() {
             Essays on what it actually takes to build digital health that holds up,
             clinically, commercially, and at scale.
           </p>
-          <a
+          <ExtLink
             href="https://shubstack.substack.com"
-            target="_blank"
-            rel="noopener noreferrer"
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
             Read the newsletter →
-          </a>
+          </ExtLink>
         </div>
       </section>
     </>

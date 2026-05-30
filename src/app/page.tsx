@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import ExtLink from '@/components/ExtLink'
+import { getEssays } from '@/lib/substack'
 
 const TICKER = [
   'Clinical Leadership', 'Product Velocity', 'Evidence Strategy', 'Digital Health',
@@ -14,7 +16,27 @@ const STATS = [
   { n: '60+', l: 'Countries reached via podcast' },
 ]
 
-export default function Home() {
+const TESTIMONIALS = [
+  // TODO: replace with real client testimonials (content coming from Shubs).
+  {
+    quote: 'Client testimonial coming soon.',
+    name: 'Name',
+    role: 'Title, Organisation',
+  },
+  {
+    quote: 'Client testimonial coming soon.',
+    name: 'Name',
+    role: 'Title, Organisation',
+  },
+  {
+    quote: 'Client testimonial coming soon.',
+    name: 'Name',
+    role: 'Title, Organisation',
+  },
+]
+
+export default async function Home() {
+  const essays = await getEssays(3)
   return (
     <>
       {/* HERO */}
@@ -342,6 +364,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="light">
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">Testimonials</span>
+            <h2 className="sec-title">What it&apos;s like to work with me.</h2>
+          </div>
+          <div className="tst-grid">
+            {TESTIMONIALS.map((t, i) => (
+              <div className="tcard" key={i}>
+                <blockquote>“{t.quote}”</blockquote>
+                <div className="tcite">
+                  <b>{t.name}</b>
+                  <br />
+                  {t.role}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* OUTCOMES */}
       <section>
         <div className="wrap">
@@ -390,58 +434,20 @@ export default function Home() {
       <section className="light" id="thinking">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">From the founder</span>
+            <span className="label">From Shubs</span>
             <h2 className="sec-title">The industry talks to itself. I don&apos;t.</h2>
           </div>
           <div className="think-list">
-            <a
-              className="think-row"
-              href="https://shubstack.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="date">Mar 2026</div>
-              <div>
-                <h4>On solving actual problems in healthcare</h4>
-                <p>
-                  Don&apos;t start with what tech or dataset you have. Start with the
-                  actual outcome and goal, and work with the people who have the problem.
-                </p>
-              </div>
-              <div className="go">Read →</div>
-            </a>
-            <a
-              className="think-row"
-              href="https://shubstack.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="date">Mar 2026</div>
-              <div>
-                <h4>Same same, but different</h4>
-                <p>
-                  On choosing what matters and defining better health outcomes in digital
-                  health, and why ambitious claims about AI deserve more scepticism.
-                </p>
-              </div>
-              <div className="go">Read →</div>
-            </a>
-            <a
-              className="think-row"
-              href="https://shubstack.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="date">Nov 2025</div>
-              <div>
-                <h4>Evaluating tech in healthcare: measuring what matters</h4>
-                <p>
-                  Why most digital health evaluation frameworks miss the point, and what
-                  rigorous value measurement actually looks like.
-                </p>
-              </div>
-              <div className="go">Read →</div>
-            </a>
+            {essays.map((e) => (
+              <ExtLink className="think-row" href={e.url} key={e.title}>
+                <div className="date">{e.date}</div>
+                <div>
+                  <h4>{e.title}</h4>
+                  <p>{e.blurb}</p>
+                </div>
+                <div className="go">Read →</div>
+              </ExtLink>
+            ))}
           </div>
           <div className="pod">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -454,14 +460,9 @@ export default function Home() {
                 countries.
               </p>
             </div>
-            <a
-              href="https://gpodh.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-line"
-            >
+            <ExtLink href="https://gpodh.org" className="btn btn-line">
               Listen on gpodh.org →
-            </a>
+            </ExtLink>
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import Link from 'next/link'
+import ExtLink from '@/components/ExtLink'
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -150,32 +151,17 @@ export default function Contact() {
               <div className="k">Connect</div>
               <h4>Find me elsewhere</h4>
               <p>
-                <a
-                  className="inl"
-                  href="https://linkedin.com/in/shubs-upadhyay"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <ExtLink className="inl" href="https://linkedin.com/in/shubs-upadhyay">
                   LinkedIn
-                </a>{' '}
+                </ExtLink>{' '}
                 ·{' '}
-                <a
-                  className="inl"
-                  href="https://shubstack.substack.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <ExtLink className="inl" href="https://shubstack.substack.com">
                   Shubstack
-                </a>{' '}
+                </ExtLink>{' '}
                 ·{' '}
-                <a
-                  className="inl"
-                  href="https://gpodh.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <ExtLink className="inl" href="https://gpodh.org">
                   GPODH Podcast
-                </a>
+                </ExtLink>
               </p>
             </div>
           </div>

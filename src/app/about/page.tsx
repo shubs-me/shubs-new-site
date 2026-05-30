@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ExtLink from '@/components/ExtLink'
 
 export const metadata: Metadata = {
   title: 'About | Shubs Upadhyay',
@@ -148,23 +149,11 @@ export default function About() {
               <span>NHS Digital Health Advisor</span>
             </div>
             <div className="plinks">
-              <a
-                href="https://linkedin.com/in/shubs-upadhyay"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <ExtLink href="https://linkedin.com/in/shubs-upadhyay">
                 LinkedIn →
-              </a>
-              <a
-                href="https://shubstack.substack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Shubstack →
-              </a>
-              <a href="https://gpodh.org" target="_blank" rel="noopener noreferrer">
-                GPODH Podcast →
-              </a>
+              </ExtLink>
+              <ExtLink href="https://shubstack.substack.com">Shubstack →</ExtLink>
+              <ExtLink href="https://gpodh.org">GPODH Podcast →</ExtLink>
             </div>
           </div>
         </div>

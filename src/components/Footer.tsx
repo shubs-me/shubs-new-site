@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ExtLink from '@/components/ExtLink'
 
 const CONNECT = [
   { label: 'LinkedIn', href: 'https://linkedin.com/in/shubs-upadhyay' },
@@ -33,9 +34,9 @@ export default function Footer() {
           <div className="foot-col">
             <h5>Connect</h5>
             {CONNECT.map(({ label, href }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer">
+              <ExtLink key={label} href={href}>
                 {label}
-              </a>
+              </ExtLink>
             ))}
           </div>
         </div>
