@@ -89,7 +89,16 @@ export default function About() {
           <div>
             <div className="photo-card">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/shubs-cutout.png" alt="Dr Shubs Upadhyay" />
+              <img
+                src="/images/shubs-speaking.jpg"
+                alt="Dr Shubs Upadhyay speaking on stage"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center top',
+                }}
+              />
             </div>
           </div>
           <div className="lived-body">
