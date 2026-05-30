@@ -1,38 +1,35 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans, DM_Mono } from "next/font/google";
+import { Archivo, Hanken_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import ScrollDot from "@/components/ScrollDot";
-import AmbientCursor from "@/components/AmbientCursor";
-import ScrollThread from "@/components/ScrollThread";
+import SiteMotion from "@/components/SiteMotion";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-const dmMono = DM_Mono({
-  variable: "--font-dm-mono",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Shubs Upadhyay: Clinical Rigour at Product Speed",
+  title: "Shubs Upadhyay — Clinical rigour at product speed",
   description:
-    "I help founders, product leaders, and medical leaders build the ways of working that align clinical, product, and commercial teams toward outcomes that matter.",
+    "Dr Shubs Upadhyay helps founders, product leaders, and medical leaders build digital health that holds up — clinically, commercially, and at scale.",
 };
 
 export default function RootLayout({
@@ -43,23 +40,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="light"
-      className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable} h-full antialiased`}
+      className={`${archivo.variable} ${hanken.variable} ${spaceMono.variable}`}
     >
-      <body className="min-h-full flex flex-col" style={{ backgroundColor: 'var(--sq-bg)', color: 'var(--sq-ink)' }}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:text-sm focus:rounded focus:font-medium"
-          style={{ backgroundColor: 'var(--sq-amber)', color: 'var(--sq-bg)', fontFamily: 'var(--font-dm-sans)' }}
-        >
+      <body>
+        <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        <AmbientCursor />
-        <ScrollThread />
         <Nav />
-        <ScrollDot />
-        <main id="main-content" className="flex-1">{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
+        <SiteMotion />
       </body>
     </html>
   );

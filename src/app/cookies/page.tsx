@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function CookiePolicyPage() {
   return (
-    <section className="pt-24 pb-32">
+    <section className="light pt-24 pb-32">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="h-px w-8 bg-[var(--sq-amber)]" />
