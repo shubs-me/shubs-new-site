@@ -23,11 +23,12 @@ export default function Thinking() {
         </div>
       </header>
 
-      {/* FEATURED + ARCHIVE */}
+      {/* ESSAYS */}
       <section className="light">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Latest from Shubstack</span>
+            <span className="label">Essays</span>
+            <h2 className="sec-title">Writing from the Shubstack.</h2>
           </div>
           <a
             className="feat"
@@ -92,7 +93,7 @@ export default function Thinking() {
       <section>
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">The GPODH Podcast</span>
+            <span className="label">Podcast</span>
             <h2 className="sec-title">Global Perspectives on Digital Health.</h2>
           </div>
           <div className="pod">
@@ -118,10 +119,10 @@ export default function Thinking() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* NEWSLETTER */}
       <section className="contact">
         <div className="wrap">
-          <span className="label">Keep reading</span>
+          <span className="label">Newsletter</span>
           <h2>
             More on <em>Shubstack.</em>
           </h2>
