@@ -212,7 +212,7 @@ export default function About() {
               easy to build or easy to <em>sell.”</em>
             </blockquote>
             <ul>
-              <li>I don&apos;t accept that speed and rigour are in tension.</li>
+              <li>I don&apos;t accept that moving fast means cutting clinical corners.</li>
               <li>I don&apos;t accept that evidence is only for academics.</li>
               <li>
                 I don&apos;t accept that commercial success and genuine clinical value are
