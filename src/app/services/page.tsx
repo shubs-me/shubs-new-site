@@ -110,28 +110,31 @@ export default function Services() {
         <div className="wrap">
           <div className="sec-head">
             <span className="label">My services</span>
-            <h2 className="sec-title">Two practice areas. One discipline.</h2>
+            <h2 className="sec-title wide">
+              Invest in what it takes to build demonstrable clinical value, at speed.
+            </h2>
           </div>
           <div className="pillar" id="pillar-clinical-product-integration">
             <div className="pa">
-              <span>Practice Area 01</span> · <span>Clinical &amp; Product</span>
+              <span>Practice Area 01</span> · <span>Quality &amp; Shipping Velocity</span>
             </div>
             <h2>Clinical and Product Integration</h2>
-            <p>
-              Level up how clinical, product, QARA, data science, and engineering teams
-              make decisions together. The pre-deployment work on product quality and
-              robust monitoring lets you ship at pace and catch the right things
-              proactively, without becoming a bottleneck or safety becoming an
-              afterthought. Whether your clinicians are embedded or advising in, I help
-              you build the working relationships and processes that make the whole system
-              reliable.
+            <p className="plead">
+              Harmonise clinical, QARA, and product teams. Say goodbye to death by
+              approval and missed safety issues.
             </p>
-            <div className="idl-label">Ideal for</div>
+            <p>
+              Build the right thing, and build the thing right. I level up how clinical,
+              product, QARA, data science, and engineering teams make decisions together,
+              so you ship at pace and catch the right things proactively, without becoming
+              a bottleneck or letting safety become an afterthought.
+            </p>
+            <div className="idl-label">What this looks like</div>
             <div className="idl-grid">
-              <span>Clinical governance that enables rather than blocks</span>
-              <span>Pre-deployment product quality and QARA</span>
-              <span>Post-market monitoring and signal detection</span>
-              <span>Cross-functional decision-making processes</span>
+              <span>Cross-disciplinary workshops that get engineers, designers, and clinicians on the same page about outcomes, risk, and safety</span>
+              <span>Preparing product and tech teams for AIaMD and SaMD regulation</span>
+              <span>Proactive post-deployment quality and monitoring</span>
+              <span>A quality-first culture that people live day to day</span>
             </div>
             <Link href="/contact" className="more">
               Discuss your product →
@@ -139,24 +142,24 @@ export default function Services() {
           </div>
           <div className="pillar" id="pillar-commercial-clinical-alignment">
             <div className="pa">
-              <span>Practice Area 02</span> · <span>Commercial Alignment</span>
+              <span>Practice Area 02</span> · <span>Commercial Success, Clinical Trust</span>
             </div>
             <h2>Commercial and Clinical Alignment</h2>
+            <p className="plead">
+              Communicate what matters, and live it day to day.
+            </p>
             <p>
               As digital health companies scale, the sales narrative, the product roadmap,
-              and the evidence strategy tend to drift apart. I work across commercial,
-              product, and clinical teams to bring them back into a single line, so that
-              what you&apos;re selling, what you&apos;re building, and what you&apos;re
-              proving are the same story. Not a messaging project. An integrated strategic
-              alignment that sets the priorities, the data, and the methodology to deliver
-              and evidence the value you&apos;re promising.
+              and the evidence strategy drift apart. I run sprints to unblock and re-align
+              commercial, product, and clinical teams, so that what you&apos;re selling,
+              what you&apos;re building, and what you&apos;re proving are the same story.
             </p>
-            <div className="idl-label">Ideal for</div>
+            <div className="idl-label">What this looks like</div>
             <div className="idl-grid">
-              <span>Evidence strategies that answer procurement questions</span>
-              <span>Sales narratives aligned to clinical outcomes data</span>
-              <span>Roadmap and evidence strategy built in parallel</span>
-              <span>Clinical due diligence and investor positioning</span>
+              <span>Sprints to unblock and re-align commercial, product, and clinical teams</span>
+              <span>Zero gaps between the claims you make and the evidence you generate</span>
+              <span>Connecting commercial narrative and storytelling to real clinical value</span>
+              <span>Key opinion leadership: keynotes, offsites, and industry-facing thought and action leadership</span>
             </div>
             <Link href="/contact" className="more">
               Discuss your strategy →

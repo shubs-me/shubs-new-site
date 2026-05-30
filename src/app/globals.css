@@ -1400,8 +1400,18 @@ footer {
   font-size: clamp(28px, 4.2vw, 54px);
   line-height: 0.98;
   letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   max-width: 18ch;
+}
+.pillar .plead {
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: clamp(19px, 2vw, 26px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--clay);
+  margin-bottom: 24px;
+  max-width: 24ch;
 }
 .pillar > p {
   color: var(--muted);
