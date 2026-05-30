@@ -77,7 +77,8 @@ export default async function Home() {
           <Image
             src="/images/shubs-pink.webp"
             alt="Dr Shubs Upadhyay"
-            fill
+            width={640}
+            height={640}
             priority
             sizes="(max-width: 820px) 82vw, 34vw"
           />
