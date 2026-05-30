@@ -31,33 +31,39 @@ export default function About() {
 
       {/* FOUNDED */}
       <section className="light">
-        <div className="wrap">
-          <div className="sec-head">
-            <span className="label">Why I exist</span>
-            <h2 className="sec-title wide">
-              Real clinical value doesn&apos;t have to be <em>elusive.</em>
-            </h2>
+        <div className="wrap founded">
+          <div>
+            <div className="sec-head">
+              <span className="label">Why I exist</span>
+              <h2 className="sec-title wide">
+                Real clinical value doesn&apos;t have to be <em>elusive.</em>
+              </h2>
+            </div>
+            <div className="prose">
+              <p>
+                People building and implementing digital health know that clinical
+                outcomes matter. But those outcomes can feel far off, and hard to move
+                directly.
+              </p>
+              <p>
+                So things drift. The commercial narrative pulls one way, the product
+                roadmap another, and the evidence lands somewhere else entirely. Clinical
+                value gets lost in translation, and teams move fast, just not towards what
+                actually matters for people.
+              </p>
+              <p>
+                When users and buyers see bold claims without the evidence to back them,
+                trust wanes. Clients churn. Funding dries up.
+              </p>
+              <p>
+                After a decade inside venture-backed digital health companies and global
+                institutions, I set up my practice to change that: to bring sharp focus
+                back to clinical outcomes, and to what really matters.
+              </p>
+            </div>
           </div>
-          <div className="prose">
-            <p>
-              People building and implementing digital health know that clinical outcomes
-              matter. But those outcomes can feel far off, and hard to move directly.
-            </p>
-            <p>
-              So things drift. The commercial narrative pulls one way, the product roadmap
-              another, and the evidence lands somewhere else entirely. Clinical value gets
-              lost in translation, and teams move fast, just not towards what actually
-              matters for people.
-            </p>
-            <p>
-              When users and buyers see bold claims without the evidence to back them,
-              trust wanes. Clients churn. Funding dries up.
-            </p>
-            <p>
-              After a decade inside venture-backed digital health companies and global
-              institutions, I set up my practice to change that: to bring sharp focus back
-              to clinical outcomes, and to what really matters.
-            </p>
+          <div className="founded-mark" aria-hidden>
+            S<span>.</span>
           </div>
         </div>
       </section>

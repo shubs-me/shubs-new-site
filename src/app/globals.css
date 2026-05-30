@@ -1233,6 +1233,35 @@ footer {
   }
 }
 
+/* founded — text with oversized brand mark (about) */
+.founded {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.founded-mark {
+  font-family: var(--disp);
+  font-weight: 700;
+  font-size: clamp(220px, 30vw, 420px);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+  text-align: center;
+  user-select: none;
+}
+.founded-mark span {
+  color: var(--clay);
+}
+@media (max-width: 860px) {
+  .founded {
+    grid-template-columns: 1fr;
+  }
+  .founded-mark {
+    display: none;
+  }
+}
+
 /* prose */
 .prose p {
   font-size: clamp(17px, 1.5vw, 19px);
