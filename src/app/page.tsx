@@ -35,6 +35,7 @@ const TESTIMONIALS = [
       'Your work was valued across our clinical, product, AI scientist and engineering leaders. We now use the ‘clinical value’ and ‘measure what matters’ framework in our day to day work.',
     name: 'Medical Leader',
     role: 'Doctolib',
+    rating: 'Rated 5/5 · Value delivered, professionalism, clarity, quality',
   },
   {
     quote:
@@ -395,6 +396,9 @@ export default async function Home() {
             {TESTIMONIALS.map((t, i) => (
               <div className="tcard" key={i}>
                 <blockquote>“{t.quote}”</blockquote>
+                {'rating' in t && t.rating && (
+                  <div className="trating">{t.rating}</div>
+                )}
                 <div className="tcite">
                   <b>{t.name}</b>
                   <br />
