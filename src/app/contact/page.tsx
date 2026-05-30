@@ -75,7 +75,7 @@ export default function Contact() {
                       type="email"
                       id="email"
                       name="email"
-                      placeholder="jane@company.com"
+                      placeholder="name@company.com"
                       ref={emailRef}
                       required
                     />
