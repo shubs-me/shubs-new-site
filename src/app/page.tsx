@@ -252,15 +252,16 @@ export default async function Home() {
               </Link>
             </div>
             <div className="who-card">
-              <div className="kicker">Workshops &amp; Sprints</div>
-              <h3>Startups and scale-ups of any size</h3>
+              <div className="kicker">People leading</div>
+              <h3>Clinical and medical leaders</h3>
               <p>
-                Not every challenge needs a long engagement. I run focused Workshops and
-                Sprints designed to resolve specific friction, align teams, or build
-                foundational practices before problems compound.
+                Whether you are a CMO setting clinical strategy or a medical lead carrying
+                the weight of safety and evidence, I am a sounding board and a partner,
+                helping you make the case, build the practices, and hold the line where it
+                matters.
               </p>
               <Link href="/services" className="more">
-                See my engagements →
+                See how I can help →
               </Link>
             </div>
             <div className="who-card">
@@ -365,7 +366,7 @@ export default async function Home() {
       <section className="quote">
         <div className="wrap">
           <span className="label" style={{ marginBottom: 30 }}>
-            In their words
+            In my words
           </span>
           <blockquote>
             “Very few advisors can hold all of those conversations. That is why founders,
