@@ -21,7 +21,7 @@ export default function Home() {
       <header className="hero">
         <div className="wrap">
           <div className="hero-l">
-            <span className="label">Dr Shubs Upadhyay — Digital Health Advisor</span>
+            <span className="label">Dr Shubs Upadhyay, Digital Health Advisor</span>
             <h1>
               Clinical <em>rigour</em> at product speed.
             </h1>
@@ -79,7 +79,7 @@ export default function Home() {
               </p>
               <p>
                 Most products are built by smart, motivated people. The problem
-                isn&apos;t technology or intent — it&apos;s that the definition of value
+                isn&apos;t technology or intent, it&apos;s that the definition of value
                 gets decided too late, in the wrong room, by people who aren&apos;t
                 equipped to make it. Clinical input arrives at the end to sign off rather
                 than at the start to shape decisions.
@@ -109,7 +109,7 @@ export default function Home() {
                 <b>Funders and investors.</b> Portfolio companies report impressive
                 activity metrics while missing the clinical outcomes that determine
                 whether a health system buys, renews, or recommends. The gap between what
-                was pitched and what holds up widens quietly — until it doesn&apos;t.
+                was pitched and what holds up widens quietly, until it doesn&apos;t.
               </p>
             </div>
           </div>
@@ -123,14 +123,14 @@ export default function Home() {
               <p>
                 Clinical rigour and product velocity are not opposites. They are a
                 function of how clinical, product, commercial, and regulatory work is set
-                up to happen together. When I come in early — shaping product decisions
-                rather than reviewing them at the end — teams ship faster, build stronger
+                up to happen together. When I come in early, shaping product decisions
+                rather than reviewing them at the end, teams ship faster, build stronger
                 evidence, and arrive at conversations with commissioners, regulators, and
                 investors with a story that holds.
               </p>
               <p>
                 I work with founders, product leaders, and medical leaders to build that
-                way of working — tuned to where your organisation actually is, not lifted
+                way of working, tuned to where your organisation actually is, not lifted
                 from a framework.
               </p>
             </div>
@@ -167,7 +167,7 @@ export default function Home() {
                 Level up how clinical, product, QARA, data science, and engineering teams
                 make decisions together. The pre-deployment work on product quality and
                 robust monitoring lets you ship at pace and catch the right things
-                proactively — without becoming a bottleneck or safety becoming an
+                proactively, without becoming a bottleneck or safety becoming an
                 afterthought.
               </p>
               <div className="plist">
@@ -186,7 +186,7 @@ export default function Home() {
               <p>
                 As digital health companies scale, the sales narrative, the product
                 roadmap, and the evidence strategy tend to drift apart. I bring them back
-                into a single line — so what you&apos;re selling, what you&apos;re
+                into a single line, so what you&apos;re selling, what you&apos;re
                 building, and what you&apos;re proving are the same story. Not a messaging
                 project. An integrated strategic alignment.
               </p>
@@ -240,7 +240,7 @@ export default function Home() {
               <h3>Philanthropy, foundations, and impact investors</h3>
               <p>
                 I bring senior clinical-strategic perspective into diligence, portfolio
-                support, and cohort programming — helping the organisations you back build
+                support, and cohort programming, helping the organisations you back build
                 toward outcomes that hold up.
               </p>
               <Link href="/services" className="more">
@@ -318,8 +318,8 @@ export default function Home() {
               I&apos;m a physician who has spent a decade at the point where these problems
               actually get solved. As senior clinical and medical director at a
               venture-backed digital health company deploying regulated AI across multiple
-              markets, my work was defining what good looked like — for which patients,
-              against what counterfactual — and then building the practices that could
+              markets, my work was defining what good looked like, for which patients,
+              against what counterfactual, and then building the practices that could
               deliver it at the pace the business demanded.
             </p>
             <p>

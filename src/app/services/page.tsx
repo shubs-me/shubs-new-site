@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Services | Shubs Upadhyay',
   description:
-    'Two practice areas — Clinical and Product Integration, and Commercial and Clinical Alignment — for organisations serious about building digital health that works.',
+    'Two practice areas, Clinical and Product Integration, and Commercial and Clinical Alignment, for organisations serious about building digital health that works.',
 }
 
 const PROCESS = [
@@ -41,8 +41,8 @@ export default function Services() {
             Clinical expertise, deployed where it <em>counts.</em>
           </h1>
           <p className="sub">
-            Two practice areas — Clinical and Product Integration, and Commercial and
-            Clinical Alignment — for organisations serious about building digital health
+            Two practice areas, Clinical and Product Integration, and Commercial and
+            Clinical Alignment, for organisations serious about building digital health
             that actually works.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function Services() {
               <h3>Philanthropy, foundations, and impact investors</h3>
               <p className="ab">
                 You are deploying capital or grants into digital health and need to know
-                whether it is going somewhere meaningful — and whether the organisations
+                whether it is going somewhere meaningful, and whether the organisations
                 you fund have what it takes to deliver. I provide the clinical
                 intelligence, due diligence depth, and impact frameworks that help you
                 back the right work and help that work succeed.
@@ -120,7 +120,7 @@ export default function Services() {
               Level up how clinical, product, QARA, data science, and engineering teams
               make decisions together. The pre-deployment work on product quality and
               robust monitoring lets you ship at pace and catch the right things
-              proactively — without becoming a bottleneck or safety becoming an
+              proactively, without becoming a bottleneck or safety becoming an
               afterthought. Whether your clinicians are embedded or advising in, I help
               you build the working relationships and processes that make the whole system
               reliable.
@@ -144,7 +144,7 @@ export default function Services() {
             <p>
               As digital health companies scale, the sales narrative, the product roadmap,
               and the evidence strategy tend to drift apart. I work across commercial,
-              product, and clinical teams to bring them back into a single line — so that
+              product, and clinical teams to bring them back into a single line, so that
               what you&apos;re selling, what you&apos;re building, and what you&apos;re
               proving are the same story. Not a messaging project. An integrated strategic
               alignment that sets the priorities, the data, and the methodology to deliver

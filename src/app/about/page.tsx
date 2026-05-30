@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About | Shubs Upadhyay',
   description:
-    'The thinking behind the practice — a physician and digital health strategist building clinical rigour into health technology from the start.',
+    'The thinking behind the practice, a physician and digital health strategist building clinical rigour into health technology from the start.',
 }
 
 export default function About() {
@@ -19,7 +19,7 @@ export default function About() {
           </h1>
           <p className="sub">
             Most digital health fails not because of bad technology. It fails because it
-            is built against the wrong definition of value — and I set up my practice to
+            is built against the wrong definition of value, and I set up my practice to
             fix that.
           </p>
         </div>
@@ -36,17 +36,17 @@ export default function About() {
           </div>
           <div className="prose">
             <p>
-              What I&apos;ve seen — across the NHS, multilateral agencies, and
-              venture-backed companies — is that the industry builds well. It is less good
+              What I&apos;ve seen, across the NHS, multilateral agencies, and
+              venture-backed companies, is that the industry builds well. It is less good
               at building things that <b>hold up</b>: products that work as intended in
               clinical practice, investment theses that survive contact with real health
               systems, policies that do more than signal intent.
             </p>
             <p>
               I think that gap matters more as AI moves to the centre of health products
-              and health decisions. Clinical expertise in those conversations — from
+              and health decisions. Clinical expertise in those conversations, from
               someone who can speak honestly to what these systems actually do in a care
-              context, across commercial, product, investor, and policy rooms — is the
+              context, across commercial, product, investor, and policy rooms, is the
               difference between a well-funded assumption and something that lasts.
             </p>
             <p>
@@ -113,7 +113,7 @@ export default function About() {
                 I&apos;m a physician and digital health strategist with fifteen years of
                 experience across clinical practice, health technology, and health system
                 strategy. I&apos;ve led clinical and strategic initiatives across the NHS,
-                international health agencies, and private sector organisations — from
+                international health agencies, and private sector organisations, from
                 early-stage startups through to multilateral programmes.
               </p>
               <p>

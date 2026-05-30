@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Thinking | Shubs Upadhyay',
   description:
-    'Essays on digital health strategy, evidence, and equity — plus the GPODH podcast, recorded with leaders across 60+ countries.',
+    'Essays on digital health strategy, evidence, and equity, plus the GPODH podcast, recorded with leaders across 60+ countries.',
 }
 
 export default function Thinking() {
@@ -17,7 +17,7 @@ export default function Thinking() {
             The industry talks to itself. <em>I don&apos;t.</em>
           </h1>
           <p className="sub">
-            Essays on digital health strategy, evidence, and equity — plus the GPODH
+            Essays on digital health strategy, evidence, and equity, plus the GPODH
             podcast, recorded with leaders across 60+ countries.
           </p>
         </div>
@@ -102,7 +102,7 @@ export default function Thinking() {
               <div className="k">Hosted by Dr Shubs Upadhyay</div>
               <h3>Candid conversations across 60+ countries</h3>
               <p>
-                The people reshaping digital health — on what actually works, what
+                The people reshaping digital health, on what actually works, what
                 doesn&apos;t, and what we keep getting wrong.
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function Thinking() {
               lineHeight: 1.5,
             }}
           >
-            Essays on what it actually takes to build digital health that holds up —
+            Essays on what it actually takes to build digital health that holds up,
             clinically, commercially, and at scale.
           </p>
           <a

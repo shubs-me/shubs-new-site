@@ -27,9 +27,9 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shubs Upadhyay — Clinical rigour at product speed",
+  title: "Shubs Upadhyay, Clinical rigour at product speed",
   description:
-    "Dr Shubs Upadhyay helps founders, product leaders, and medical leaders build digital health that holds up — clinically, commercially, and at scale.",
+    "Dr Shubs Upadhyay helps founders, product leaders, and medical leaders build digital health that holds up, clinically, commercially, and at scale.",
 };
 
 export default function RootLayout({

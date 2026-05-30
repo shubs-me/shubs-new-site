@@ -34,7 +34,7 @@ export default function Contact() {
           </h1>
           <p className="sub">
             Whether you&apos;re building a digital health product that needs to hold up to
-            clinical scrutiny, or investing in the organisations doing that work — every
+            clinical scrutiny, or investing in the organisations doing that work, every
             conversation starts by understanding what you&apos;re actually trying to
             achieve.
           </p>
@@ -107,7 +107,7 @@ export default function Contact() {
                 <div className="label" style={{ marginBottom: 18 }}>
                   Message sent
                 </div>
-                <h3>Thanks — I&apos;ll be in touch.</h3>
+                <h3>Thanks, I&apos;ll be in touch.</h3>
                 <p>
                   Every message reaches me directly. Expect an honest reply within a
                   couple of working days.
