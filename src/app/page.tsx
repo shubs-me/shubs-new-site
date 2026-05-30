@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
 import InlineCTA from '@/components/InlineCTA'
+import StatNumber from '@/components/StatNumber'
 import { getEssays } from '@/lib/substack'
 
 const TICKER = [
@@ -16,7 +17,6 @@ const STATS = [
   { n: '15+', l: 'Years across the digital health ecosystem' },
   { n: '5', l: 'Countries with multi-million pound contracts protected' },
   { n: '50+', l: 'International experts led at ITU / WHO' },
-  { n: '20+', l: 'Countries with active client engagements' },
   { n: '60+', l: 'Countries reached via podcast' },
 ]
 
@@ -179,7 +179,7 @@ export default async function Home() {
           <div className="stats-grid">
             {STATS.map(({ n, l }) => (
               <div className="stat" key={n + l}>
-                <div className="n">{n}</div>
+                <StatNumber value={n} />
                 <div className="l">{l}</div>
               </div>
             ))}
