@@ -107,7 +107,7 @@ function MatchIcon() {
 
       if (line) {
         const gap = bx - ax
-        const lineOpacity = gap < 20 ? Math.max(0, (20 - gap) / 20) * 0.6 : 0
+        const lineOpacity = gap < 20 ? Math.max(0, (20 - gap) / 20) * 0.85 : 0
         line.setAttribute('x1',      String(ax))
         line.setAttribute('x2',      String(bx))
         line.setAttribute('opacity', String(lineOpacity))
@@ -126,7 +126,7 @@ function MatchIcon() {
         id="ma-line"
         x1="10" y1="28" x2="46" y2="28"
         style={{ stroke: 'var(--sq-amber)' }}
-        strokeWidth={1}
+        strokeWidth={1.6}
         strokeDasharray="3 3"
         opacity={0}
       />
@@ -173,8 +173,8 @@ function EmbedIcon() {
 
   return (
     <svg ref={svgRef} viewBox="0 0 56 56" width={56} height={56} aria-hidden>
-      <circle cx={28} cy={28} r={22} fill="none" style={{ stroke: 'var(--sq-teal)' }}  strokeWidth={0.8} strokeDasharray="4 4" opacity={0.3} />
-      <circle cx={28} cy={28} r={16} fill="none" style={{ stroke: 'var(--sq-amber)' }} strokeWidth={0.5} opacity={0.2} />
+      <circle cx={28} cy={28} r={22} fill="none" style={{ stroke: 'var(--sq-teal)' }}  strokeWidth={1.4} strokeDasharray="4 4" opacity={0.5} />
+      <circle cx={28} cy={28} r={16} fill="none" style={{ stroke: 'var(--sq-amber)' }} strokeWidth={1} opacity={0.4} />
       <circle cx={28} cy={28} r={5}  style={{ fill: 'var(--sq-teal)' }}  opacity={0.85} />
       <circle id="em-orbiter" cx={44} cy={28} r={3.5} style={{ fill: 'var(--sq-amber)' }} opacity={0.9} />
     </svg>
@@ -241,8 +241,8 @@ function DeliverIcon() {
 
   return (
     <svg ref={svgRef} viewBox="0 0 56 56" width={56} height={56} aria-hidden>
-      <line x1={10} y1={46} x2={46} y2={10} style={{ stroke: 'var(--sq-amber)' }} strokeWidth={1} opacity={0.12} />
-      <line id="dv-trail" x1={10} y1={46} x2={10} y2={46} style={{ stroke: 'var(--sq-amber)' }} strokeWidth={1.5} strokeLinecap="round" opacity={0} />
+      <line x1={10} y1={46} x2={46} y2={10} style={{ stroke: 'var(--sq-amber)' }} strokeWidth={1.4} opacity={0.25} />
+      <line id="dv-trail" x1={10} y1={46} x2={10} y2={46} style={{ stroke: 'var(--sq-amber)' }} strokeWidth={2.4} strokeLinecap="round" opacity={0} />
       <circle id="dv-dot" cx={10} cy={46} r={3.5} style={{ fill: 'var(--sq-amber)' }} opacity={0.9} />
       <circle cx={46} cy={10} r={2.5} style={{ fill: 'var(--sq-teal)' }} opacity={0.6} />
     </svg>

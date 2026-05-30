@@ -21,7 +21,7 @@ export default function BroadcastGraphic({ size = 80 }: { size?: number }) {
         const phase   = i / NUM_RINGS
         const p       = ((t * 0.65 + phase) % 1)
         const r       = 6 + p * 32
-        const opacity = (1 - p) * 0.65
+        const opacity = (1 - p) * 0.85
         ring.setAttribute('r',       String(r))
         ring.setAttribute('opacity', String(Math.max(0, opacity)))
       })
@@ -51,11 +51,11 @@ export default function BroadcastGraphic({ size = 80 }: { size?: number }) {
           cx={cx} cy={cy} r="6"
           fill="none"
           style={{ stroke: i % 2 === 0 ? 'var(--sq-teal)' : 'var(--sq-amber)' }}
-          strokeWidth="1.2"
+          strokeWidth="2"
           opacity="0"
         />
       ))}
-      <circle cx={cx} cy={cy} r={size / 2 - 2} fill="none" style={{ stroke: 'var(--sq-teal)' }} strokeWidth="0.5" opacity="0.2" />
+      <circle cx={cx} cy={cy} r={size / 2 - 2} fill="none" style={{ stroke: 'var(--sq-teal)' }} strokeWidth="1" opacity="0.35" />
       <circle cx={cx} cy={cy} r="5" style={{ fill: 'var(--sq-teal)' }} opacity="0.5" />
       <circle cx={cx} cy={cy} r="2.5" style={{ fill: 'var(--sq-amber)' }} opacity="1" />
     </svg>

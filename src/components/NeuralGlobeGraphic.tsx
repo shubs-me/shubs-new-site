@@ -158,25 +158,25 @@ export default function NeuralGlobeGraphic() {
       // Sphere rings
       c2d.beginPath()
       c2d.arc(CX, CY, 170, 0, Math.PI * 2)
-      c2d.strokeStyle = `rgba(${amberRgb},0.08)`
-      c2d.lineWidth = 1
+      c2d.strokeStyle = `rgba(${amberRgb},0.2)`
+      c2d.lineWidth = 1.6
       c2d.stroke()
 
       c2d.beginPath()
       c2d.arc(CX, CY, 155, 0, Math.PI * 2)
-      c2d.strokeStyle = `rgba(${tealRgb},0.06)`
-      c2d.lineWidth = 0.8
+      c2d.strokeStyle = `rgba(${tealRgb},0.16)`
+      c2d.lineWidth = 1.3
       c2d.stroke()
 
       // Thread
       if (pluck.phase !== 'idle') {
-        const threadAlpha = pluck.phase === 'dwelling' ? 0.22 : 0.12
+        const threadAlpha = pluck.phase === 'dwelling' ? 0.45 : 0.28
         c2d.setLineDash([4, 6])
         c2d.beginPath()
         c2d.moveTo(CX, CY)
         c2d.lineTo(pluck.cx, pluck.cy)
         c2d.strokeStyle = `rgba(${amberRgb},${threadAlpha})`
-        c2d.lineWidth = 0.8
+        c2d.lineWidth = 1.4
         c2d.stroke()
         c2d.setLineDash([])
       }
@@ -189,14 +189,14 @@ export default function NeuralGlobeGraphic() {
         const bx = isPlucked && b === pluck.nodeIdx ? pluck.cx : NODES[b].x
         const by = isPlucked && b === pluck.nodeIdx ? pluck.cy : NODES[b].y
 
-        const pulse = 0.06 + 0.06 * Math.abs(Math.sin(t * 0.4 + i * 0.3))
+        const pulse = 0.16 + 0.12 * Math.abs(Math.sin(t * 0.4 + i * 0.3))
         c2d.beginPath()
         c2d.moveTo(ax, ay)
         c2d.lineTo(bx, by)
         c2d.strokeStyle = i % 3 !== 1
           ? `rgba(${amberRgb},${pulse})`
           : `rgba(${tealRgb},${pulse})`
-        c2d.lineWidth = 0.7
+        c2d.lineWidth = 1.3
         c2d.stroke()
       })
 
@@ -247,7 +247,7 @@ export default function NeuralGlobeGraphic() {
               c2d.beginPath()
               c2d.arc(nx, ny, gr, 0, Math.PI * 2)
               c2d.strokeStyle = `rgba(${amberRgb},${ga})`
-              c2d.lineWidth = 1
+              c2d.lineWidth = 1.6
               c2d.stroke()
             }
           }
@@ -273,7 +273,7 @@ export default function NeuralGlobeGraphic() {
           if (i % 5 === 0) {
             c2d.beginPath()
             c2d.arc(nx, ny, r + 4 + 3 * Math.abs(Math.sin(t * 0.6 + i)), 0, Math.PI * 2)
-            c2d.fillStyle = `rgba(${rgb},0.07)`
+            c2d.fillStyle = `rgba(${rgb},0.14)`
             c2d.fill()
           }
           c2d.beginPath()

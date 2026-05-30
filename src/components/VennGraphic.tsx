@@ -27,7 +27,7 @@ export default function VennGraphic() {
       fills.forEach((c, i) => {
         const ph = (i * Math.PI * 2) / 3
         c.setAttribute('r',       String(radii[i] + 3 * Math.sin(t * 0.55 + ph)))
-        c.setAttribute('opacity', String(0.05 + 0.018 * Math.sin(t * 0.45 + ph)))
+        c.setAttribute('opacity', String(0.09 + 0.03 * Math.sin(t * 0.45 + ph)))
       })
 
       borders.forEach((c, i) => {
@@ -63,24 +63,24 @@ export default function VennGraphic() {
       </defs>
 
       {/* Circle fills (breathe) */}
-      <circle className="vg-fill" cx={topCx} cy={topCy} r={TOP.r} style={{ fill: 'var(--sq-amber)' }} opacity="0.05" />
-      <circle className="vg-fill" cx={blCx}  cy={blCy}  r={BL.r}  style={{ fill: 'var(--sq-teal)' }}  opacity="0.05" />
-      <circle className="vg-fill" cx={brCx}  cy={brCy}  r={BR.r}  style={{ fill: 'var(--sq-muted)' }} opacity="0.05" />
+      <circle className="vg-fill" cx={topCx} cy={topCy} r={TOP.r} style={{ fill: 'var(--sq-amber)' }} opacity="0.09" />
+      <circle className="vg-fill" cx={blCx}  cy={blCy}  r={BL.r}  style={{ fill: 'var(--sq-teal)' }}  opacity="0.09" />
+      <circle className="vg-fill" cx={brCx}  cy={brCy}  r={BR.r}  style={{ fill: 'var(--sq-muted)' }} opacity="0.09" />
 
       {/* Triple-intersection highlight */}
       <g clipPath="url(#vcp-top)">
         <g clipPath="url(#vcp-bl)">
-          <circle cx={brCx} cy={brCy} r={BR.r} style={{ fill: 'var(--sq-amber)' }} opacity="0.32" />
+          <circle cx={brCx} cy={brCy} r={BR.r} style={{ fill: 'var(--sq-amber)' }} opacity="0.42" />
         </g>
       </g>
 
       {/* Dashed borders (breathe + slow rotate) */}
       <circle className="vg-border" cx={topCx} cy={topCy} r={TOP.r}
-        fill="none" style={{ stroke: 'var(--sq-amber)' }} strokeWidth="0.9" strokeDasharray="6 4" opacity="0.45" />
+        fill="none" style={{ stroke: 'var(--sq-amber)' }} strokeWidth="1.8" strokeDasharray="6 4" opacity="0.8" />
       <circle className="vg-border" cx={blCx}  cy={blCy}  r={BL.r}
-        fill="none" style={{ stroke: 'var(--sq-teal)' }}  strokeWidth="0.9" strokeDasharray="6 4" opacity="0.4"  />
+        fill="none" style={{ stroke: 'var(--sq-teal)' }}  strokeWidth="1.8" strokeDasharray="6 4" opacity="0.75" />
       <circle className="vg-border" cx={brCx}  cy={brCy}  r={BR.r}
-        fill="none" style={{ stroke: 'var(--sq-muted)' }} strokeWidth="0.9" strokeDasharray="6 4" opacity="0.35" />
+        fill="none" style={{ stroke: 'var(--sq-muted)' }} strokeWidth="1.8" strokeDasharray="6 4" opacity="0.6" />
 
       {/* SHUBS — centroid */}
       <text

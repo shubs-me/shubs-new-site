@@ -53,9 +53,9 @@ export default function CtaGeometricGraphic() {
           width={size}
           height={size}
           fill="none"
-          style={{ stroke: 'var(--sq-amber)' }}
-          strokeWidth="0.6"
-          opacity={0.03 + i * 0.012}
+          style={{ stroke: i % 2 === 0 ? 'var(--sq-amber)' : 'var(--sq-teal)' }}
+          strokeWidth="1.3"
+          opacity={0.12 + i * 0.05}
           transform={`rotate(${45 + i * 8}, 200, 200)`}
         />
       ))}

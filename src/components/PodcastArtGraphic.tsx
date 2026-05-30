@@ -44,7 +44,7 @@ export default function PodcastArtGraphic() {
       bcastRings.forEach((ring, i) => {
         const phase   = ((t * 0.18 + i / RING_COUNT) % 1)
         const radius  = 6 + phase * 100
-        const opacity = (1 - phase) * 0.55
+        const opacity = (1 - phase) * 0.75
         ring.setAttribute('r',       String(radius))
         ring.setAttribute('opacity', String(opacity))
       })
@@ -57,7 +57,7 @@ export default function PodcastArtGraphic() {
         const y = CY + orbR * Math.sin(angle)
         dot.setAttribute('cx',      String(x))
         dot.setAttribute('cy',      String(y))
-        dot.setAttribute('opacity', String(0.3 + 0.45 * ((Math.sin(t * 0.6 + i * 0.9) + 1) / 2)))
+        dot.setAttribute('opacity', String(0.45 + 0.45 * ((Math.sin(t * 0.6 + i * 0.9) + 1) / 2)))
       })
 
       rafRef.current = requestAnimationFrame(tick)
@@ -78,7 +78,7 @@ export default function PodcastArtGraphic() {
     >
       {/* Background disc */}
       <circle cx={CX} cy={CY} r={SIZE / 2 - 2} style={{ fill: 'var(--sq-bg2)' }} />
-      <circle cx={CX} cy={CY} r={SIZE / 2 - 3} fill="none" style={{ stroke: 'var(--sq-teal)' }} strokeWidth="1" opacity="0.35" />
+      <circle cx={CX} cy={CY} r={SIZE / 2 - 3} fill="none" style={{ stroke: 'var(--sq-teal)' }} strokeWidth="1.6" opacity="0.55" />
 
       {/* Rotating groove rings */}
       <g id="pa-spin">
@@ -88,9 +88,9 @@ export default function PodcastArtGraphic() {
             cx={CX} cy={CY} r={r}
             fill="none"
             style={{ stroke: i % 2 === 0 ? 'var(--sq-teal)' : 'var(--sq-amber)' }}
-            strokeWidth={i % 3 === 0 ? '0.7' : '0.4'}
+            strokeWidth={i % 3 === 0 ? '1.3' : '0.8'}
             strokeDasharray={i % 2 === 0 ? '4 3' : 'none'}
-            opacity={0.12 + (6 - i) * 0.045}
+            opacity={0.22 + (6 - i) * 0.06}
           />
         ))}
       </g>
@@ -103,7 +103,7 @@ export default function PodcastArtGraphic() {
           cx={CX} cy={CY} r="6"
           fill="none"
           style={{ stroke: 'var(--sq-teal)' }}
-          strokeWidth="1.2"
+          strokeWidth="1.8"
           opacity="0"
         />
       ))}

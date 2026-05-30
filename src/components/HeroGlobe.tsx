@@ -81,7 +81,7 @@ export default function HeroGlobe() {
         line.setAttribute('y1', String(cy))
         line.setAttribute('x2', String(200 + r * Math.cos(angle)))
         line.setAttribute('y2', String(200 + r * Math.sin(angle)))
-        line.setAttribute('opacity', String(0.12 + 0.45 * ((Math.sin(t * 0.85 + ph) + 1) / 2)))
+        line.setAttribute('opacity', String(0.28 + 0.5 * ((Math.sin(t * 0.85 + ph) + 1) / 2)))
       })
 
       rafRef.current = requestAnimationFrame(animate)
@@ -104,18 +104,18 @@ export default function HeroGlobe() {
       <circle
         id="sg-outer-ring"
         cx="200" cy="200" r="180"
-        fill="none" style={{ stroke: 'var(--sq-amber)' }} strokeWidth="0.8"
-        strokeDasharray="10 5" opacity="0.45"
+        fill="none" style={{ stroke: 'var(--sq-amber)' }} strokeWidth="1.5"
+        strokeDasharray="10 5" opacity="0.6"
       />
       <circle
         id="sg-mid-ring"
         cx="200" cy="200" r="130"
-        fill="none" style={{ stroke: 'var(--sq-teal)' }} strokeWidth="0.6"
-        strokeDasharray="6 8" opacity="0.3"
+        fill="none" style={{ stroke: 'var(--sq-teal)' }} strokeWidth="1.2"
+        strokeDasharray="6 8" opacity="0.5"
       />
       <circle
         cx="200" cy="200" r="80"
-        fill="none" style={{ stroke: 'var(--sq-amber)' }} strokeWidth="0.5" opacity="0.2"
+        fill="none" style={{ stroke: 'var(--sq-amber)' }} strokeWidth="1" opacity="0.4"
       />
 
       <g id="sg-lon-group">
@@ -125,7 +125,7 @@ export default function HeroGlobe() {
           return (
             <line key={`lat-${i}`}
               x1={200 - hw} y1={y} x2={200 + hw} y2={y}
-              style={{ stroke: 'var(--sq-amber)' }} strokeWidth="0.5" opacity="0.18"
+              style={{ stroke: 'var(--sq-amber)' }} strokeWidth="0.9" opacity="0.32"
             />
           )
         })}
@@ -135,7 +135,7 @@ export default function HeroGlobe() {
             <line key={`lon-${i}`}
               x1={200 + 180 * Math.cos(rad)} y1={200 + 180 * Math.sin(rad)}
               x2={200 - 180 * Math.cos(rad)} y2={200 - 180 * Math.sin(rad)}
-              style={{ stroke: 'var(--sq-teal)' }} strokeWidth="0.5" opacity="0.18"
+              style={{ stroke: 'var(--sq-teal)' }} strokeWidth="0.9" opacity="0.32"
             />
           )
         })}
@@ -148,8 +148,8 @@ export default function HeroGlobe() {
           x1="200" y1="200"
           x2={NODES[nodeIdx].x} y2={NODES[nodeIdx].y}
           style={{ stroke: i % 2 === 0 ? 'var(--sq-amber)' : 'var(--sq-teal)' }}
-          strokeWidth="0.8"
-          opacity="0.3"
+          strokeWidth="1.4"
+          opacity="0.45"
         />
       ))}
 
@@ -159,7 +159,7 @@ export default function HeroGlobe() {
           className="sg-dot"
           cx={node.x} cy={node.y} r="2.5"
           style={{ fill: node.amber ? 'var(--sq-amber)' : 'var(--sq-teal)' }}
-          opacity="0.6"
+          opacity="0.75"
         />
       ))}
 

@@ -2,10 +2,10 @@
 import { useEffect, useRef } from 'react'
 
 const SPEED = 0.35
-const RADIUS = 2.5
-const NODE_OPACITY = 0.7
+const RADIUS = 3
+const NODE_OPACITY = 0.85
 const CONNECT_DIST = 120
-const LINE_WIDTH = 0.5
+const LINE_WIDTH = 1.1
 const NODE_COUNT = 19
 
 interface Node {
@@ -99,7 +99,7 @@ export default function ServicesMeshGraphic() {
           const dy = b.y - a.y
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < CONNECT_DIST) {
-            const opacity = (1 - dist / CONNECT_DIST) * 0.55
+            const opacity = (1 - dist / CONNECT_DIST) * 0.85
             g.beginPath()
             g.moveTo(a.x, a.y)
             g.lineTo(b.x, b.y)
