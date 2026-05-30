@@ -38,7 +38,11 @@ export default function Contact() {
         <div className="wrap">
           <span className="label">Contact</span>
           <h1>
-            Let&apos;s build something <em>the right way.</em>
+            Let&apos;s build
+            <br />
+            something
+            <br />
+            the <em>right way.</em>
           </h1>
           <p className="sub">
             Whether you&apos;re building a digital health product that needs to hold up to
