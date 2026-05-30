@@ -4,9 +4,11 @@ import ExtLink from '@/components/ExtLink'
 import { getEssays } from '@/lib/substack'
 
 const TICKER = [
-  'Clinical Leadership', 'Product Velocity', 'Evidence Strategy', 'Digital Health',
-  'NHS', 'WHO', 'Clinical Rigour', 'Impact at Scale', 'Founder Advisory',
-  'Implementation Science', 'Global Health', 'Evidence Design',
+  'Clinical Leadership', 'Medical Leadership', 'Evidence Strategy', 'Evidence Design',
+  'Value Realisation', 'Clinical ROI', 'Commercial Focus', 'Market Intelligence',
+  'Medical Quality', 'Clinical AI Evaluation', 'Founder Advisory', 'Research Approach',
+  'Regulatory Readiness', 'Implementation Science', 'Quality & Safety',
+  'Clinical Due Diligence',
 ]
 
 const STATS = [
