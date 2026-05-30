@@ -184,9 +184,9 @@ export default function About() {
                 counsel they rarely have access to.
               </p>
               <p>
-                I host the <Link href="/thinking">GPODH podcast</Link> and write the{' '}
-                <Link href="/thinking">Shubstack newsletter</Link> on digital health
-                strategy, evidence, and equity.
+                I host the <Link href="/thinking">GPODH podcast</Link> and write on{' '}
+                <Link href="/thinking">Shubstack</Link> about digital health strategy,
+                evidence, and equity.
               </p>
             </div>
             <div className="plinks">

@@ -119,10 +119,10 @@ export default async function Thinking() {
         </div>
       </section>
 
-      {/* NEWSLETTER */}
+      {/* KEEP IN TOUCH */}
       <section className="contact">
         <div className="wrap">
-          <span className="label">Newsletter</span>
+          <span className="label">Keep in touch</span>
           <h2>
             More on <em>Shubstack.</em>
           </h2>
