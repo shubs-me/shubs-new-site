@@ -1080,6 +1080,39 @@ section {
   background: #000;
 }
 
+/* inline CTA (mid-page, slim) */
+.inline-cta {
+  padding: 0;
+  border-top: 1px solid var(--line-d);
+  border-bottom: 1px solid var(--line-d);
+}
+.light + .inline-cta,
+.inline-cta.on-light {
+  border-color: var(--line-l);
+}
+.inline-cta-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(20px, 4vw, 48px);
+  flex-wrap: wrap;
+  padding-top: clamp(28px, 4vw, 44px);
+  padding-bottom: clamp(28px, 4vw, 44px);
+}
+.inline-cta p {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: clamp(20px, 2.6vw, 32px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+}
+.inline-cta .btn-clay {
+  flex: none;
+  font-size: 16px;
+  padding: 15px 30px;
+}
+
 /* footer */
 footer {
   padding: clamp(56px, 7vw, 96px) 0 38px;

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import InlineCTA from '@/components/InlineCTA'
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -167,6 +168,12 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {/* INLINE CTA */}
+      <InlineCTA
+        text="Not sure which practice area fits? Let's talk it through."
+        cta="Start a conversation →"
+      />
 
       {/* QUOTE */}
       <section className="quote">

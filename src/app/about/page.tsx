@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
+import InlineCTA from '@/components/InlineCTA'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -125,6 +126,12 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* INLINE CTA */}
+      <InlineCTA
+        text="Think we might be a fit? I'd love to hear from you."
+        cta="Get in touch →"
+      />
 
       {/* PERSON */}
       <section className="light">

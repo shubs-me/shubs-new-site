@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
+import InlineCTA from '@/components/InlineCTA'
 import { getEssays } from '@/lib/substack'
 
 const TICKER = [
@@ -324,6 +325,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* INLINE CTA */}
+      <InlineCTA />
 
       {/* LIVED */}
       <section className="light">
