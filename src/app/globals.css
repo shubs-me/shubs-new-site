@@ -1208,6 +1208,31 @@ footer {
   color: var(--muted-d);
 }
 
+/* thinking hero with animated portrait */
+.think-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.think-hero-photo {
+  position: relative;
+  background: var(--clay);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-top-left-radius: clamp(70px, 11vw, 160px);
+  border-bottom-right-radius: clamp(70px, 11vw, 160px);
+}
+@media (max-width: 860px) {
+  .think-hero {
+    grid-template-columns: 1fr;
+  }
+  .think-hero-photo {
+    max-width: 360px;
+    margin-top: 8px;
+  }
+}
+
 /* prose */
 .prose p {
   font-size: clamp(17px, 1.5vw, 19px);

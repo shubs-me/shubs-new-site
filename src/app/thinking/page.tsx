@@ -19,15 +19,28 @@ export default async function Thinking() {
     <>
       {/* HERO */}
       <header className="page-hero">
-        <div className="wrap">
-          <span className="label">Thinking</span>
-          <h1>
-            The industry talks to itself. <em>I don&apos;t.</em>
-          </h1>
-          <p className="sub">
-            Essays on digital health strategy, evidence, and equity, plus the GPODH
-            podcast, recorded with leaders across 60+ countries.
-          </p>
+        <div className="wrap think-hero">
+          <div>
+            <span className="label">Thinking</span>
+            <h1>
+              The industry talks to itself. <em>I don&apos;t.</em>
+            </h1>
+            <p className="sub">
+              Essays on digital health strategy, evidence, and equity, plus the GPODH
+              podcast, recorded with leaders across 60+ countries.
+            </p>
+          </div>
+          <div className="think-hero-photo">
+            <Image
+              src="/images/Shubs.gif"
+              alt="Dr Shubs Upadhyay"
+              fill
+              unoptimized
+              priority
+              sizes="(max-width: 860px) 70vw, 34vw"
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            />
+          </div>
         </div>
       </header>
 
