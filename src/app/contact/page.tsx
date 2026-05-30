@@ -64,7 +64,7 @@ export default function Contact() {
                       type="text"
                       id="name"
                       name="name"
-                      placeholder="Jane Doe"
+                      placeholder="Your name"
                       ref={nameRef}
                       required
                     />

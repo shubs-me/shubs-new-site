@@ -68,7 +68,7 @@ export default async function Home() {
             </p>
             <div className="hero-cta">
               <Link href="/contact" className="btn btn-clay">
-                Work with me →
+                Let&apos;s talk →
               </Link>
               <Link href="/services" className="btn btn-line">
                 How I work →
@@ -523,7 +523,7 @@ export default async function Home() {
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
-            Book a call →
+            Get in touch →
           </Link>
         </div>
       </section>

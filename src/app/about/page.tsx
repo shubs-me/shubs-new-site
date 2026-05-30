@@ -243,7 +243,7 @@ export default function About() {
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
-            Book a call →
+            Get in touch →
           </Link>
         </div>
       </section>

@@ -33,7 +33,7 @@ export default async function Thinking() {
           <div className="think-hero-photo">
             <Image
               src="/images/Shubs.webp"
-              alt="Dr Shubs Upadhyay"
+              alt="Dr Shubs Upadhyay in an animated portrait"
               fill
               unoptimized
               priority

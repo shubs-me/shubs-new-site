@@ -53,7 +53,7 @@ export default function Nav() {
             </Link>
           ))}
           <Link href="/contact" className="btn btn-clay">
-            Speak to me →
+            Let&apos;s talk →
           </Link>
         </div>
 
@@ -88,7 +88,7 @@ export default function Nav() {
             </Link>
           ))}
           <Link href="/contact" className="btn btn-clay">
-            Speak to me →
+            Let&apos;s talk →
           </Link>
         </div>
       </div>

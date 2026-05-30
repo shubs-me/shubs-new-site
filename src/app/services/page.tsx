@@ -77,7 +77,7 @@ export default function Services() {
                 <span>Impact narrative and positioning for buyers that need clinical proof</span>
               </ul>
               <Link href="/contact" className="more">
-                Start a conversation →
+                Get in touch →
               </Link>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function Services() {
                 <span>Evaluation of what a programme can realistically deliver</span>
               </ul>
               <Link href="/contact" className="more">
-                Start a conversation →
+                Get in touch →
               </Link>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function Services() {
       {/* INLINE CTA */}
       <InlineCTA
         text="Not sure which practice area fits? Let's talk it through."
-        cta="Start a conversation →"
+        cta="Get in touch →"
       />
 
       {/* QUOTE */}
@@ -233,7 +233,7 @@ export default function Services() {
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
-            Book a call →
+            Get in touch →
           </Link>
         </div>
       </section>
