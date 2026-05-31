@@ -213,10 +213,10 @@ export default function About() {
             </blockquote>
             <ul>
               <li>I don&apos;t accept that moving fast means cutting clinical corners.</li>
-              <li>I don&apos;t accept that evidence is only for academics.</li>
+              <li>I don&apos;t accept that evidence is just a box to tick for regulators.</li>
               <li>
-                I don&apos;t accept that commercial success and genuine clinical value are
-                different goals.
+                I don&apos;t accept that doing right by patients and growing the business
+                are competing goals.
               </li>
             </ul>
             <div className="close">
@@ -251,6 +251,9 @@ export default function About() {
           >
             Get in touch →
           </Link>
+          <p className="cta-reassure">
+            An honest reply within a couple of working days. No pitch.
+          </p>
         </div>
       </section>
     </>

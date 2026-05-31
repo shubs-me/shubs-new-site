@@ -15,6 +15,8 @@
   --muted-d: rgba(21, 18, 14, 0.66);
   --clay: #FC5F84;
   --clay-deep: #E23E69;
+  /* AA-contrast pink for small text on the cream/light sections (5:1 on cream) */
+  --clay-ink: #BD1A57;
   --clay-soft: rgba(252, 95, 132, 0.14);
   --line-d: rgba(239, 233, 220, 0.15);
   --line-l: rgba(21, 18, 14, 0.13);
@@ -405,7 +407,22 @@ section {
   max-width: 24ch;
 }
 .light .label {
-  color: var(--clay-deep);
+  color: var(--clay-ink);
+}
+.light .label::before {
+  background: var(--clay-ink);
+}
+/* AA-contrast pink for small text + arrow markers on light/cream sections */
+.light .pblock .more,
+.light .who-card .more,
+.light .more,
+.light .think-row .go,
+.light .sec-more,
+.light .plist span::before,
+.feat .more,
+.tcard .trating,
+.aud .more {
+  color: var(--clay-ink);
 }
 
 /* narrative — big stacked */
@@ -459,21 +476,6 @@ section {
   color: var(--ink);
   font-weight: 600;
 }
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 26px;
-}
-.chips span {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border: 1px solid var(--line-l);
-  padding: 9px 14px;
-  color: var(--ink);
-}
 @media (max-width: 680px) {
   .narr-row {
     grid-template-columns: 1fr;
@@ -491,6 +493,16 @@ section {
 .stats {
   background: var(--clay);
   color: var(--ink);
+}
+.stats-intro {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: clamp(20px, 2.6vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 24ch;
+  margin-bottom: clamp(36px, 4.5vw, 56px);
 }
 .stats-grid {
   display: grid;
@@ -1079,6 +1091,14 @@ section {
 .contact .btn-clay:hover {
   background: #000;
 }
+.cta-reassure {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(21, 18, 14, 0.66);
+  margin-top: 20px;
+}
 
 /* inline CTA (mid-page, slim) */
 .inline-cta {
@@ -1359,11 +1379,7 @@ footer {
   color: var(--cream);
 }
 
-/* chips / person links dark context */
-.chips.dark span {
-  border-color: var(--line-d);
-  color: var(--cream);
-}
+/* person links dark context */
 .plinks {
   display: flex;
   flex-wrap: wrap;

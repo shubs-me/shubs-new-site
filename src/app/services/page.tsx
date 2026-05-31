@@ -235,6 +235,9 @@ export default function Services() {
           >
             Get in touch →
           </Link>
+          <p className="cta-reassure">
+            An honest reply within a couple of working days. No pitch.
+          </p>
         </div>
       </section>
     </>

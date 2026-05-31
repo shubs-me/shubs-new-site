@@ -63,8 +63,8 @@ export default async function Home() {
             <p className="hero-lead">
               After a decade inside venture-backed digital health, the NHS, and global
               health agencies, I know what separates the products that hold up from the
-              ones that don&apos;t. I set up independently to put that experience in your
-              corner.
+              ones that don&apos;t. I help teams ship faster, prove clinical value, and win
+              the rooms that decide whether digital health succeeds.
             </p>
             <div className="hero-cta">
               <Link href="/contact" className="btn btn-clay">
@@ -176,6 +176,9 @@ export default async function Home() {
       {/* STATS */}
       <section className="stats">
         <div className="wrap">
+          <p className="stats-intro">
+            A decade of work that held up, where it counted.
+          </p>
           <div className="stats-grid">
             {STATS.map(({ n, l }) => (
               <div className="stat" key={n + l}>
@@ -525,6 +528,9 @@ export default async function Home() {
           >
             Get in touch →
           </Link>
+          <p className="cta-reassure">
+            An honest reply within a couple of working days. No pitch.
+          </p>
         </div>
       </section>
     </>

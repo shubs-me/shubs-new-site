@@ -36,7 +36,7 @@ export default async function Thinking() {
               alt="Dr Shubs Upadhyay in an animated portrait"
               fill
               unoptimized
-              priority
+              loading="lazy"
               sizes="(max-width: 860px) 70vw, 34vw"
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
             />
