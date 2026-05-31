@@ -56,7 +56,7 @@ export default function Services() {
           <div className="sec-head">
             <span className="label">Who I work with</span>
             <h2 className="sec-title wide">
-              Built for builders and those who back them.
+              For builders, and those who back them.
             </h2>
           </div>
           <div className="aud">
