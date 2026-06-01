@@ -38,9 +38,14 @@ The OAuth bridge is already built into this site (`/api/auth` and
 and add two secrets:
 
 1. **Create a GitHub OAuth app** at
-   https://github.com/settings/developers → "New OAuth App":
-   - **Homepage URL:** `https://www.shubs.me`
-   - **Authorization callback URL:** `https://www.shubs.me/api/callback`
+   https://github.com/settings/developers → "New OAuth App". Use the URL the
+   site is currently served from:
+   - **While on the Vercel URL:**
+     - Homepage URL: `https://shubs-new-site.vercel.app`
+     - Authorization callback URL: `https://shubs-new-site.vercel.app/api/callback`
+   - **After `www.shubs.me` is connected:** use `https://www.shubs.me` and
+     `https://www.shubs.me/api/callback` instead (and update `base_url` in
+     `public/admin/config.yml` to match).
    - Click *Register*, then *Generate a new client secret*.
 2. **Add two environment variables in Vercel**
    (Project → Settings → Environment Variables):
@@ -49,8 +54,9 @@ and add two secrets:
 3. **Redeploy** (Vercel does this automatically on the next push, or trigger it
    manually). `/admin` login now works.
 
-After the repo is transferred, also update the `repo:` and `base_url` lines in
-`public/admin/config.yml` to the new owner/domain.
+The `base_url` in `public/admin/config.yml` must always equal the origin the
+site is served from. After the repo/domain is transferred, update the `repo:`
+and `base_url` lines to the new owner/domain.
 
 Until those two secrets are set, use the GitHub method in section 3 below — it
 edits exactly the same files.

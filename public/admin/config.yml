@@ -6,8 +6,11 @@ backend:
   name: github
   repo: samwoodhouse1982/shubs-new-site # change to the new owner/repo after transfer
   branch: master
-  # OAuth handled by this site's own /api/auth + /api/callback routes
-  base_url: https://www.shubs.me
+  # OAuth handled by this site's own /api/auth + /api/callback routes.
+  # base_url must be the live origin the site is served from.
+  # While on the Vercel URL, keep this as below; switch to https://www.shubs.me
+  # once the custom domain is connected.
+  base_url: https://shubs-new-site.vercel.app
   auth_endpoint: /api/auth
 
 # Where uploaded images are stored and how they're referenced on the site.
