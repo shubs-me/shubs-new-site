@@ -21,10 +21,230 @@ public_folder: /images
 publish_mode: simple
 
 collections:
-  # ---- Home page content ----
+  # ============================================================
+  # HOME PAGE
+  # ============================================================
   - name: home
     label: Home page
     files:
+      - name: home-sections
+        label: Sections & copy
+        file: content/home.json
+        description: Every heading, paragraph and image on the home page.
+        fields:
+          # ---- Hero ----
+          - name: hero
+            label: Hero (top of page)
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: lead, label: Lead paragraph, widget: text }
+              - { name: ctaPrimaryLabel, label: Primary button text, widget: string }
+              - { name: ctaPrimaryHref, label: Primary button link, widget: string }
+              - { name: ctaSecondaryLabel, label: Secondary button text, widget: string }
+              - { name: ctaSecondaryHref, label: Secondary button link, widget: string }
+              - { name: image, label: Photo, widget: image }
+              - { name: imageAlt, label: Photo description (alt text), widget: string }
+          # ---- The gap ----
+          - name: gap
+            label: "Section: The gap I keep seeing"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - name: rows
+                label: Steps
+                widget: list
+                fields:
+                  - { name: n, label: Number (e.g. 01), widget: string }
+                  - { name: tag, label: Tag (e.g. The Problem), widget: string }
+                  - { name: heading, label: Heading, widget: string }
+                  - name: paras
+                    label: Paragraphs
+                    widget: list
+                    fields:
+                      - { name: lead, label: Bold lead-in (optional), widget: string, required: false }
+                      - { name: text, label: Text, widget: text }
+          # ---- Practice ----
+          - name: practice
+            label: "Section: Where I focus"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - name: blocks
+                label: Focus areas
+                widget: list
+                fields:
+                  - { name: num, label: Number, widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - { name: body, label: Description, widget: text }
+                  - { name: list, label: Bullet points, widget: list, field: { name: item, label: Point, widget: string } }
+                  - { name: moreLabel, label: Link text, widget: string }
+                  - { name: moreHref, label: Link target, widget: string }
+          # ---- Who ----
+          - name: who
+            label: "Section: Who I work with"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - name: cards
+                label: Cards
+                widget: list
+                fields:
+                  - { name: kicker, label: Kicker, widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - { name: body, label: Description, widget: text }
+                  - { name: moreLabel, label: Link text, widget: string }
+                  - { name: moreHref, label: Link target, widget: string }
+          # ---- Engagements ----
+          - name: engagements
+            label: "Section: Three ways to work"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - name: cards
+                label: Formats
+                widget: list
+                fields:
+                  - { name: num, label: Number, widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - { name: body, label: Description, widget: text }
+          # ---- Lived ----
+          - name: lived
+            label: "Section: Lived, not lifted"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: paras, label: Paragraphs, widget: list, field: { name: para, label: Paragraph, widget: text } }
+              - { name: tag, label: Photo tag, widget: string }
+              - { name: image, label: Photo, widget: image }
+              - { name: imageAlt, label: Photo description (alt text), widget: string }
+          # ---- Quote ----
+          - name: quote
+            label: "Section: Pull quote"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - { name: pre, label: Quote (plain start), widget: text }
+              - { name: em, label: Quote ending (pink italic), widget: string }
+              - { name: cite, label: Attribution, widget: string }
+          # ---- Testimonials heading ----
+          - name: testimonialsHead
+            label: "Section: Testimonials heading"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+          # ---- Outcomes ----
+          - name: outcomes
+            label: "Section: What I've delivered"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: heroNum, label: Big number, widget: string }
+              - { name: heroLead, label: Big number bold lead-in, widget: string }
+              - { name: heroBody, label: Big number description, widget: text }
+              - name: items
+                label: Outcome cards
+                widget: list
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: body, label: Description, widget: text }
+          # ---- Thinking teaser ----
+          - name: thinkingHead
+            label: "Section: Notes from the field"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: moreLabel, label: "\"Read all\" link text", widget: string }
+              - { name: moreHref, label: "\"Read all\" link target", widget: string }
+              - { name: podImage, label: Podcast photo, widget: image }
+              - { name: podImageAlt, label: Podcast photo alt text, widget: string }
+              - { name: podKicker, label: Podcast kicker, widget: string }
+              - { name: podTitle, label: Podcast title, widget: string }
+              - { name: podBody, label: Podcast description, widget: text }
+              - { name: podLinkLabel, label: Podcast link text, widget: string }
+              - { name: podLinkHref, label: Podcast link target, widget: string }
+          # ---- Closing CTA ----
+          - name: cta
+            label: "Section: Closing call-to-action"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: body, label: Description, widget: text }
+              - { name: ctaLabel, label: Button text, widget: string }
+              - { name: ctaHref, label: Button link, widget: string }
+              - { name: reassure, label: Reassurance line, widget: string }
+
+      # ---- Existing home lists (kept as-is) ----
       - name: stats
         label: Stats band
         file: content/stats.json
@@ -68,10 +288,230 @@ collections:
             widget: list
             field: { name: keyword, label: Keyword, widget: string }
 
-  # ---- Services page content ----
+  # ============================================================
+  # ABOUT PAGE
+  # ============================================================
+  - name: about
+    label: About page
+    files:
+      - name: about-sections
+        label: Sections & copy
+        file: content/about.json
+        description: Every heading, paragraph and image on the about page.
+        fields:
+          - name: hero
+            label: Hero (top of page)
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: sub, label: Sub-heading, widget: text }
+          - name: founded
+            label: "Section: Why I exist"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: paras, label: Paragraphs, widget: list, field: { name: para, label: Paragraph, widget: text } }
+          - name: experience
+            label: "Section: Experience"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - name: cards
+                label: Experience cards
+                widget: list
+                fields:
+                  - { name: kicker, label: Kicker, widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - name: items
+                    label: Bullet points
+                    widget: list
+                    fields:
+                      - { name: lead, label: Bold lead-in (optional), widget: string, required: false }
+                      - { name: text, label: Text, widget: text }
+          - name: cta1
+            label: "Mid-page call-to-action band"
+            widget: object
+            fields:
+              - { name: text, label: Text, widget: string }
+              - { name: cta, label: Button text, widget: string }
+          - name: person
+            label: "Section: The person behind it"
+            widget: object
+            fields:
+              - { name: image, label: Photo, widget: image }
+              - { name: imageAlt, label: Photo description (alt text), widget: string }
+              - { name: label, label: Eyebrow label, widget: string }
+              - { name: name, label: Name, widget: string }
+              - { name: paras, label: Paragraphs, widget: list, field: { name: para, label: Paragraph, widget: text } }
+              - { name: linksIntro, label: Links intro sentence, widget: text }
+              - name: links
+                label: Profile links
+                widget: list
+                fields:
+                  - { name: label, label: Link text, widget: string }
+                  - { name: href, label: Link target, widget: string }
+          - name: manifesto
+            label: "Section: Manifesto"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - { name: pre, label: Quote (plain start), widget: text }
+              - { name: em, label: Quote ending (pink italic), widget: string }
+              - { name: points, label: Points, widget: list, field: { name: point, label: Point, widget: text } }
+              - { name: close, label: Closing line, widget: text }
+          - name: cta
+            label: "Section: Closing call-to-action"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: body, label: Description, widget: text }
+              - { name: ctaLabel, label: Button text, widget: string }
+              - { name: ctaHref, label: Button link, widget: string }
+              - { name: reassure, label: Reassurance line, widget: string }
+
+  # ============================================================
+  # SERVICES PAGE
+  # ============================================================
   - name: services
     label: Services page
     files:
+      - name: services-sections
+        label: Sections & copy
+        file: content/services.json
+        description: Every heading, paragraph and list on the services page.
+        fields:
+          - name: hero
+            label: Hero (top of page)
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: sub, label: Sub-heading, widget: text }
+          - name: who
+            label: "Section: Who I work with"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - name: rows
+                label: Audience blocks
+                widget: list
+                fields:
+                  - { name: kicker, label: Kicker, widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - { name: body, label: Description, widget: text }
+                  - { name: list, label: Bullet points, widget: list, field: { name: item, label: Point, widget: string } }
+                  - { name: moreLabel, label: Link text, widget: string }
+                  - { name: moreHref, label: Link target, widget: string }
+          - name: pillarsHead
+            label: "Section: My services heading"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+          - name: pillars
+            label: "Practice areas"
+            widget: list
+            fields:
+              - { name: id, label: "Anchor id (don't change)", widget: string }
+              - { name: pa, label: Practice area label, widget: string }
+              - { name: paTag, label: Practice area tag, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: lead, label: Lead line, widget: text }
+              - { name: body, label: Description, widget: text }
+              - { name: listLabel, label: List label, widget: string }
+              - { name: list, label: Bullet points, widget: list, field: { name: item, label: Point, widget: string } }
+              - { name: moreLabel, label: Link text, widget: string }
+              - { name: moreHref, label: Link target, widget: string }
+          - name: cta1
+            label: "Mid-page call-to-action band"
+            widget: object
+            fields:
+              - { name: text, label: Text, widget: string }
+              - { name: cta, label: Button text, widget: string }
+          - name: quote
+            label: "Section: Pull quote"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - { name: pre, label: Quote (plain start), widget: text }
+              - { name: em, label: Quote ending (pink italic), widget: string }
+              - { name: cite, label: Attribution, widget: string }
+          - name: processHead
+            label: "Section: Process heading"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+          - name: cta
+            label: "Section: Closing call-to-action"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: body, label: Description, widget: text }
+              - { name: ctaLabel, label: Button text, widget: string }
+              - { name: ctaHref, label: Button link, widget: string }
+              - { name: reassure, label: Reassurance line, widget: string }
+
       - name: process
         label: Process steps
         file: content/process.json
@@ -84,3 +524,142 @@ collections:
               - { name: number, label: Number (e.g. 01), widget: string }
               - { name: title, label: Title, widget: string }
               - { name: body, label: Description, widget: text }
+
+  # ============================================================
+  # CONTACT PAGE
+  # ============================================================
+  - name: contact
+    label: Contact page
+    files:
+      - name: contact-sections
+        label: Sections & copy
+        file: content/contact.json
+        description: Hero, form labels and the side panel on the contact page.
+        fields:
+          - name: hero
+            label: Hero (top of page)
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: sub, label: Sub-heading, widget: text }
+          - name: form
+            label: "Contact form labels"
+            widget: object
+            fields:
+              - { name: nameLabel, label: Name field label, widget: string }
+              - { name: namePlaceholder, label: Name placeholder, widget: string }
+              - { name: emailLabel, label: Email field label, widget: string }
+              - { name: emailPlaceholder, label: Email placeholder, widget: string }
+              - { name: orgLabel, label: Organisation field label, widget: string }
+              - { name: orgPlaceholder, label: Organisation placeholder, widget: string }
+              - { name: roleLabel, label: Role field label, widget: string }
+              - { name: roleOptions, label: Role dropdown options, widget: list, field: { name: option, label: Option, widget: string } }
+              - { name: msgLabel, label: Message field label, widget: string }
+              - { name: msgPlaceholder, label: Message placeholder, widget: string }
+              - { name: submitLabel, label: Submit button text, widget: string }
+              - { name: sentKicker, label: "After-send: kicker", widget: string }
+              - { name: sentTitle, label: "After-send: heading", widget: string }
+              - { name: sentBody, label: "After-send: message", widget: text }
+          - name: info
+            label: "Side panel rows"
+            widget: list
+            fields:
+              - { name: k, label: Kicker, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Description, widget: text }
+              - { name: linkLabel, label: Link text (optional), widget: string, required: false }
+              - { name: linkHref, label: Link target (optional), widget: string, required: false }
+          - name: connect
+            label: "Side panel: Connect"
+            widget: object
+            fields:
+              - { name: k, label: Kicker, widget: string }
+              - { name: title, label: Title, widget: string }
+              - name: links
+                label: Links
+                widget: list
+                fields:
+                  - { name: label, label: Link text, widget: string }
+                  - { name: href, label: Link target, widget: string }
+
+  # ============================================================
+  # THINKING PAGE
+  # ============================================================
+  - name: thinking
+    label: Thinking page
+    files:
+      - name: thinking-sections
+        label: Sections & copy
+        file: content/thinking.json
+        description: Headings and images on the thinking page. The article list is pulled from Substack automatically.
+        fields:
+          - name: hero
+            label: Hero (top of page)
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: sub, label: Sub-heading, widget: text }
+              - { name: image, label: Photo, widget: image }
+              - { name: imageAlt, label: Photo description (alt text), widget: string }
+          - name: insightsHead
+            label: "Section: Insights heading"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: featuredImage, label: Featured article photo, widget: image }
+              - { name: featuredImageAlt, label: Featured photo alt text, widget: string }
+          - name: podcast
+            label: "Section: Podcast"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: image, label: Photo, widget: image }
+              - { name: imageAlt, label: Photo description (alt text), widget: string }
+              - { name: kicker, label: Kicker, widget: string }
+              - { name: cardTitle, label: Card title, widget: string }
+              - { name: body, label: Description, widget: text }
+              - { name: linkLabel, label: Link text, widget: string }
+              - { name: linkHref, label: Link target, widget: string }
+          - name: cta
+            label: "Section: Closing call-to-action"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - { name: body, label: Description, widget: text }
+              - { name: ctaLabel, label: Button text, widget: string }
+              - { name: ctaHref, label: Button link, widget: string }

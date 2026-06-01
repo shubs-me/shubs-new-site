@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "label": "Services",
+    "title": { "pre": "Clinical expertise, deployed where it ", "em": "counts.", "post": "" },
+    "sub": "Two practice areas, Clinical and Product Integration, and Commercial and Clinical Alignment, for organisations serious about building digital health that actually works."
+  },
+  "who": {
+    "label": "Who I work with",
+    "title": { "pre": "For builders, and those who back them.", "em": "", "post": "" },
+    "rows": [
+      {
+        "kicker": "People building",
+        "title": "Digital health founders and their teams",
+        "body": "You are building something that needs to work in clinical reality, not just in a demo. From early product decisions through to major health system procurements, I bring the clinical credibility, evidence strategy, and leadership depth that gets your product taken seriously by commissioners, payers, and the clinicians who actually have to use it.",
+        "list": [
+          "Fractional CMO and clinical leadership embedded in your team",
+          "Clinical product strategy and evidence frameworks from day one",
+          "NHS, international, and payer market access",
+          "Impact narrative and positioning for buyers that need clinical proof"
+        ],
+        "moreLabel": "Get in touch →",
+        "moreHref": "/contact"
+      },
+      {
+        "kicker": "People investing",
+        "title": "Philanthropy, foundations, and impact investors",
+        "body": "You are deploying capital or grants into digital health and need to know whether it is going somewhere meaningful, and whether the organisations you fund have what it takes to deliver. I provide the clinical intelligence, due diligence depth, and impact frameworks that help you back the right work and help that work succeed.",
+        "list": [
+          "Clinical due diligence and honest portfolio assessment",
+          "Impact measurement frameworks that go beyond adoption metrics",
+          "Strategic and clinical support for grantees building credibility",
+          "Evaluation of what a programme can realistically deliver"
+        ],
+        "moreLabel": "Get in touch →",
+        "moreHref": "/contact"
+      }
+    ]
+  },
+  "pillarsHead": {
+    "label": "My services",
+    "title": { "pre": "Build clinical value while shipping quality at speed.", "em": "", "post": "" }
+  },
+  "pillars": [
+    {
+      "id": "pillar-clinical-product-integration",
+      "pa": "Practice Area 01",
+      "paTag": "Quality & Shipping Velocity",
+      "title": "Clinical and Product Integration",
+      "lead": "Harmonise clinical, QARA, and product teams. Say goodbye to death by approval and missed safety issues.",
+      "body": "Build the right thing, and build the thing right. I level up how clinical, product, QARA, data science, and engineering teams make decisions together, so you ship at pace and catch the right things proactively, without becoming a bottleneck or letting safety become an afterthought.",
+      "listLabel": "What this looks like",
+      "list": [
+        "Cross-disciplinary workshops that get engineers, designers, and clinicians on the same page about outcomes, risk, and safety",
+        "Preparing product and tech teams for AIaMD and SaMD regulation",
+        "Proactive post-deployment quality and monitoring",
+        "A quality-first culture that people live day to day"
+      ],
+      "moreLabel": "Discuss your product →",
+      "moreHref": "/contact"
+    },
+    {
+      "id": "pillar-commercial-clinical-alignment",
+      "pa": "Practice Area 02",
+      "paTag": "Commercial Success, Clinical Trust",
+      "title": "Commercial and Clinical Alignment",
+      "lead": "Communicate what matters, and live it day to day.",
+      "body": "As digital health companies scale, the sales narrative, the product roadmap, and the evidence strategy drift apart. I run sprints to unblock and re-align commercial, product, and clinical teams, so that what you're selling, what you're building, and what you're proving are the same story.",
+      "listLabel": "What this looks like",
+      "list": [
+        "Sprints to unblock and re-align commercial, product, and clinical teams",
+        "Zero gaps between the claims you make and the evidence you generate",
+        "Connecting commercial narrative and storytelling to real clinical value",
+        "Key opinion leadership: keynotes, offsites, and industry-facing thought and action leadership"
+      ],
+      "moreLabel": "Discuss your strategy →",
+      "moreHref": "/contact"
+    }
+  ],
+  "cta1": {
+    "text": "Not sure which practice area fits? Let's talk it through.",
+    "cta": "Get in touch →"
+  },
+  "quote": {
+    "label": "The principle",
+    "pre": "I don't add clinical credibility as a final audit. I build it in from ",
+    "em": "the start.",
+    "cite": "Dr Shubs Upadhyay"
+  },
+  "processHead": {
+    "label": "How I work",
+    "title": { "pre": "A process built on depth, not haste.", "em": "", "post": "" }
+  },
+  "cta": {
+    "label": "Let's work together",
+    "title": { "pre": "Building or backing? ", "em": "Let's talk.", "post": "" },
+    "body": "Whether you are building a digital health product that needs clinical credibility, or investing in the organisations doing that work, every conversation starts with understanding what you are actually trying to achieve.",
+    "ctaLabel": "Get in touch →",
+    "ctaHref": "/contact",
+    "reassure": "An honest reply within a couple of working days. No pitch."
+  }
+}

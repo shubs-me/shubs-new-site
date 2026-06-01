@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "label": "Thinking",
+    "title": { "pre": "The industry talks to itself. ", "em": "I don't.", "post": "" },
+    "sub": "Insights on digital health strategy, evidence, and equity, plus the GPODH podcast, recorded with leaders across 60+ countries.",
+    "image": "/images/Shubs.webp",
+    "imageAlt": "Dr Shubs Upadhyay in an animated portrait"
+  },
+  "insightsHead": {
+    "label": "Insights",
+    "title": { "pre": "Writing from the Shubstack.", "em": "", "post": "" },
+    "featuredImage": "/images/shubs-podcast-booth.jpg",
+    "featuredImageAlt": "Dr Shubs Upadhyay at a podcast booth"
+  },
+  "podcast": {
+    "label": "Podcast",
+    "title": { "pre": "Global Perspectives on Digital Health.", "em": "", "post": "" },
+    "image": "/images/shubs-pink.webp",
+    "imageAlt": "Shubs, host",
+    "kicker": "Hosted by Dr Shubs Upadhyay",
+    "cardTitle": "Candid conversations across 60+ countries",
+    "body": "The people reshaping digital health, on what actually works, what doesn't, and what we keep getting wrong.",
+    "linkLabel": "Listen on gpodh.org →",
+    "linkHref": "https://gpodh.org"
+  },
+  "cta": {
+    "label": "Keep in touch",
+    "title": { "pre": "More on ", "em": "Shubstack.", "post": "" },
+    "body": "Insights on what it actually takes to build digital health that holds up, clinically, commercially, and at scale.",
+    "ctaLabel": "Keep in touch →",
+    "ctaHref": "https://shubstack.substack.com"
+  }
+}

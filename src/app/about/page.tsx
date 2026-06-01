@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
 import InlineCTA from '@/components/InlineCTA'
+import Em from '@/components/Em'
+import about from '@/../content/about.json'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -17,15 +19,11 @@ export default function About() {
       {/* HERO */}
       <header className="page-hero">
         <div className="wrap">
-          <span className="label">About</span>
+          <span className="label">{about.hero.label}</span>
           <h1>
-            The thinking behind <em>the practice.</em>
+            <Em {...about.hero.title} />
           </h1>
-          <p className="sub">
-            Most digital health doesn&apos;t fall short because of bad technology. It
-            falls short because it is built against the wrong definition of value, and I
-            set up my practice to fix that.
-          </p>
+          <p className="sub">{about.hero.sub}</p>
         </div>
       </header>
 
@@ -34,32 +32,15 @@ export default function About() {
         <div className="wrap founded">
           <div>
             <div className="sec-head">
-              <span className="label">Why I exist</span>
+              <span className="label">{about.founded.label}</span>
               <h2 className="sec-title wide">
-                Real clinical value doesn&apos;t have to be <em>elusive.</em>
+                <Em {...about.founded.title} />
               </h2>
             </div>
             <div className="prose">
-              <p>
-                People building and implementing digital health know that clinical
-                outcomes matter. But those outcomes can feel far off, and hard to move
-                directly.
-              </p>
-              <p>
-                So things drift. The commercial narrative pulls one way, the product
-                roadmap another, and the evidence lands somewhere else entirely. Clinical
-                value gets lost in translation, and teams move fast, just not towards what
-                actually matters for people.
-              </p>
-              <p>
-                When users and buyers see bold claims without the evidence to back them,
-                trust wanes. Clients churn. Funding dries up.
-              </p>
-              <p>
-                After a decade inside venture-backed digital health companies and global
-                institutions, I set up my practice to change that: to bring sharp focus
-                back to clinical outcomes, and to what really matters.
-              </p>
+              {about.founded.paras.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
             </div>
           </div>
           <div className="founded-mark" aria-hidden>
@@ -72,72 +53,33 @@ export default function About() {
       <section>
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Experience</span>
-            <h2 className="sec-title">I&apos;ve lived the challenges.</h2>
+            <span className="label">{about.experience.label}</span>
+            <h2 className="sec-title">
+              <Em {...about.experience.title} />
+            </h2>
           </div>
           <div className="exp-grid">
-            <div className="exp-card">
-              <div className="kicker">Frontline clinician</div>
-              <h3>Senior clinical experience</h3>
-              <ul>
-                <li>NHS primary and urgent care, UK</li>
-                <li>Rural medicine, Australia</li>
-                <li>Global health and primary care strengthening, Sierra Leone</li>
-              </ul>
-            </div>
-            <div className="exp-card">
-              <div className="kicker">Industry leadership</div>
-              <h3>Senior leadership in health tech</h3>
-              <ul>
-                <li>
-                  Former Medical Director at Ada Health, with clinical leadership advisory
-                  for some of Europe&apos;s biggest health tech companies.
-                </li>
-                <li>
-                  <b>Medical quality &amp; AI evaluation.</b> Built a regulatory-compliant
-                  medical quality function covering model evaluation, post-deployment
-                  monitoring, and clinical evaluation.
-                </li>
-                <li>
-                  <b>Enterprise-grade clinical trust.</b> Led cross-functional teams
-                  putting regulated clinical AI into health systems across the US, Europe,
-                  and Africa, earning lasting trust with clinical leaders through
-                  demonstrable outcomes.
-                </li>
-                <li>
-                  <b>Business and clinical outcomes, aligned.</b> Commercial, product, and
-                  clinical leadership that sharpened go-to-market and evidence generation,
-                  with narratives that won and retained multi-million-dollar partnerships.
-                </li>
-              </ul>
-            </div>
-            <div className="exp-card">
-              <div className="kicker">Convening the field</div>
-              <h3>Shaping policy and the last mile of care</h3>
-              <ul>
-                <li>
-                  Former Co-chair, Clinical Evaluation Group, WHO initiative on AI for
-                  Health, developing global guidelines for evaluating AI in healthcare.
-                </li>
-                <li>
-                  Keynotes and talks at HLTH, HIMSS, WHO, the Wellcome Trust, Doctolib, and
-                  the Global Digital Health Forum.
-                </li>
-                <li>
-                  Guest Editor, Nature npj Digital Medicine, special collection on
-                  implementation in low-resource settings.
-                </li>
-              </ul>
-            </div>
+            {about.experience.cards.map((card) => (
+              <div className="exp-card" key={card.title}>
+                <div className="kicker">{card.kicker}</div>
+                <h3>{card.title}</h3>
+                <ul>
+                  {card.items.map((item, i) => (
+                    <li key={i}>
+                      {item.lead ? <b>{item.lead}</b> : null}
+                      {item.lead ? ' ' : ''}
+                      {item.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* INLINE CTA */}
-      <InlineCTA
-        text="Think we might be a fit? I'd love to hear from you."
-        cta="Get in touch →"
-      />
+      <InlineCTA text={about.cta1.text} cta={about.cta1.cta} />
 
       {/* PERSON */}
       <section className="light">
@@ -145,8 +87,8 @@ export default function About() {
           <div>
             <div className="photo-card">
               <Image
-                src="/images/shubs-speaking.jpg"
-                alt="Dr Shubs Upadhyay speaking on stage"
+                src={about.person.image}
+                alt={about.person.imageAlt}
                 fill
                 sizes="(max-width: 820px) 100vw, 40vw"
                 style={{ objectFit: 'cover', objectPosition: 'center top' }}
@@ -155,7 +97,7 @@ export default function About() {
           </div>
           <div className="lived-body">
             <span className="label" style={{ marginBottom: 24 }}>
-              The person behind it
+              {about.person.label}
             </span>
             <h2
               style={{
@@ -167,34 +109,20 @@ export default function About() {
                 marginBottom: 28,
               }}
             >
-              Dr Shubs Upadhyay
+              {about.person.name}
             </h2>
             <div className="prose">
-              <p>
-                I&apos;m a physician and digital health strategist with fifteen years
-                across clinical practice, health technology, and health system strategy,
-                from frontline care in the NHS, Australia, and Sierra Leone to medical
-                leadership inside venture-backed health tech.
-              </p>
-              <p>
-                As former Medical Director at Ada Health and co-chair of the WHO Clinical
-                Evaluation Group for AI in healthcare, I&apos;ve sat on both the clinical
-                and the commercial side of the table. I set up independently to give
-                digital health organisations the kind of senior clinical and strategic
-                counsel they rarely have access to.
-              </p>
-              <p>
-                I host the <Link href="/thinking">GPODH podcast</Link> and write on{' '}
-                <Link href="/thinking">Shubstack</Link> about digital health strategy,
-                evidence, and equity.
-              </p>
+              {about.person.paras.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+              <p>{about.person.linksIntro}</p>
             </div>
             <div className="plinks">
-              <ExtLink href="https://linkedin.com/in/shubs-upadhyay">
-                LinkedIn →
-              </ExtLink>
-              <ExtLink href="https://shubstack.substack.com">Shubstack →</ExtLink>
-              <ExtLink href="https://gpodh.org">GPODH Podcast →</ExtLink>
+              {about.person.links.map((link) => (
+                <ExtLink href={link.href} key={link.href}>
+                  {link.label}
+                </ExtLink>
+              ))}
             </div>
           </div>
         </div>
@@ -204,24 +132,19 @@ export default function About() {
       <section>
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">How I work</span>
+            <span className="label">{about.manifesto.label}</span>
           </div>
           <div className="mani dark">
             <blockquote>
-              “Digital health must be built around clinical reality, not around what is
-              easy to build or easy to <em>sell.”</em>
+              “{about.manifesto.pre}
+              <em>{about.manifesto.em}”</em>
             </blockquote>
             <ul>
-              <li>I don&apos;t accept that moving fast means cutting clinical corners.</li>
-              <li>I don&apos;t accept that evidence is just a box to tick for regulators.</li>
-              <li>
-                I don&apos;t accept that doing right by patients and growing the business
-                are competing goals.
-              </li>
+              {about.manifesto.points.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
             </ul>
-            <div className="close">
-              The organisations that understand this are the ones that last.
-            </div>
+            <div className="close">{about.manifesto.close}</div>
           </div>
         </div>
       </section>
@@ -229,9 +152,9 @@ export default function About() {
       {/* CTA */}
       <section className="contact">
         <div className="wrap">
-          <span className="label">Let&apos;s work together</span>
+          <span className="label">{about.cta.label}</span>
           <h2>
-            Have a conversation with <em>Shubs.</em>
+            <Em {...about.cta.title} />
           </h2>
           <p
             style={{
@@ -241,19 +164,16 @@ export default function About() {
               lineHeight: 1.5,
             }}
           >
-            Every engagement starts by understanding what you are actually trying to
-            achieve. No pitch, no hard sell. Just an honest conversation.
+            {about.cta.body}
           </p>
           <Link
-            href="/contact"
+            href={about.cta.ctaHref}
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
-            Get in touch →
+            {about.cta.ctaLabel}
           </Link>
-          <p className="cta-reassure">
-            An honest reply within a couple of working days. No pitch.
-          </p>
+          <p className="cta-reassure">{about.cta.reassure}</p>
         </div>
       </section>
     </>

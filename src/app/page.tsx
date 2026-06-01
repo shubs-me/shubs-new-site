@@ -3,10 +3,12 @@ import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
 import InlineCTA from '@/components/InlineCTA'
 import StatNumber from '@/components/StatNumber'
+import Em from '@/components/Em'
 import { getEssays } from '@/lib/substack'
 import ticker from '@/../content/ticker.json'
 import stats from '@/../content/stats.json'
 import testimonials from '@/../content/testimonials.json'
+import home from '@/../content/home.json'
 
 const TICKER = ticker.items
 const STATS = stats.items
@@ -20,30 +22,25 @@ export default async function Home() {
       <header className="hero">
         <div className="wrap">
           <div className="hero-l">
-            <span className="label">Dr Shubs Upadhyay, Digital Health Advisor</span>
+            <span className="label">{home.hero.label}</span>
             <h1>
-              <em>Clinical rigour</em> at product speed.
+              <Em {...home.hero.title} />
             </h1>
-            <p className="hero-lead">
-              After a decade inside venture-backed digital health, the NHS, and global
-              health agencies, I know what separates the products that hold up from the
-              ones that don&apos;t. I help teams ship faster, prove clinical value, and win
-              the rooms that decide whether digital health succeeds.
-            </p>
+            <p className="hero-lead">{home.hero.lead}</p>
             <div className="hero-cta">
-              <Link href="/contact" className="btn btn-clay">
-                Let&apos;s talk →
+              <Link href={home.hero.ctaPrimaryHref} className="btn btn-clay">
+                {home.hero.ctaPrimaryLabel}
               </Link>
-              <Link href="/services" className="btn btn-line">
-                How I work →
+              <Link href={home.hero.ctaSecondaryHref} className="btn btn-line">
+                {home.hero.ctaSecondaryLabel}
               </Link>
             </div>
           </div>
         </div>
         <div className="hero-photo">
           <Image
-            src="/images/shubs-pink.webp"
-            alt="Dr Shubs Upadhyay"
+            src={home.hero.image}
+            alt={home.hero.imageAlt}
             width={640}
             height={640}
             priority
@@ -67,73 +64,29 @@ export default async function Home() {
       <section className="light" id="gap">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Why this matters</span>
-            <h2 className="sec-title">The gap I keep seeing.</h2>
+            <span className="label">{home.gap.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.gap.title} />
+            </h2>
           </div>
-          <div className="narr-row">
-            <div className="narr-tag">
-              <div className="n">01</div>
-              <div className="t">The Problem</div>
+          {home.gap.rows.map((row) => (
+            <div className="narr-row" key={row.n}>
+              <div className="narr-tag">
+                <div className="n">{row.n}</div>
+                <div className="t">{row.tag}</div>
+              </div>
+              <div className="narr-body">
+                <h3>{row.heading}</h3>
+                {row.paras.map((p, i) => (
+                  <p key={i}>
+                    {p.lead ? <b>{p.lead}</b> : null}
+                    {p.lead ? ' ' : ''}
+                    {p.text}
+                  </p>
+                ))}
+              </div>
             </div>
-            <div className="narr-body">
-              <h3>What it costs when clinical comes in too late.</h3>
-              <p>
-                The digital health industry celebrates the wrong signals. Accuracy
-                scores, engagement metrics, adoption curves. Easy to report, and none of
-                it the same as health outcomes.
-              </p>
-              <p>
-                Most products are built by smart, motivated people. The problem
-                isn&apos;t technology or intent, it&apos;s that the definition of value
-                gets decided too late, in the wrong room, by people who aren&apos;t
-                equipped to make it. Clinical input arrives at the end to sign off rather
-                than at the start to shape decisions.
-              </p>
-            </div>
-          </div>
-          <div className="narr-row">
-            <div className="narr-tag">
-              <div className="n">02</div>
-              <div className="t">The Cost</div>
-            </div>
-            <div className="narr-body">
-              <h3>What it costs when this goes wrong.</h3>
-              <p>
-                <b>Builders and teams.</b> Deals stall in procurement because the clinical
-                story wasn&apos;t built into the product from the start. Safety and quality
-                incidents surface late and expensively. Regulatory submissions take three
-                times as long as they should.
-              </p>
-              <p>
-                <b>Funders and investors.</b> Portfolio companies report impressive
-                activity metrics while missing the clinical outcomes that determine
-                whether a health system buys, renews, or recommends. The gap between what
-                was pitched and what holds up widens quietly, until it doesn&apos;t.
-              </p>
-            </div>
-          </div>
-          <div className="narr-row">
-            <div className="narr-tag">
-              <div className="n">03</div>
-              <div className="t">The Solution</div>
-            </div>
-            <div className="narr-body">
-              <h3>There&apos;s a better way to work, and I can help you build it.</h3>
-              <p>
-                Clinical rigour and product velocity are not opposites. They are a
-                function of how clinical, product, commercial, and regulatory work is set
-                up to happen together. When I come in early, shaping product decisions
-                rather than reviewing them at the end, teams ship faster, build stronger
-                evidence, and arrive at conversations with commissioners, regulators, and
-                investors with a story that holds.
-              </p>
-              <p>
-                I work with founders, product leaders, and medical leaders to build that
-                way of working, tuned to where your organisation actually is, not lifted
-                from a framework.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -156,49 +109,28 @@ export default async function Home() {
       <section id="practice">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">What I do</span>
-            <h2 className="sec-title">Where I focus.</h2>
+            <span className="label">{home.practice.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.practice.title} />
+            </h2>
           </div>
-          <div className="pblock">
-            <div className="pnum">01</div>
-            <div>
-              <h3>Clinical and Product Integration</h3>
-              <p>
-                Level up how clinical, product, QARA, data science, and engineering teams
-                make decisions together. The pre-deployment work on product quality and
-                robust monitoring lets you ship at pace and catch the right things
-                proactively, without becoming a bottleneck or safety becoming an
-                afterthought.
-              </p>
-              <div className="plist">
-                <span>Pre-deployment quality and QARA that keeps you moving</span>
-                <span>Monitoring frameworks that catch the right things proactively</span>
+          {home.practice.blocks.map((block) => (
+            <div className="pblock" key={block.num}>
+              <div className="pnum">{block.num}</div>
+              <div>
+                <h3>{block.title}</h3>
+                <p>{block.body}</p>
+                <div className="plist">
+                  {block.list.map((item, i) => (
+                    <span key={i}>{item}</span>
+                  ))}
+                </div>
+                <Link href={block.moreHref} className="more">
+                  {block.moreLabel}
+                </Link>
               </div>
-              <Link href="/services" className="more">
-                Learn more →
-              </Link>
             </div>
-          </div>
-          <div className="pblock">
-            <div className="pnum">02</div>
-            <div>
-              <h3>Commercial and Clinical Alignment</h3>
-              <p>
-                As digital health companies scale, the sales narrative, the product
-                roadmap, and the evidence strategy tend to drift apart. I bring them back
-                into a single line, so what you&apos;re selling, what you&apos;re
-                building, and what you&apos;re proving are the same story. Not a messaging
-                project. An integrated strategic alignment.
-              </p>
-              <div className="plist">
-                <span>Sales narrative aligned with clinical evidence</span>
-                <span>Product, commercial, and evidence strategy as a single line</span>
-              </div>
-              <Link href="/services" className="more">
-                Learn more →
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -206,48 +138,22 @@ export default async function Home() {
       <section className="light">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Who I work with</span>
-            <h2 className="sec-title">I work directly with you.</h2>
+            <span className="label">{home.who.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.who.title} />
+            </h2>
           </div>
           <div className="three">
-            <div className="who-card">
-              <div className="kicker">People building</div>
-              <h3>Digital health founders and their teams</h3>
-              <p>
-                When the clinical, product, commercial, and evidence challenges start to
-                compound on each other, this is the engagement. I come in early, stay
-                close, and build the ways of working that mean the next stage actually
-                works.
-              </p>
-              <Link href="/services" className="more">
-                See how I can help →
-              </Link>
-            </div>
-            <div className="who-card">
-              <div className="kicker">People leading</div>
-              <h3>Clinical and medical leaders</h3>
-              <p>
-                Whether you are a CMO setting clinical strategy or a medical lead carrying
-                the weight of safety and evidence, I am a sounding board and a partner,
-                helping you make the case, build the practices, and hold the line where it
-                matters.
-              </p>
-              <Link href="/services" className="more">
-                See how I can help →
-              </Link>
-            </div>
-            <div className="who-card">
-              <div className="kicker">People investing</div>
-              <h3>Philanthropy, foundations, and impact investors</h3>
-              <p>
-                I bring senior clinical-strategic perspective into diligence, portfolio
-                support, and cohort programming, helping the organisations you back build
-                toward outcomes that hold up.
-              </p>
-              <Link href="/services" className="more">
-                See how I help investors →
-              </Link>
-            </div>
+            {home.who.cards.map((card) => (
+              <div className="who-card" key={card.title}>
+                <div className="kicker">{card.kicker}</div>
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+                <Link href={card.moreHref} className="more">
+                  {card.moreLabel}
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -256,37 +162,19 @@ export default async function Home() {
       <section>
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">How I work · Three formats</span>
-            <h2 className="sec-title">Three ways to level up your impact.</h2>
+            <span className="label">{home.engagements.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.engagements.title} />
+            </h2>
           </div>
           <div className="eng-grid">
-            <div className="eng-card">
-              <div className="en">01</div>
-              <h3>Retainer Advisory</h3>
-              <p>
-                Ongoing senior counsel to founders and leadership teams. On-site presence
-                where it matters, in the real decisions: board conversations,
-                clinical-product reviews, evidence strategy, commercial alignment.
-              </p>
-            </div>
-            <div className="eng-card">
-              <div className="en">02</div>
-              <h3>Three-Month Sprint</h3>
-              <p>
-                A focused intensive designed to resolve a specific strategic or
-                operational challenge. Defined scope, clear deliverables, and a concrete
-                output your team can run with.
-              </p>
-            </div>
-            <div className="eng-card">
-              <div className="en">03</div>
-              <h3>Workshop &amp; Keynote</h3>
-              <p>
-                A single high-impact session for leadership teams, boards, or investor
-                portfolios. I run workshops and keynotes at companies and conferences
-                across Europe.
-              </p>
-            </div>
+            {home.engagements.cards.map((card) => (
+              <div className="eng-card" key={card.num}>
+                <div className="en">{card.num}</div>
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -299,36 +187,20 @@ export default async function Home() {
         <div className="wrap lived">
           <div className="lived-body">
             <span className="label" style={{ marginBottom: 26 }}>
-              Why work with me
+              {home.lived.label}
             </span>
             <h2>
-              Lived, <em>not lifted.</em>
+              <Em {...home.lived.title} />
             </h2>
-            <p>
-              I&apos;m a physician who has spent a decade at the point where these problems
-              actually get solved. As senior clinical and medical director at a
-              venture-backed digital health company deploying regulated AI across multiple
-              markets, my work was defining what good looked like, for which patients,
-              against what counterfactual, and then building the practices that could
-              deliver it at the pace the business demanded.
-            </p>
-            <p>
-              That work has continued since. Co-chairing a WHO working group on AI
-              evaluation. Clinical practice across different health systems. Keynotes for
-              senior tech and product audiences at companies like Doctolib, the Wellcome
-              Trust, and conferences across Europe.
-            </p>
-            <p>
-              What I bring is not a playbook. It is hard-won lessons from having lived
-              these problems, and the ability to translate credibly across every
-              discipline in the room. That fluency is the work.
-            </p>
+            {home.lived.paras.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
           </div>
           <div className="lived-photo">
-            <span className="tag mono">Physician · Advisor · Host</span>
+            <span className="tag mono">{home.lived.tag}</span>
             <Image
-              src="/images/shubs-keynote.jpg"
-              alt="Dr Shubs Upadhyay delivering a keynote"
+              src={home.lived.image}
+              alt={home.lived.imageAlt}
               fill
               sizes="(max-width: 820px) 100vw, 40vw"
               style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -341,13 +213,13 @@ export default async function Home() {
       <section className="quote">
         <div className="wrap">
           <span className="label" style={{ marginBottom: 30 }}>
-            In my words
+            {home.quote.label}
           </span>
           <blockquote>
-            “Very few advisors can hold all of those conversations. That is why founders,
-            product leaders, and the investors who back them <em>bring me in.”</em>
+            “{home.quote.pre}
+            <em>{home.quote.em}”</em>
           </blockquote>
-          <cite>Dr Shubs Upadhyay</cite>
+          <cite>{home.quote.cite}</cite>
         </div>
       </section>
 
@@ -355,8 +227,10 @@ export default async function Home() {
       <section className="light">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Testimonials</span>
-            <h2 className="sec-title">What it&apos;s like to work with me.</h2>
+            <span className="label">{home.testimonialsHead.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.testimonialsHead.title} />
+            </h2>
           </div>
           <div className="tst-grid">
             {TESTIMONIALS.map((t, i) => (
@@ -378,42 +252,24 @@ export default async function Home() {
       <section>
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Outcomes</span>
-            <h2 className="sec-title">What I&apos;ve delivered.</h2>
+            <span className="label">{home.outcomes.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.outcomes.title} />
+            </h2>
           </div>
           <div className="out-hero">
-            <div className="big">200K</div>
+            <div className="big">{home.outcomes.heroNum}</div>
             <p>
-              <b>Women reached through a single digital health programme.</b> Implementation
-              science support helped transform a promising maternal health pilot into a
-              government-endorsed programme. Each figure here is a real person in the
-              system.
+              <b>{home.outcomes.heroLead}</b> {home.outcomes.heroBody}
             </p>
           </div>
           <div className="out-list">
-            <div className="out-item">
-              <h3>NHS-grade clinical credibility</h3>
-              <p>
-                Embedded clinical leadership helped a Series B digital therapeutics
-                company restructure its evidence strategy, resulting in a successful NHS
-                procurement worth £3.4M.
-              </p>
-            </div>
-            <div className="out-item">
-              <h3>Policy positioning, internationally</h3>
-              <p>
-                Strategic counsel shaped national digital health roadmaps in partnership
-                with ITU and WHO, securing institutional buy-in across multiple health
-                system contexts.
-              </p>
-            </div>
-            <div className="out-item">
-              <h3>From pilot to scale in 18 months</h3>
-              <p>
-                Implementation science support transformed a promising maternal health
-                pilot into a government-endorsed programme reaching 200,000 women.
-              </p>
-            </div>
+            {home.outcomes.items.map((item) => (
+              <div className="out-item" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -422,8 +278,10 @@ export default async function Home() {
       <section className="light" id="thinking">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">From Shubs</span>
-            <h2 className="sec-title">Notes from the field.</h2>
+            <span className="label">{home.thinkingHead.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.thinkingHead.title} />
+            </h2>
           </div>
           <div className="think-list">
             {essays.map((e) => (
@@ -437,26 +295,23 @@ export default async function Home() {
               </ExtLink>
             ))}
           </div>
-          <Link href="/thinking" className="sec-more">
-            Read all insights →
+          <Link href={home.thinkingHead.moreHref} className="sec-more">
+            {home.thinkingHead.moreLabel}
           </Link>
           <div className="pod">
             <Image
-              src="/images/shubs-pink.webp"
-              alt="Shubs, host"
+              src={home.thinkingHead.podImage}
+              alt={home.thinkingHead.podImageAlt}
               width={88}
               height={88}
             />
             <div className="pod-txt">
-              <div className="k">Hosted by Dr Shubs Upadhyay · The GPODH Podcast</div>
-              <h3>Global Perspectives on Digital Health</h3>
-              <p>
-                Candid conversations with the people reshaping digital health across 60+
-                countries.
-              </p>
+              <div className="k">{home.thinkingHead.podKicker}</div>
+              <h3>{home.thinkingHead.podTitle}</h3>
+              <p>{home.thinkingHead.podBody}</p>
             </div>
-            <ExtLink href="https://gpodh.org" className="btn btn-line">
-              Listen on gpodh.org →
+            <ExtLink href={home.thinkingHead.podLinkHref} className="btn btn-line">
+              {home.thinkingHead.podLinkLabel}
             </ExtLink>
           </div>
         </div>
@@ -465,9 +320,9 @@ export default async function Home() {
       {/* CONTACT */}
       <section className="contact" id="contact">
         <div className="wrap">
-          <span className="label">Let&apos;s work together</span>
+          <span className="label">{home.cta.label}</span>
           <h2>
-            Ready to build something <em>the right way?</em>
+            <Em {...home.cta.title} />
           </h2>
           <p
             style={{
@@ -477,20 +332,16 @@ export default async function Home() {
               lineHeight: 1.5,
             }}
           >
-            Whether you are building digital health that has to hold up, or backing the
-            people who do, every conversation starts with what you are actually trying to
-            achieve.
+            {home.cta.body}
           </p>
           <Link
-            href="/contact"
+            href={home.cta.ctaHref}
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
-            Get in touch →
+            {home.cta.ctaLabel}
           </Link>
-          <p className="cta-reassure">
-            An honest reply within a couple of working days. No pitch.
-          </p>
+          <p className="cta-reassure">{home.cta.reassure}</p>
         </div>
       </section>
     </>

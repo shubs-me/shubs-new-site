@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "label": "Contact",
+    "title": { "pre": "Let's build something the ", "em": "right way.", "post": "" },
+    "sub": "Whether you're building a digital health product that needs to hold up to clinical scrutiny, or investing in the organisations doing that work, every conversation starts by understanding what you're actually trying to achieve."
+  },
+  "form": {
+    "nameLabel": "Your name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "name@company.com",
+    "orgLabel": "Organisation",
+    "orgPlaceholder": "Company, fund, or foundation",
+    "roleLabel": "I am…",
+    "roleOptions": [
+      "A founder or product leader",
+      "An investor, funder, or foundation",
+      "A medical or clinical leader",
+      "Something else"
+    ],
+    "msgLabel": "What are you trying to achieve?",
+    "msgPlaceholder": "A sentence or two on where you are and what's on your mind.",
+    "submitLabel": "Send message →",
+    "sentKicker": "Message sent",
+    "sentTitle": "Thanks, I'll be in touch.",
+    "sentBody": "Every message reaches me directly. Expect an honest reply within a couple of working days."
+  },
+  "info": [
+    {
+      "k": "What to expect",
+      "title": "An honest conversation",
+      "body": "No pitch, no hard sell. We start by understanding what you're trying to achieve and whether I'm the right person to help."
+    },
+    {
+      "k": "Prefer to book directly?",
+      "title": "Grab a time that works",
+      "body": "Skip the form and put a slot in the diary.",
+      "linkLabel": "Book a call →",
+      "linkHref": "#"
+    },
+    {
+      "k": "Engagements",
+      "title": "Three ways to work together",
+      "body": "Retainer advisory · Three-month sprint · Workshop & keynote.",
+      "linkLabel": "See services →",
+      "linkHref": "/services"
+    }
+  ],
+  "connect": {
+    "k": "Connect",
+    "title": "Find me elsewhere",
+    "links": [
+      { "label": "LinkedIn", "href": "https://linkedin.com/in/shubs-upadhyay" },
+      { "label": "Shubstack", "href": "https://shubstack.substack.com" },
+      { "label": "GPODH Podcast", "href": "https://gpodh.org" }
+    ]
+  }
+}

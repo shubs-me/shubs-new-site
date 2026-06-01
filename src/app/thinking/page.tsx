@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
+import Em from '@/components/Em'
 import { getEssays } from '@/lib/substack'
+import thinking from '@/../content/thinking.json'
 
 export const metadata: Metadata = {
   title: 'Thinking',
@@ -21,19 +23,16 @@ export default async function Thinking() {
       <header className="page-hero">
         <div className="wrap think-hero">
           <div>
-            <span className="label">Thinking</span>
+            <span className="label">{thinking.hero.label}</span>
             <h1>
-              The industry talks to itself. <em>I don&apos;t.</em>
+              <Em {...thinking.hero.title} />
             </h1>
-            <p className="sub">
-              Insights on digital health strategy, evidence, and equity, plus the GPODH
-              podcast, recorded with leaders across 60+ countries.
-            </p>
+            <p className="sub">{thinking.hero.sub}</p>
           </div>
           <div className="think-hero-photo">
             <Image
-              src="/images/Shubs.webp"
-              alt="Dr Shubs Upadhyay in an animated portrait"
+              src={thinking.hero.image}
+              alt={thinking.hero.imageAlt}
               fill
               unoptimized
               loading="lazy"
@@ -48,8 +47,10 @@ export default async function Thinking() {
       <section className="light">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Insights</span>
-            <h2 className="sec-title">Writing from the Shubstack.</h2>
+            <span className="label">{thinking.insightsHead.label}</span>
+            <h2 className="sec-title">
+              <Em {...thinking.insightsHead.title} />
+            </h2>
           </div>
           {featured && (
             <ExtLink className="feat" href={featured.url}>
@@ -63,8 +64,8 @@ export default async function Thinking() {
               </div>
               <div className="fr">
                 <Image
-                  src="/images/shubs-podcast-booth.jpg"
-                  alt="Dr Shubs Upadhyay at a podcast booth"
+                  src={thinking.insightsHead.featuredImage}
+                  alt={thinking.insightsHead.featuredImageAlt}
                   fill
                   sizes="(max-width: 760px) 100vw, 50vw"
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -94,26 +95,25 @@ export default async function Thinking() {
       <section>
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Podcast</span>
-            <h2 className="sec-title">Global Perspectives on Digital Health.</h2>
+            <span className="label">{thinking.podcast.label}</span>
+            <h2 className="sec-title">
+              <Em {...thinking.podcast.title} />
+            </h2>
           </div>
           <div className="pod">
             <Image
-              src="/images/shubs-pink.webp"
-              alt="Shubs, host"
+              src={thinking.podcast.image}
+              alt={thinking.podcast.imageAlt}
               width={88}
               height={88}
             />
             <div className="pod-txt">
-              <div className="k">Hosted by Dr Shubs Upadhyay</div>
-              <h3>Candid conversations across 60+ countries</h3>
-              <p>
-                The people reshaping digital health, on what actually works, what
-                doesn&apos;t, and what we keep getting wrong.
-              </p>
+              <div className="k">{thinking.podcast.kicker}</div>
+              <h3>{thinking.podcast.cardTitle}</h3>
+              <p>{thinking.podcast.body}</p>
             </div>
-            <ExtLink href="https://gpodh.org" className="btn btn-line">
-              Listen on gpodh.org →
+            <ExtLink href={thinking.podcast.linkHref} className="btn btn-line">
+              {thinking.podcast.linkLabel}
             </ExtLink>
           </div>
         </div>
@@ -122,9 +122,9 @@ export default async function Thinking() {
       {/* KEEP IN TOUCH */}
       <section className="contact">
         <div className="wrap">
-          <span className="label">Keep in touch</span>
+          <span className="label">{thinking.cta.label}</span>
           <h2>
-            More on <em>Shubstack.</em>
+            <Em {...thinking.cta.title} />
           </h2>
           <p
             style={{
@@ -134,15 +134,14 @@ export default async function Thinking() {
               lineHeight: 1.5,
             }}
           >
-            Insights on what it actually takes to build digital health that holds up,
-            clinically, commercially, and at scale.
+            {thinking.cta.body}
           </p>
           <ExtLink
-            href="https://shubstack.substack.com"
+            href={thinking.cta.ctaHref}
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
-            Keep in touch →
+            {thinking.cta.ctaLabel}
           </ExtLink>
         </div>
       </section>
