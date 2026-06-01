@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "number": "01",
+      "title": "Listen",
+      "body": "I begin every engagement by deeply understanding your context: not just the brief, but the pressures, histories, and blind spots that shape it."
+    },
+    {
+      "number": "02",
+      "title": "Match",
+      "body": "I identify the right approach and skill set for the specific challenge at hand, bringing in trusted independent specialists where the engagement calls for it."
+    },
+    {
+      "number": "03",
+      "title": "Embed",
+      "body": "I work with your team, not at them. My model is collaborative by design, and I transfer knowledge as I deliver."
+    },
+    {
+      "number": "04",
+      "title": "Deliver",
+      "body": "I am accountable to outcomes. Every engagement ends with something tangible: a strategy, a product, an evidence base, a deal."
+    }
+  ]
+}

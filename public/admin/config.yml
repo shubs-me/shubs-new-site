@@ -1,0 +1,80 @@
+# Decap CMS configuration.
+# Visual content editor available at /admin once an OAuth provider is connected.
+# See MAINTENANCE.md for the one-time setup (auth) and day-to-day editing guide.
+
+backend:
+  name: github
+  repo: samwoodhouse1982/shubs-new-site # change to the new owner/repo after transfer
+  branch: master
+
+# Where uploaded images are stored and how they're referenced on the site.
+media_folder: public/images
+public_folder: /images
+
+# Friendlier editor: open a PR-free direct commit workflow.
+publish_mode: simple
+
+collections:
+  # ---- Home page content ----
+  - name: home
+    label: Home page
+    files:
+      - name: stats
+        label: Stats band
+        file: content/stats.json
+        description: The figures shown on the pink band.
+        fields:
+          - { name: intro, label: Intro line, widget: string }
+          - name: items
+            label: Stats
+            widget: list
+            fields:
+              - { name: number, label: Number (e.g. 60+), widget: string }
+              - { name: label, label: Caption, widget: string }
+
+      - name: testimonials
+        label: Testimonials
+        file: content/testimonials.json
+        description: Client quotes on the home page.
+        fields:
+          - name: items
+            label: Testimonials
+            widget: list
+            fields:
+              - { name: quote, label: Quote, widget: text }
+              - { name: name, label: Name / role, widget: string }
+              - { name: role, label: Organisation, widget: string }
+              - {
+                  name: rating,
+                  label: Rating line (optional),
+                  widget: string,
+                  required: false,
+                  default: '',
+                }
+
+      - name: ticker
+        label: Scrolling keywords
+        file: content/ticker.json
+        description: The scrolling marquee under the hero.
+        fields:
+          - name: items
+            label: Keywords
+            widget: list
+            field: { name: keyword, label: Keyword, widget: string }
+
+  # ---- Services page content ----
+  - name: services
+    label: Services page
+    files:
+      - name: process
+        label: Process steps
+        file: content/process.json
+        description: The four "How I work" steps.
+        fields:
+          - name: items
+            label: Steps
+            widget: list
+            fields:
+              - { name: number, label: Number (e.g. 01), widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Description, widget: text }

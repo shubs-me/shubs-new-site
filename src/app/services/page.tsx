@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import InlineCTA from '@/components/InlineCTA'
+import process from '@/../content/process.json'
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -9,28 +10,7 @@ export const metadata: Metadata = {
     'Two practice areas, Clinical and Product Integration, and Commercial and Clinical Alignment, for organisations serious about building digital health that works.',
 }
 
-const PROCESS = [
-  {
-    n: '01',
-    h: 'Listen',
-    p: 'I begin every engagement by deeply understanding your context: not just the brief, but the pressures, histories, and blind spots that shape it.',
-  },
-  {
-    n: '02',
-    h: 'Match',
-    p: 'I identify the right approach and skill set for the specific challenge at hand, bringing in trusted independent specialists where the engagement calls for it.',
-  },
-  {
-    n: '03',
-    h: 'Embed',
-    p: 'I work with your team, not at them. My model is collaborative by design, and I transfer knowledge as I deliver.',
-  },
-  {
-    n: '04',
-    h: 'Deliver',
-    p: 'I am accountable to outcomes. Every engagement ends with something tangible: a strategy, a product, an evidence base, a deal.',
-  },
-]
+const PROCESS = process.items
 
 export default function Services() {
   return (
@@ -197,11 +177,11 @@ export default function Services() {
             <h2 className="sec-title wide">A process built on depth, not haste.</h2>
           </div>
           <div className="eng-grid four">
-            {PROCESS.map(({ n, h, p }) => (
-              <div className="eng-card" key={n}>
-                <div className="en">{n}</div>
-                <h3>{h}</h3>
-                <p>{p}</p>
+            {PROCESS.map(({ number, title, body }) => (
+              <div className="eng-card" key={number}>
+                <div className="en">{number}</div>
+                <h3>{title}</h3>
+                <p>{body}</p>
               </div>
             ))}
           </div>

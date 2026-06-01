@@ -4,49 +4,13 @@ import ExtLink from '@/components/ExtLink'
 import InlineCTA from '@/components/InlineCTA'
 import StatNumber from '@/components/StatNumber'
 import { getEssays } from '@/lib/substack'
+import ticker from '@/../content/ticker.json'
+import stats from '@/../content/stats.json'
+import testimonials from '@/../content/testimonials.json'
 
-const TICKER = [
-  'Clinical Leadership', 'Medical Leadership', 'Evidence Strategy', 'Evidence Design',
-  'Value Realisation', 'Clinical ROI', 'Commercial Focus', 'Market Intelligence',
-  'Medical Quality', 'Clinical AI Evaluation', 'Founder Advisory', 'Research Approach',
-  'Regulatory Readiness', 'Implementation Science', 'Quality & Safety',
-  'Clinical Due Diligence',
-]
-
-const STATS = [
-  { n: '15+', l: 'Years across the digital health ecosystem' },
-  { n: '5', l: 'Countries with multi-million pound contracts protected' },
-  { n: '50+', l: 'International experts led at ITU / WHO' },
-  { n: '60+', l: 'Countries reached via podcast' },
-]
-
-const TESTIMONIALS = [
-  {
-    quote:
-      'Shubs always brings a huge amount of positive energy and enthusiasm to his work, is a strong connector and collaborator, a creative thinker, and a wonderful culture contributor.',
-    name: 'Dr Claire Novorol',
-    role: 'Ada Health',
-  },
-  {
-    quote:
-      'Shubs helped us bring clarity and focus to both our value messaging and evidence generation strategy. We highly recommend working with Shubs.',
-    name: 'CEO',
-    role: 'Sanome',
-  },
-  {
-    quote:
-      'Your work was valued across our clinical, product, AI scientist and engineering leaders. We now use the ‘clinical value’ and ‘measure what matters’ framework in our day to day work.',
-    name: 'Medical Leader',
-    role: 'Doctolib',
-    rating: 'Rated 5/5 · Value delivered, professionalism, clarity, quality',
-  },
-  {
-    quote:
-      'Shubs helped shape a clear narrative drawing on first-hand experience and real-world implementation, one that we can take away into our discussions with researchers, policy makers, and other funders and that will inform our investment strategy going forwards.',
-    name: 'Guy Parsons',
-    role: 'Technology Lead, Wellcome Trust',
-  },
-]
+const TICKER = ticker.items
+const STATS = stats.items
+const TESTIMONIALS = testimonials.items
 
 export default async function Home() {
   const essays = await getEssays(3)
@@ -176,14 +140,12 @@ export default async function Home() {
       {/* STATS */}
       <section className="stats">
         <div className="wrap">
-          <p className="stats-intro">
-            A decade of work that held up, where it counted.
-          </p>
+          <p className="stats-intro">{stats.intro}</p>
           <div className="stats-grid">
-            {STATS.map(({ n, l }) => (
-              <div className="stat" key={n + l}>
-                <StatNumber value={n} />
-                <div className="l">{l}</div>
+            {STATS.map(({ number, label }) => (
+              <div className="stat" key={number + label}>
+                <StatNumber value={number} />
+                <div className="l">{label}</div>
               </div>
             ))}
           </div>
@@ -400,9 +362,7 @@ export default async function Home() {
             {TESTIMONIALS.map((t, i) => (
               <div className="tcard" key={i}>
                 <blockquote>“{t.quote}”</blockquote>
-                {'rating' in t && t.rating && (
-                  <div className="trating">{t.rating}</div>
-                )}
+                {t.rating ? <div className="trating">{t.rating}</div> : null}
                 <div className="tcite">
                   <b>{t.name}</b>
                   <br />
