@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "label": "Legal",
+    "title": "Cookie Policy",
+    "sub": "Politique de cookies. How this site uses cookies and similar technologies."
+  },
+  "updated": "Last updated: March 2026",
+  "sections": [
+    {
+      "heading": "1. What Are Cookies?",
+      "body": "Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work more efficiently and to provide information to site owners. Similar technologies include local storage, session storage, and tracking pixels.\n\nIn France, the deposit of non-essential cookies requires prior consent in accordance with the GDPR and the guidelines issued by the **CNIL**."
+    },
+    {
+      "heading": "2. Cookies We Use",
+      "body": "**Strictly necessary · always active**\n\nEssential for the website to function and to remember your cookie choices. These cannot be disabled and require no consent under applicable law.\n\n**Analytics · requires consent**\n\nUsed to count visits and traffic sources so we can measure and improve site performance. All data is aggregated and anonymised. Provider: [INSERT ANALYTICS PROVIDER]. Retention: up to 13 months.\n\n**Third-party embedded content · requires consent**\n\nThis site may embed content from third-party services (such as the GPODH podcast player or video). These services may set their own cookies when you interact with the embedded content, governed by their own policies, for example [Google's privacy policy](https://policies.google.com/privacy)."
+    },
+    {
+      "heading": "3. Managing Your Consent",
+      "body": "When you first visit this site you will be asked to consent to non-essential cookies. You can withdraw or update your consent at any time. You can also manage cookies directly via your browser settings:\n\n- [Google Chrome](https://support.google.com/chrome/answer/95647)\n- [Mozilla Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer)\n- [Apple Safari](https://support.apple.com/en-gb/guide/safari/sfri11471/mac)\n- [Microsoft Edge](https://support.microsoft.com/en-us/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d)\n\nPlease note that disabling certain cookies may affect the functionality of the website."
+    },
+    {
+      "heading": "4. Contact & Complaints",
+      "body": "For questions about our use of cookies, contact us via [our contact form](/contact). You also have the right to lodge a complaint with the [CNIL](https://www.cnil.fr)."
+    }
+  ],
+  "more": [
+    { "label": "Legal Notice →", "href": "/legal" },
+    { "label": "Privacy Policy →", "href": "/privacy" }
+  ]
+}

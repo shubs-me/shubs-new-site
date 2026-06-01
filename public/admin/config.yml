@@ -669,3 +669,90 @@ collections:
               - { name: body, label: Description, widget: text }
               - { name: ctaLabel, label: Button text, widget: string }
               - { name: ctaHref, label: Button link, widget: string }
+
+  # ============================================================
+  # LEGAL PAGES (Legal Notice, Privacy, Cookies)
+  # ============================================================
+  - name: legal
+    label: Legal pages
+    files:
+      - name: legal-notice
+        label: Legal Notice
+        file: content/legal.json
+        description: Mentions légales. Company registration details live here.
+        fields:
+          - name: hero
+            label: Page heading
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: sub, label: Sub-heading, widget: text }
+          - { name: updated, label: "\"Last updated\" line", widget: string }
+          - name: sections
+            label: Sections
+            widget: list
+            summary: "{{fields.heading}}"
+            fields:
+              - { name: heading, label: Section heading, widget: string }
+              - { name: body, label: Section text, widget: markdown }
+          - name: more
+            label: Footer links
+            widget: list
+            fields:
+              - { name: label, label: Link text, widget: string }
+              - { name: href, label: Link target, widget: string }
+
+      - name: privacy-policy
+        label: Privacy Policy
+        file: content/privacy.json
+        description: GDPR privacy policy.
+        fields:
+          - name: hero
+            label: Page heading
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: sub, label: Sub-heading, widget: text }
+          - { name: updated, label: "\"Last updated\" line", widget: string }
+          - name: sections
+            label: Sections
+            widget: list
+            summary: "{{fields.heading}}"
+            fields:
+              - { name: heading, label: Section heading, widget: string }
+              - { name: body, label: Section text, widget: markdown }
+          - name: more
+            label: Footer links
+            widget: list
+            fields:
+              - { name: label, label: Link text, widget: string }
+              - { name: href, label: Link target, widget: string }
+
+      - name: cookie-policy
+        label: Cookie Policy
+        file: content/cookies.json
+        description: Cookie policy.
+        fields:
+          - name: hero
+            label: Page heading
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: sub, label: Sub-heading, widget: text }
+          - { name: updated, label: "\"Last updated\" line", widget: string }
+          - name: sections
+            label: Sections
+            widget: list
+            summary: "{{fields.heading}}"
+            fields:
+              - { name: heading, label: Section heading, widget: string }
+              - { name: body, label: Section text, widget: markdown }
+          - name: more
+            label: Footer links
+            widget: list
+            fields:
+              - { name: label, label: Link text, widget: string }
+              - { name: href, label: Link target, widget: string }

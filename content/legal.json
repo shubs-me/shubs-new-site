@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "label": "Legal",
+    "title": "Legal Notice",
+    "sub": "Mentions légales for SandiQ Global, the company behind this website."
+  },
+  "updated": "Last updated: March 2026",
+  "sections": [
+    {
+      "heading": "1. Publisher",
+      "body": "This website is published by **SandiQ Global**, a company registered in France.\n\n- **Legal form:** Société par Actions Simplifiée Unipersonnelle (SASU)\n- **Registered office:** [INSERT ADDRESS], France\n- **SIRET:** [INSERT SIRET NUMBER]\n- **RCS:** [INSERT RCS NUMBER]\n- **Share capital:** [INSERT SHARE CAPITAL] €\n- **Intra-community VAT:** [INSERT VAT NUMBER]"
+    },
+    {
+      "heading": "2. Publication Director",
+      "body": "The publication director is **Dr Shubs Upadhyay**, Founding Partner of SandiQ Global."
+    },
+    {
+      "heading": "3. Contact",
+      "body": "The fastest way to reach us is via [our contact form](/contact)."
+    },
+    {
+      "heading": "4. Hosting Provider",
+      "body": "This website is hosted by **Vercel Inc.**, 340 Pine Street, Suite 700, San Francisco, CA 94104, United States. [vercel.com](https://vercel.com)"
+    },
+    {
+      "heading": "5. Intellectual Property",
+      "body": "All content on this website, including text, graphics, logos, and images, is the exclusive property of SandiQ Global or its licensors and is protected under French and international intellectual property law. Any reproduction, distribution, or use without prior written consent is strictly prohibited."
+    },
+    {
+      "heading": "6. Limitation of Liability",
+      "body": "SandiQ Global makes every effort to ensure the accuracy and currency of the information published on this site. However, we cannot guarantee that the information is complete, up to date, or free from error, and accept no liability for any loss or damage arising from its use.\n\nThis site may contain links to third-party websites. SandiQ Global has no control over those sites and accepts no responsibility for their content or practices."
+    },
+    {
+      "heading": "7. Applicable Law",
+      "body": "This legal notice is governed by French law. Any dispute relating to its interpretation or application falls within the exclusive jurisdiction of the competent French courts."
+    }
+  ],
+  "more": [
+    { "label": "Privacy Policy →", "href": "/privacy" },
+    { "label": "Cookie Policy →", "href": "/cookies" }
+  ]
+}
