@@ -6,6 +6,9 @@ backend:
   name: github
   repo: samwoodhouse1982/shubs-new-site # change to the new owner/repo after transfer
   branch: master
+  # OAuth handled by this site's own /api/auth + /api/callback routes
+  base_url: https://www.shubs.me
+  auth_endpoint: /api/auth
 
 # Where uploaded images are stored and how they're referenced on the site.
 media_folder: public/images

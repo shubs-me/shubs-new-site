@@ -33,15 +33,26 @@ automatically. Images can be uploaded right in the editor (they're stored in
 
 ### One-time setup (the developer does this once)
 
-The editor needs a GitHub OAuth connection. Two options:
+The OAuth bridge is already built into this site (`/api/auth` and
+`/api/callback`). To switch it on, you only need to create a GitHub OAuth app
+and add two secrets:
 
-- **Easiest — Netlify/Decap OAuth or Vercel function:** deploy a small OAuth
-  helper and set `base_url` in `public/admin/config.yml`. See Decap's
-  [GitHub backend guide](https://decapcms.org/docs/github-backend/).
-- After the repo is transferred, update the `repo:` line in
-  `public/admin/config.yml` to the new `owner/repo`.
+1. **Create a GitHub OAuth app** at
+   https://github.com/settings/developers → "New OAuth App":
+   - **Homepage URL:** `https://www.shubs.me`
+   - **Authorization callback URL:** `https://www.shubs.me/api/callback`
+   - Click *Register*, then *Generate a new client secret*.
+2. **Add two environment variables in Vercel**
+   (Project → Settings → Environment Variables):
+   - `OAUTH_GITHUB_CLIENT_ID` = the app's Client ID
+   - `OAUTH_GITHUB_CLIENT_SECRET` = the generated secret
+3. **Redeploy** (Vercel does this automatically on the next push, or trigger it
+   manually). `/admin` login now works.
 
-Until that OAuth step is done, use the GitHub method in section 3 below — it
+After the repo is transferred, also update the `repo:` and `base_url` lines in
+`public/admin/config.yml` to the new owner/domain.
+
+Until those two secrets are set, use the GitHub method in section 3 below — it
 edits exactly the same files.
 
 ---
