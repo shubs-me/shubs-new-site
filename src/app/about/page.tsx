@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Fragment } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
@@ -115,7 +116,22 @@ export default function About() {
               {about.person.paras.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
-              <p>{about.person.linksIntro}</p>
+              <p>
+                {about.person.intro.map((seg, i) => {
+                  if (!('href' in seg) || !seg.href) {
+                    return <Fragment key={i}>{seg.text}</Fragment>
+                  }
+                  return seg.href.startsWith('/') ? (
+                    <Link key={i} href={seg.href}>
+                      {seg.text}
+                    </Link>
+                  ) : (
+                    <ExtLink key={i} href={seg.href}>
+                      {seg.text}
+                    </ExtLink>
+                  )
+                })}
+              </p>
             </div>
             <div className="plinks">
               {about.person.links.map((link) => (

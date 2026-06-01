@@ -61,7 +61,13 @@
       "I'm a physician and digital health strategist with fifteen years across clinical practice, health technology, and health system strategy, from frontline care in the NHS, Australia, and Sierra Leone to medical leadership inside venture-backed health tech.",
       "As former Medical Director at Ada Health and co-chair of the WHO Clinical Evaluation Group for AI in healthcare, I've sat on both the clinical and the commercial side of the table. I set up independently to give digital health organisations the kind of senior clinical and strategic counsel they rarely have access to."
     ],
-    "linksIntro": "I host the GPODH podcast and write on Shubstack about digital health strategy, evidence, and equity.",
+    "intro": [
+      { "text": "I host the " },
+      { "text": "GPODH podcast", "href": "/thinking" },
+      { "text": " and write on " },
+      { "text": "Shubstack", "href": "/thinking" },
+      { "text": " about digital health strategy, evidence, and equity." }
+    ],
     "links": [
       { "label": "LinkedIn →", "href": "https://linkedin.com/in/shubs-upadhyay" },
       { "label": "Shubstack →", "href": "https://shubstack.substack.com" },

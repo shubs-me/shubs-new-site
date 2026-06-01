@@ -364,7 +364,13 @@ collections:
               - { name: label, label: Eyebrow label, widget: string }
               - { name: name, label: Name, widget: string }
               - { name: paras, label: Paragraphs, widget: list, field: { name: para, label: Paragraph, widget: text } }
-              - { name: linksIntro, label: Links intro sentence, widget: text }
+              - name: intro
+                label: Intro sentence (text and links)
+                widget: list
+                summary: "{{fields.text}}"
+                fields:
+                  - { name: text, label: Text, widget: string }
+                  - { name: href, label: Link target (leave blank for plain text), widget: string, required: false }
               - name: links
                 label: Profile links
                 widget: list
