@@ -1880,6 +1880,54 @@ footer {
   }
 }
 
+/* ============ Floating contact button ============ */
+.contact-fab {
+  position: fixed;
+  right: clamp(16px, 3vw, 32px);
+  bottom: clamp(16px, 3vw, 32px);
+  z-index: 70;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 100px;
+  background: var(--clay);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 10px 30px rgba(21, 18, 14, 0.28);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+}
+.contact-fab.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.contact-fab:hover {
+  background: var(--clay-deep);
+}
+.contact-fab-icon {
+  flex: none;
+}
+@media (max-width: 600px) {
+  .contact-fab {
+    padding: 15px;
+  }
+  .contact-fab-label {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-fab {
+    transition: opacity 0.2s ease;
+    transform: none;
+  }
+}
+
 /* ============ FOCUS VISIBILITY (keyboard a11y) ============ */
 a:focus-visible,
 button:focus-visible,

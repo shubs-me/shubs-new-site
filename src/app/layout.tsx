@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SiteMotion from "@/components/SiteMotion";
+import ContactFab from "@/components/ContactFab";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 
 const archivo = Archivo({
@@ -85,6 +86,7 @@ export default function RootLayout({
         <Nav />
         <main id="main-content">{children}</main>
         <Footer />
+        <ContactFab />
         <SiteMotion />
       </body>
     </html>
