@@ -951,6 +951,16 @@ section {
   color: var(--muted);
   font-style: normal;
 }
+/* Compact variant: smaller type on a wider measure, so a longer quote reads
+   as a few tight lines instead of a tall narrow block. */
+.quote-compact blockquote {
+  font-size: clamp(21px, 2.7vw, 38px);
+  line-height: 1.1;
+  max-width: 30ch;
+}
+.quote-compact cite {
+  margin-top: 24px;
+}
 
 /* lived */
 .lived {

@@ -218,7 +218,7 @@ export default async function Home() {
       </section>
 
       {/* QUOTE */}
-      <section className="quote">
+      <section className="quote quote-compact">
         <div className="wrap">
           <span className="label" style={{ marginBottom: 30 }}>
             {home.quote.label}
