@@ -69,24 +69,32 @@ export default async function Home() {
               <Em {...home.gap.title} />
             </h2>
           </div>
-          {home.gap.rows.map((row) => (
-            <div className="narr-row" key={row.n}>
-              <div className="narr-tag">
-                <div className="n">{row.n}</div>
-                <div className="t">{row.tag}</div>
-              </div>
-              <div className="narr-body">
-                <h3>{row.heading}</h3>
-                {row.paras.map((p, i) => (
-                  <p key={i}>
-                    {p.lead ? <b>{p.lead}</b> : null}
-                    {p.lead ? ' ' : ''}
-                    {p.text}
-                  </p>
-                ))}
-              </div>
-            </div>
-          ))}
+          <div className="gap-grid">
+            {home.gap.rows.map((row) => (
+              <details className="gap-col" key={row.n}>
+                <summary>
+                  <span className="gap-col-top">
+                    <span className="gap-n">{row.n}</span>
+                    <span className="gap-t">{row.tag}</span>
+                  </span>
+                  <h3>{row.heading}</h3>
+                  <span className="gap-more">
+                    <span className="gap-more-open">Read more</span>
+                    <span className="gap-more-close">Show less</span>
+                  </span>
+                </summary>
+                <div className="gap-col-body">
+                  {row.paras.map((p, i) => (
+                    <p key={i}>
+                      {p.lead ? <b>{p.lead}</b> : null}
+                      {p.lead ? ' ' : ''}
+                      {p.text}
+                    </p>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
