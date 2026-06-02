@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
 import Em from '@/components/Em'
@@ -136,13 +137,13 @@ export default async function Thinking() {
           >
             {thinking.cta.body}
           </p>
-          <ExtLink
+          <Link
             href={thinking.cta.ctaHref}
             className="btn btn-clay"
             style={{ fontSize: 16, padding: '16px 32px' }}
           >
             {thinking.cta.ctaLabel}
-          </ExtLink>
+          </Link>
         </div>
       </section>
     </>
