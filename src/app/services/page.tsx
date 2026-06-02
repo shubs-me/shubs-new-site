@@ -131,7 +131,10 @@ export default function Services() {
         <div className="wrap">
           <span className="label">{services.cta.label}</span>
           <h2>
-            <Em {...services.cta.title} />
+            {services.cta.title.pre}
+            <br />
+            <em>{services.cta.title.em}</em>
+            {services.cta.title.post}
           </h2>
           <p
             style={{

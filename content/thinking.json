@@ -24,10 +24,10 @@
     "linkHref": "https://gpodh.org"
   },
   "cta": {
-    "label": "Keep in touch",
-    "title": { "pre": "More on ", "em": "Shubstack.", "post": "" },
-    "body": "Insights on what it actually takes to build digital health that holds up, clinically, commercially, and at scale.",
-    "ctaLabel": "Keep in touch →",
+    "label": "The Shubstack",
+    "title": { "pre": "Get it straight to your ", "em": "inbox.", "post": "" },
+    "body": "Insights on what it actually takes to build digital health that holds up, clinically, commercially, and at scale. New thinking, direct from Shubs.",
+    "ctaLabel": "Subscribe on Substack →",
     "ctaHref": "https://shubstack.substack.com"
   }
 }

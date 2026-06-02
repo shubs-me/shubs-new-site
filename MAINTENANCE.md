@@ -18,14 +18,21 @@ keeps showing the last working version** — nothing goes down.
 
 ## 2. The visual editor (`/admin`) — easiest
 
-Go to **https://www.shubs.me/admin** and log in with GitHub. You can edit:
+Go to **https://www.shubs.me/admin** and log in with GitHub. **Every page is
+editable here** — there's one entry per page in the sidebar:
 
-| Section | What you can change |
+| Collection | What you can change |
 |---|---|
-| **Home → Stats band** | The intro line and the four figures + captions |
-| **Home → Testimonials** | Add / edit / reorder client quotes (and the optional rating line) |
-| **Home → Scrolling keywords** | The marquee words under the hero |
-| **Services → Process steps** | The four "How I work" steps |
+| **Home page** | Every section: hero, "the gap", stats, focus areas, who I work with, engagements, "lived not lifted", quote, testimonials, outcomes, the notes/podcast teaser, and the closing call-to-action |
+| **About page** | Hero, "why I exist", the experience grid, the person bio + links, manifesto, and the closing CTA |
+| **Services page** | Hero, audiences, the two practice areas, the quote, process steps, and the closing CTA |
+| **Contact page** | Hero, all form labels/placeholders/options, and the side-panel rows (incl. the "Book a call" link) |
+| **Thinking page** | Hero, section headings, the podcast block, and the closing CTA (the article list is automatic — see §5) |
+| **Legal pages** | Legal Notice, Privacy Policy, Cookie Policy — each section is a rich-text box (bold, links, lists). Fill in the company registration details here. |
+
+For most headings you'll see the words split into a plain part and a
+**"Highlighted part (pink italic)"** — that second box is the pink emphasised
+text. Edit either.
 
 Edit a field, click **Publish** → it commits to GitHub → the site rebuilds
 automatically. Images can be uploaded right in the editor (they're stored in
@@ -68,13 +75,15 @@ edits exactly the same files.
 All editable content lives in plain files in the **`content/`** folder. You can
 edit them in GitHub's web interface (pencil icon → edit → "Commit changes"):
 
-- `content/stats.json` — the stats band
-- `content/testimonials.json` — client quotes
-- `content/ticker.json` — scrolling keywords
-- `content/process.json` — the Services process steps
+- `content/home.json` `about.json` `services.json` `contact.json`
+  `thinking.json` — the copy and images for each main page
+- `content/legal.json` `privacy.json` `cookies.json` — the legal pages
+- `content/stats.json` `testimonials.json` `ticker.json` `process.json` —
+  the stats band, client quotes, scrolling keywords, and process steps
 
-Keep the `"quotes"` and commas exactly as they are; only change the text inside
-the quotes. After committing, the site rebuilds automatically.
+Keep the `"quotes"`, brackets and commas exactly as they are; only change the
+text inside the quotes. After committing, the site rebuilds automatically.
+(The visual editor in §2 is the easier way to do all of this.)
 
 ---
 
@@ -100,20 +109,19 @@ here.
 
 ## 6. Things that still need a code edit
 
-Longer narrative copy (page headlines, the About story, Services pillar
-descriptions, the contact page) lives in the page files under `src/app/…`. These
-are safe to edit but require care with the surrounding code — ask the developer,
-or edit the text between the tags only.
+**All page copy and images are now editable in the visual editor** (§2) — page
+headlines, the About story, Services pillars, the contact page, and the legal
+pages included. You shouldn't need to touch code for wording changes.
 
-Still to be wired before/after launch (developer tasks):
+Still to be wired (developer tasks — see `HANDOFF.md` for detail):
 
 - **Contact form** — currently shows a success message but does not yet send.
   Needs an email handler (e.g. Resend, Formspree).
-- **"Book a call"** — currently a placeholder; needs the Google Calendar
-  appointment-scheduling link.
-- **Legal details** — `src/app/legal/page.tsx` and `cookies/page.tsx` contain
+- **"Book a call"** — the link is editable in the CMS (Contact page) but still
+  points at a placeholder `#`; set it to the real booking link.
+- **Legal details** — `content/legal.json` and `content/cookies.json` contain
   `[INSERT …]` placeholders (company registration number, VAT, address,
-  analytics provider) to be filled in.
+  analytics provider). Fill these in via the editor (Legal pages).
 
 ---
 

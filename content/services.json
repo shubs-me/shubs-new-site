@@ -92,7 +92,7 @@
   },
   "cta": {
     "label": "Let's work together",
-    "title": { "pre": "Building or backing? ", "em": "Let's talk.", "post": "" },
+    "title": { "pre": "Building or backing?", "em": "Let's talk.", "post": "" },
     "body": "Whether you are building a digital health product that needs clinical credibility, or investing in the organisations doing that work, every conversation starts with understanding what you are actually trying to achieve.",
     "ctaLabel": "Get in touch →",
     "ctaHref": "/contact",
