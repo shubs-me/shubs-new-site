@@ -203,6 +203,12 @@ in the CMS by design — publishing on Substack updates the site automatically.
   goes live, update `base_url` AND the GitHub OAuth App's callback URL to match**
   (see [§8](#8-domain--transfer-checklist)).
 - **Media:** uploads go to `public/images` and are referenced as `/images/...`.
+- **Who can log in:** there's no separate CMS user list — **access = GitHub
+  push access to the repo**. The repo owner (Shubs, once transferred) can always
+  log in; anyone else needs to be added as a **collaborator with write access**.
+  If the repo lives in a GitHub *org* with third-party OAuth-app restrictions,
+  the OAuth App must be owned/approved within that org (another reason for Shubs
+  to own the OAuth App).
 
 ### How to add a new editable field (recipe)
 
