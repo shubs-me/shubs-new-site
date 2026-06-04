@@ -1425,7 +1425,7 @@ footer {
   font-size: clamp(20px, 2.6vw, 30px);
   letter-spacing: -0.02em;
   color: var(--ink);
-  max-width: 24ch;
+  max-width: 36ch;
 }
 .mani.dark blockquote {
   color: var(--cream);
