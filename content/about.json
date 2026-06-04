@@ -10,7 +10,7 @@
     "paras": [
       "People building and implementing digital health know that clinical outcomes matter. But those outcomes can feel far off, and hard to move directly.",
       "So things drift. The commercial narrative pulls one way, the product roadmap another, and the evidence lands somewhere else entirely. Clinical value gets lost in translation, and teams move fast, just not towards what actually matters for people.",
-      "When users and buyers see bold claims without the evidence to back them, trust wanes. Clients churn. Funding dries up.",
+      "When users and buyers see bold claims with no evidence behind them, trust goes, and so do renewals and funding.",
       "After a decade inside venture-backed digital health companies and global institutions, I set up my practice to change that: to bring sharp focus back to clinical outcomes, and to what really matters."
     ]
   },
@@ -79,16 +79,16 @@
     "pre": "Digital health must be built around clinical reality, not around what is easy to build or easy to ",
     "em": "sell.",
     "points": [
-      "I don't accept that moving fast means cutting clinical corners.",
-      "I don't accept that evidence is just a box to tick for regulators.",
-      "I don't accept that doing right by patients and growing the business are competing goals."
+      "Moving fast is no excuse for cutting clinical corners.",
+      "Evidence isn't a box you tick to keep the regulator happy.",
+      "And doing right by patients doesn't have to fight with growing the business."
     ],
-    "close": "The organisations that understand this are the ones that last."
+    "close": "The teams that actually get this are the ones that tend to last."
   },
   "cta": {
     "label": "Let's work together",
     "title": { "pre": "Have a conversation with ", "em": "Shubs.", "post": "" },
-    "body": "Every engagement starts by understanding what you are actually trying to achieve. No pitch, no hard sell. Just an honest conversation.",
+    "body": "Every engagement starts by understanding where you're trying to get to. No pitch, no hard sell. Just an honest conversation.",
     "ctaLabel": "Get in touch →",
     "ctaHref": "/contact"
   }

@@ -2,7 +2,7 @@
   "hero": {
     "label": "Dr Shubs Upadhyay, Digital Health Advisor",
     "title": { "pre": "", "em": "Clinical rigour", "post": " at product speed." },
-    "lead": "After a decade inside venture-backed digital health, the NHS, and global health agencies, I know what separates the products that hold up from the ones that don't. I help teams ship faster, prove clinical value, and win the rooms that decide whether digital health succeeds.",
+    "lead": "After a decade inside venture-backed digital health, the NHS, and global health agencies, I know what separates the products that hold up from the ones that don't. I help teams ship faster, prove clinical value, and win over the people who decide whether it succeeds.",
     "ctaPrimaryLabel": "Let's talk →",
     "ctaPrimaryHref": "/contact",
     "ctaSecondaryLabel": "How I work →",
@@ -29,7 +29,7 @@
         "heading": "What it costs when this goes wrong.",
         "paras": [
           { "lead": "Builders and teams.", "text": "Deals stall in procurement because the clinical story wasn't built into the product from the start. Safety and quality incidents surface late and expensively. Regulatory submissions take three times as long as they should." },
-          { "lead": "Funders and investors.", "text": "Portfolio companies report impressive activity metrics while missing the clinical outcomes that determine whether a health system buys, renews, or recommends. The gap between what was pitched and what holds up widens quietly, until it doesn't." }
+          { "lead": "Funders and investors.", "text": "Portfolio companies report impressive activity metrics while missing the clinical outcomes that determine whether a health system buys, renews, or recommends. The gap between what was pitched and what actually works tends to stay hidden, until a renewal, audit or safety review brings it into the open." }
         ]
       },
       {
@@ -37,7 +37,7 @@
         "tag": "The Solution",
         "heading": "There's a better way to work, and I can help you build it.",
         "paras": [
-          { "lead": "", "text": "Clinical rigour and product velocity are not opposites. They are a function of how clinical, product, commercial, and regulatory work is set up to happen together. When I come in early, shaping product decisions rather than reviewing them at the end, teams ship faster, build stronger evidence, and arrive at conversations with commissioners, regulators, and investors with a story that holds." },
+          { "lead": "", "text": "Clinical rigour and product velocity are not opposites. They are a function of how clinical, product, commercial, and regulatory work is set up to happen together. When I come in early, shaping product decisions rather than reviewing them at the end, teams ship faster, build stronger evidence, and arrive at conversations with commissioners, regulators, and investors with a case that stands up." },
           { "lead": "", "text": "I work with founders, product leaders, and medical leaders to build that way of working, tuned to where your organisation actually is, not lifted from a framework." }
         ]
       }
@@ -61,7 +61,7 @@
       {
         "num": "02",
         "title": "Commercial and Clinical Alignment",
-        "body": "As digital health companies scale, the sales narrative, the product roadmap, and the evidence strategy tend to drift apart. I bring them back into a single line, so what you're selling, what you're building, and what you're proving are the same story. Not a messaging project. An integrated strategic alignment.",
+        "body": "As digital health companies scale, the sales narrative, the product roadmap, and the evidence strategy tend to drift apart. I bring them back into a single line, so what you're selling, what you're building, and what you're proving are the same story. Not a rebranding exercise, but product, commercial and evidence genuinely pulling the same way.",
         "list": [
           "Sales narrative aligned with clinical evidence",
           "Product, commercial, and evidence strategy as a single line"
@@ -85,14 +85,14 @@
       {
         "kicker": "People leading",
         "title": "Clinical and medical leaders",
-        "body": "Whether you are a CMO setting clinical strategy or a medical lead carrying the weight of safety and evidence, I am a sounding board and a partner, helping you make the case, build the practices, and hold the line where it matters.",
+        "body": "Whether you are a CMO setting clinical strategy or a medical lead carrying the weight of safety and evidence, I am a sounding board and a partner, helping you make the case to your board, put the right practices in place, and stand firm on the things that actually affect patients.",
         "moreLabel": "See how I can help →",
         "moreHref": "/services"
       },
       {
         "kicker": "People investing",
         "title": "Philanthropy, foundations, and impact investors",
-        "body": "I bring senior clinical-strategic perspective into diligence, portfolio support, and cohort programming, helping the organisations you back build toward outcomes that hold up.",
+        "body": "I bring senior clinical-strategic perspective into diligence, portfolio support, and cohort programming, helping the organisations you back build toward outcomes they can stand behind.",
         "moreLabel": "See how I help investors →",
         "moreHref": "/services"
       }
@@ -174,7 +174,7 @@
   "cta": {
     "label": "Let's work together",
     "title": { "pre": "Ready to build something ", "em": "the right way?", "post": "" },
-    "body": "Whether you are building digital health that has to hold up, or backing the people who do, every conversation starts with what you are actually trying to achieve.",
+    "body": "Whether you're building digital health that has to work in the real world, or backing the people who do, every conversation starts with what you're actually trying to build.",
     "ctaLabel": "Get in touch →",
     "ctaHref": "/contact"
   }

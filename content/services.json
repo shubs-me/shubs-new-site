@@ -47,7 +47,7 @@
       "paTag": "Quality & Shipping Velocity",
       "title": "Clinical and Product Integration",
       "lead": "Harmonise clinical, QARA, and product teams. Say goodbye to death by approval and missed safety issues.",
-      "body": "Build the right thing, and build the thing right. I level up how clinical, product, QARA, data science, and engineering teams make decisions together, so you ship at pace and catch the right things proactively, without becoming a bottleneck or letting safety become an afterthought.",
+      "body": "It's about building the right product, and building it properly. I level up how clinical, product, QARA, data science, and engineering teams make decisions together, so you ship at pace and catch the right things proactively, without becoming a bottleneck or letting safety become an afterthought.",
       "listLabel": "What this looks like",
       "list": [
         "Cross-disciplinary workshops that get engineers, designers, and clinicians on the same page about outcomes, risk, and safety",
@@ -93,7 +93,7 @@
   "cta": {
     "label": "Let's work together",
     "title": { "pre": "Building or backing?", "em": "Let's talk.", "post": "" },
-    "body": "Whether you are building a digital health product that needs clinical credibility, or investing in the organisations doing that work, every conversation starts with understanding what you are actually trying to achieve.",
+    "body": "Whether you're building a digital health product that needs clinical credibility, or investing in the organisations doing that work, every conversation starts with the outcome you're really after.",
     "ctaLabel": "Get in touch →",
     "ctaHref": "/contact"
   }
