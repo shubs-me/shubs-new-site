@@ -176,7 +176,6 @@
     "title": { "pre": "Ready to build something ", "em": "the right way?", "post": "" },
     "body": "Whether you are building digital health that has to hold up, or backing the people who do, every conversation starts with what you are actually trying to achieve.",
     "ctaLabel": "Get in touch →",
-    "ctaHref": "/contact",
-    "reassure": "An honest reply within a couple of working days. No pitch."
+    "ctaHref": "/contact"
   }
 }

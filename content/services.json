@@ -95,7 +95,6 @@
     "title": { "pre": "Building or backing?", "em": "Let's talk.", "post": "" },
     "body": "Whether you are building a digital health product that needs clinical credibility, or investing in the organisations doing that work, every conversation starts with understanding what you are actually trying to achieve.",
     "ctaLabel": "Get in touch →",
-    "ctaHref": "/contact",
-    "reassure": "An honest reply within a couple of working days. No pitch."
+    "ctaHref": "/contact"
   }
 }

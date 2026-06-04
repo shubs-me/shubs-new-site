@@ -90,7 +90,6 @@
     "title": { "pre": "Have a conversation with ", "em": "Shubs.", "post": "" },
     "body": "Every engagement starts by understanding what you are actually trying to achieve. No pitch, no hard sell. Just an honest conversation.",
     "ctaLabel": "Get in touch →",
-    "ctaHref": "/contact",
-    "reassure": "An honest reply within a couple of working days. No pitch."
+    "ctaHref": "/contact"
   }
 }

@@ -189,7 +189,6 @@ export default function About() {
           >
             {about.cta.ctaLabel}
           </Link>
-          <p className="cta-reassure">{about.cta.reassure}</p>
         </div>
       </section>
     </>

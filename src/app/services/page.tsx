@@ -153,7 +153,6 @@ export default function Services() {
           >
             {services.cta.ctaLabel}
           </Link>
-          <p className="cta-reassure">{services.cta.reassure}</p>
         </div>
       </section>
     </>

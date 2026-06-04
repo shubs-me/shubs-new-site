@@ -1153,15 +1153,6 @@ section {
 .contact .btn-clay:hover {
   background: #000;
 }
-.cta-reassure {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(21, 18, 14, 0.66);
-  margin-top: 20px;
-}
-
 /* inline CTA (mid-page, slim) */
 .inline-cta {
   padding: 0;

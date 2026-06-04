@@ -246,7 +246,6 @@ collections:
               - { name: body, label: Description, widget: text }
               - { name: ctaLabel, label: Button text, widget: string }
               - { name: ctaHref, label: Button link, widget: string }
-              - { name: reassure, label: Reassurance line, widget: string }
 
       # ---- Existing home lists (kept as-is) ----
       - name: stats
@@ -405,7 +404,6 @@ collections:
               - { name: body, label: Description, widget: text }
               - { name: ctaLabel, label: Button text, widget: string }
               - { name: ctaHref, label: Button link, widget: string }
-              - { name: reassure, label: Reassurance line, widget: string }
 
   # ============================================================
   # SERVICES PAGE
@@ -520,7 +518,6 @@ collections:
               - { name: body, label: Description, widget: text }
               - { name: ctaLabel, label: Button text, widget: string }
               - { name: ctaHref, label: Button link, widget: string }
-              - { name: reassure, label: Reassurance line, widget: string }
 
       - name: process
         label: Process steps

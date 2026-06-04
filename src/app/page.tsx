@@ -349,7 +349,6 @@ export default async function Home() {
           >
             {home.cta.ctaLabel}
           </Link>
-          <p className="cta-reassure">{home.cta.reassure}</p>
         </div>
       </section>
     </>
