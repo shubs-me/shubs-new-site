@@ -13,5 +13,16 @@
     <!-- Decap CMS: visual editor for the site's content.
          Loads from a CDN; commits edits back to GitHub. -->
     <script src="https://unpkg.com/decap-cms@^3.8.4/dist/decap-cms.js"></script>
+    <script>
+      // Add a link to the "Undo recent changes" page in the CMS sidebar.
+      if (window.CMS && window.CMS.registerAdditionalLink) {
+        window.CMS.registerAdditionalLink({
+          id: 'undo',
+          title: 'Undo recent changes',
+          data: '/admin/undo',
+          options: { iconName: 'page' },
+        });
+      }
+    </script>
   </body>
 </html>

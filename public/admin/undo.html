@@ -135,7 +135,7 @@
       var REPO = 'samwoodhouse1982/shubs-new-site';
       var BRANCH = 'master';
       var API = 'https://api.github.com';
-      var SCAN = 25; // how many recent commits to scan for content changes
+      var PER_PAGE = 25; // commits fetched per "page" of history (Show older loads more)
 
       // Friendly names for the files the CMS edits.
       var PATH_LABELS = {
@@ -174,6 +174,12 @@
       // -- Auth (reuses the Decap GitHub OAuth popup at /api/auth) -------------
       var token = sessionStorage.getItem('shubs_undo_token') || null;
       var app = document.getElementById('app');
+
+      // History paging state (accumulates across "Show older changes").
+      var rows = [];
+      var nextPage = 1;
+      var reachedEnd = false;
+      var loadingMore = false;
 
       function login() {
         var popup = window.open('/api/auth', 'shubs-oauth', 'width=640,height=720');
@@ -246,38 +252,59 @@
 
       // -- Load + render the list of content changes --------------------------
       function loadChanges() {
+        rows = [];
+        nextPage = 1;
+        reachedEnd = false;
+        loadingMore = false;
         app.innerHTML = '<div class="center"><span class="spinner"></span><p>Loading recent changes…</p></div>';
+        fetchPage().then(renderAll).catch(function (err) { renderError(err.message); });
+      }
+
+      // Fetch one page of commits, keep the content ones, append to `rows`.
+      function fetchPage() {
         var list;
-        gh('/repos/' + REPO + '/commits?sha=' + BRANCH + '&per_page=' + SCAN)
+        return gh('/repos/' + REPO + '/commits?sha=' + BRANCH + '&per_page=' + PER_PAGE + '&page=' + nextPage)
           .then(function (commits) {
+            if (!commits || !commits.length) { reachedEnd = true; return; }
+            if (commits.length < PER_PAGE) reachedEnd = true;
             list = commits;
             // Fetch each commit's file list so we can keep only content changes.
             return Promise.all(
               commits.map(function (c) {
                 return gh('/repos/' + REPO + '/commits/' + c.sha).catch(function () { return null; });
               })
-            );
-          })
-          .then(function (details) {
-            var rows = [];
-            for (var i = 0; i < list.length; i++) {
-              var detail = details[i];
-              if (!detail || !detail.files) continue;
-              var labels = labelsForFiles(detail.files);
-              if (!labels.length) continue; // skip code / system commits
-              rows.push({
-                sha: list[i].sha,
-                labels: labels,
-                subject: (list[i].commit.message || '').split('\n')[0],
-                author: (list[i].commit.author && list[i].commit.author.name) || 'Unknown',
-                avatar: list[i].author && list[i].author.avatar_url,
-                date: list[i].commit.author && list[i].commit.author.date,
-                hasParent: detail.parents && detail.parents.length > 0,
-              });
-            }
-            renderList(rows);
-          })
-          .catch(function (err) { renderError(err.message); });
+            ).then(function (details) {
+              for (var i = 0; i < list.length; i++) {
+                var detail = details[i];
+                if (!detail || !detail.files) continue;
+                var labels = labelsForFiles(detail.files);
+                if (!labels.length) continue; // skip code / system commits
+                rows.push({
+                  sha: list[i].sha,
+                  labels: labels,
+                  subject: (list[i].commit.message || '').split('\n')[0],
+                  author: (list[i].commit.author && list[i].commit.author.name) || 'Unknown',
+                  avatar: list[i].author && list[i].author.avatar_url,
+                  date: list[i].commit.author && list[i].commit.author.date,
+                  hasParent: detail.parents && detail.parents.length > 0,
+                });
+              }
+              nextPage++;
+            });
+          });
+      }
+
+      function loadMore(btn) {
+        if (loadingMore || reachedEnd) return;
+        loadingMore = true;
+        if (btn) { btn.disabled = true; btn.textContent = 'Loading…'; }
+        fetchPage()
+          .then(function () { loadingMore = false; renderAll(); })
+          .catch(function (err) {
+            loadingMore = false;
+            showBanner('err', err.message);
+            if (btn) { btn.disabled = false; btn.textContent = 'Show older changes'; }
+          });
       }
 
       function el(tag, cls, text) {
@@ -287,7 +314,7 @@
         return n;
       }
 
-      function renderList(rows) {
+      function renderAll() {
         app.innerHTML = '';
 
         var toolbar = el('div', 'toolbar');
@@ -305,14 +332,25 @@
         toolbar.appendChild(out);
         app.appendChild(toolbar);
 
-        if (!rows.length) {
-          app.appendChild(banner('info', 'No content changes found in the last ' + SCAN + ' updates.'));
-          return;
+        if (rows.length) {
+          var ul = el('ul', 'changes');
+          rows.forEach(function (row) { ul.appendChild(renderRow(row)); });
+          app.appendChild(ul);
+        } else if (reachedEnd) {
+          app.appendChild(banner('info', 'No content changes found yet.'));
+        } else {
+          app.appendChild(banner('info', 'No content changes in the most recent updates — load older ones below.'));
         }
 
-        var ul = el('ul', 'changes');
-        rows.forEach(function (row) { ul.appendChild(renderRow(row)); });
-        app.appendChild(ul);
+        // "Show older changes" pager — keeps loading further back in history.
+        if (!reachedEnd) {
+          var pager = el('div', 'toolbar');
+          pager.style.justifyContent = 'center';
+          var more = el('button', null, 'Show older changes');
+          more.onclick = function () { loadMore(more); };
+          pager.appendChild(more);
+          app.appendChild(pager);
+        }
 
         app.appendChild(
           foot(

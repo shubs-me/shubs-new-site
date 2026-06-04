@@ -70,8 +70,10 @@ edits exactly the same files.
 
 ### Made a mistake? Undo recent changes (`/admin/undo`)
 
-Go to **https://www.shubs.me/admin/undo** and sign in with the same GitHub
-account. It lists your recent content changes, newest first. Press **Undo** on
+In the content manager there's an **"Undo recent changes"** link in the left
+sidebar (or go straight to **https://www.shubs.me/admin/undo**). Sign in with
+the same GitHub account. It lists your recent content changes, newest first —
+use **Show older changes** at the bottom to go further back. Press **Undo** on
 any one to put those files back exactly as they were just before that change —
 the live site refreshes in about a minute. It's safe: each undo is itself just
 another change (you can even undo an undo), and only content edits are listed
