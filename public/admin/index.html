@@ -8,6 +8,62 @@
     <!-- Explicit absolute path so the config loads whether the page is served
          at /admin or /admin/ -->
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+
+    <!-- Brand the Decap CMS chrome to match the site (warm near-black + clay
+         pink). Decap uses hashed class names, but its Emotion labels keep the
+         component name as a suffix, so [class*="Name"] selectors are stable
+         enough to target. Best-effort: only colours the login screen, top bar
+         and primary buttons; the editing forms keep Decap's readable light UI. -->
+    <style>
+      :root {
+        --shubs-ink: #15120e;
+        --shubs-clay: #fc5f84;
+        --shubs-clay-deep: #e23e69;
+        --shubs-cream: #efe9dc;
+      }
+
+      /* --- Login screen --- */
+      [class*="AuthenticationPage"] {
+        background-color: var(--shubs-ink) !important;
+        background-image: none !important;
+      }
+      [class*="LoginButton"] {
+        background-color: var(--shubs-clay) !important;
+        color: var(--shubs-ink) !important;
+        border-radius: 100px !important;
+      }
+      [class*="LoginButton"]:hover {
+        background-color: var(--shubs-clay-deep) !important;
+      }
+
+      /* --- Top app bar --- */
+      [class*="AppHeader"] {
+        background-color: var(--shubs-ink) !important;
+        background-image: none !important;
+      }
+      [class*="AppHeader"] a,
+      [class*="AppHeaderNavLink"],
+      [class*="AppHeaderButton"] {
+        color: var(--shubs-cream) !important;
+      }
+      [class*="AppHeaderNavLink"][class*="active"],
+      [class*="AppHeaderNavLink"]:hover {
+        color: #fff !important;
+      }
+
+      /* --- Primary action buttons (publish / save / new) --- */
+      [class*="PublishButton"],
+      [class*="SaveButton"],
+      [class*="DropdownButton"][class*="PublishedToolbarButton"],
+      [class*="AppHeaderActions"] button[class*="DropdownButton"] {
+        background-color: var(--shubs-clay) !important;
+        color: var(--shubs-ink) !important;
+      }
+      [class*="PublishButton"]:hover,
+      [class*="SaveButton"]:hover {
+        background-color: var(--shubs-clay-deep) !important;
+      }
+    </style>
   </head>
   <body>
     <!-- Decap CMS: visual editor for the site's content.
