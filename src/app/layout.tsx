@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SiteMotion from "@/components/SiteMotion";
 import ContactFab from "@/components/ContactFab";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 
 const archivo = Archivo({
@@ -90,6 +91,7 @@ export default function RootLayout({
         <ContactFab />
         <SiteMotion />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
