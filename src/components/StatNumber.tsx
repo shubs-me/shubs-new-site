@@ -14,7 +14,10 @@ export default function StatNumber({ value }: { value: string }) {
   const suffix = match ? value.slice(match.index! + match[0].length) : value
   const decimals = match && match[0].includes('.') ? match[0].split('.')[1].length : 0
 
-  const [display, setDisplay] = useState(target)
+  // `display` drives the count-up animation (starts at 0). Until the animation
+  // begins we render the final `target`, so SSR / reduced-motion / pre-scroll
+  // all show the real number.
+  const [display, setDisplay] = useState(0)
   const [started, setStarted] = useState(false)
 
   useEffect(() => {
@@ -53,14 +56,14 @@ export default function StatNumber({ value }: { value: string }) {
       setDisplay(target * eased)
       if (p < 1) raf = requestAnimationFrame(tick)
     }
-    setDisplay(0)
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
   }, [started, target])
 
+  const current = started ? display : target
   const shown = decimals
-    ? display.toFixed(decimals)
-    : Math.round(display).toString()
+    ? current.toFixed(decimals)
+    : Math.round(current).toString()
 
   return (
     <div className="n" ref={ref}>

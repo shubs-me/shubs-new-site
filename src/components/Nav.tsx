@@ -14,10 +14,14 @@ export default function Nav() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
 
-  // Close the menu on route change.
-  useEffect(() => {
+  // Close the mobile menu whenever the route changes. Adjusting state during
+  // render (by tracking the previous path) is React's recommended alternative
+  // to calling setState inside an effect.
+  const [lastPath, setLastPath] = useState(pathname)
+  if (pathname !== lastPath) {
+    setLastPath(pathname)
     setOpen(false)
-  }, [pathname])
+  }
 
   // Close on Escape; lock body scroll while the panel is open.
   useEffect(() => {

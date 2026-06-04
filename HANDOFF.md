@@ -274,6 +274,52 @@ What to check/do after transfer:
 7. **Redeploy and re-test:** `/admin` login + a test publish, and a test
    contact-form submission.
 
+### Handoff runbook (do these in order)
+
+1. **Sam:** Transfer the **Vercel project** to Shubs.
+2. **Sam:** Transfer the **GitHub repo** to `shubs-me/shubs-new-site`.
+3. **Sam / Claude (right after the repo transfer):** change the repo name in the
+   two files above (`config.yml` `repo:` and `undo.html` `REPO`) to
+   `shubs-me/shubs-new-site` — via GitHub's web editor or one commit.
+4. **Shubs:** Add Sam back as a **GitHub collaborator** (Write, or Admin if he
+   keeps handling infra) **and** a **Vercel project member**, if Sam stays on.
+5. **Shubs:** Create/verify a **GitHub OAuth App** — Homepage
+   `https://www.shubs.me`, callback `https://www.shubs.me/api/callback`; copy the
+   **Client ID** and **generate a Client Secret**.
+6. **Shubs:** In **Vercel → Environment Variables** (scope **Production**), set
+   `OAUTH_GITHUB_CLIENT_ID` and `OAUTH_GITHUB_CLIENT_SECRET`
+   (`NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` is optional — the key is already in code).
+7. **Shubs:** **Redeploy** (Deployments → ⋯ → Redeploy) so the env vars take
+   effect. *(Skipping this is the usual cause of "OAUTH_GITHUB_CLIENT_ID is not
+   configured" at login.)*
+8. **Shubs:** Confirm **Domains** (`www.shubs.me` + apex `shubs.me`) show "Valid
+   Configuration", and **re-enable Web Analytics** (it's per-account).
+9. **Test:** log in to `/admin` → small edit → **Publish** → check `/admin/undo`
+   lists it → send a **contact-form** test to confirm it reaches Shubs's inbox.
+
+### Connect the new owner's Claude to the repo (fine-grained PAT)
+
+So Claude can work on the site it needs repo access via a GitHub **fine-grained
+Personal Access Token**:
+
+1. GitHub → profile photo → **Settings → Developer settings → Personal access
+   tokens → Fine-grained tokens → Generate new token**.
+2. **Resource owner:** the account/org that owns the repo (an org admin may need
+   to **approve** the token). **Repository access:** *Only select repositories →
+   `shubs-me/shubs-new-site`*.
+3. **Permissions → Repository permissions** — set **both**:
+   - **Contents → Read and write**
+   - **Pull requests → Read and write**
+   - (*Metadata → Read-only* is auto-selected; leave it.)
+4. **Generate** and **copy the token immediately** (shown once); store it in a
+   password manager.
+5. In **Claude (Claude Code on the web)**, open the GitHub connection, connect
+   `shubs-me/shubs-new-site`, and paste the token when prompted.
+
+> ⚠️ The token **must** include **both** Contents (read/write) **and** Pull
+> requests (read/write) — without Contents it can't read/commit code; without
+> Pull requests it can't open PRs.
+
 ---
 
 ## 9. Local dev / build / deploy
@@ -297,41 +343,30 @@ npm run lint
 
 ## 10. Open tasks & blockers
 
-Ordered by priority. None of these block the *site* from running; they block the
-*CMS login* and two interactive features.
+None of these block the *site* from running.
 
-1. **CMS login / OAuth — needs the env vars + a matching OAuth App.**
-   - Code is ready: `base_url` in `config.yml` is now `https://www.shubs.me`.
-   - Remaining manual steps:
-     - **GitHub OAuth App** Homepage `https://www.shubs.me`, callback
-       `https://www.shubs.me/api/callback`.
-     - Add `OAUTH_GITHUB_CLIENT_ID` + `OAUTH_GITHUB_CLIENT_SECRET` in Vercel
-       (scope **Production**), then **redeploy**.
-   - Then verify `/admin` login end-to-end and a test publish.
-   - "Enable Device Flow" on the OAuth App is **not** needed (standard web
-     Authorization Code flow via the callback URL).
+1. **CMS login / OAuth — the one handover blocker.** The code is ready
+   (`base_url` = `https://www.shubs.me`; the OAuth bridge is built). What's left
+   is manual and per the **runbook in §8**: set `OAUTH_GITHUB_CLIENT_ID` /
+   `OAUTH_GITHUB_CLIENT_SECRET` in Vercel, point a GitHub OAuth App at
+   `https://www.shubs.me/api/callback`, and **redeploy**. Until that's done,
+   `/admin` login won't work. ("Enable Device Flow" is **not** needed.)
 
-2. **Contact form — DONE (live once deployed).**
-   - `src/app/contact/page.tsx` POSTs to `https://api.web3forms.com/submit`
-     with all fields + a hidden `access_key`, a subject/from-name, and a
-     honeypot. On success it shows the confirmation; on failure, a retry message.
-   - Shubs' Web3Forms key is committed as the default (public submit key), so it
-     works without any env var and survives the transfer. Worth one live test
-     submission after deploy to confirm it lands in his inbox.
-   - Labels/placeholders/options are CMS-editable in `content/contact.json`.
+2. **Optional — legal wording polish (your call; ideally a legal sense-check):**
+   - Cookie Policy §3 still says visitors "will be asked to consent to
+     non-essential cookies," but there's **no consent banner** and analytics is
+     now cookieless — soften the wording to match reality, or add a banner.
+   - Privacy Policy lists website-analytics legal basis as "consent (Art.
+     6(1)(a))"; since Vercel Analytics is cookieless, **legitimate interest** may
+     fit better.
 
-3. **"Book a call" link is a placeholder.**
-   - In `content/contact.json` the "Prefer to book directly?" row has
-     `"linkHref": "#"`. Point it at the real booking URL (e.g. Google Calendar
-     appointment scheduling / Calendly). Editable in the CMS now.
+3. **Production domain** `www.shubs.me` + apex `shubs.me` — connected; just
+   confirm "Valid Configuration" in Vercel after the project transfer.
 
-4. **Legal placeholders.** `content/legal.json` and `content/cookies.json`
-   contain `[INSERT ADDRESS]`, `[INSERT SIRET NUMBER]`, `[INSERT RCS NUMBER]`,
-   `[INSERT SHARE CAPITAL]`, `[INSERT VAT NUMBER]`, `[INSERT ANALYTICS PROVIDER]`.
-   Shubs/SandiQ to supply; editable in the CMS (Legal pages).
-
-5. **Production domain** `www.shubs.me` — **connected.** Confirm Vercel is
-   serving it and that `base_url`/OAuth callback both use it (see [§8](#8-domain--transfer-checklist)).
+**Done this engagement (no longer open):** contact form wired to Web3Forms;
+"Book a call" placeholder removed; all legal `[INSERT …]` placeholders filled
+(SandiQ registration details + Vercel Analytics named); Web Analytics added in
+code; ESLint and TypeScript clean.
 
 ---
 
