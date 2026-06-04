@@ -99,7 +99,7 @@ export default function SiteMotion() {
     q<HTMLElement>(
       [
         '.sec-head', '.prose', '.pillar', '.out-item', '.think-row', '.feat',
-        '.pod', '.mani', '.lived-body', '.narr-body', '.photo-card',
+        '.pod', '.mani', '.lived-body', '.gap-col', '.photo-card',
         '.hero-lead', '.hero-cta', '.contact p', '.form', '.eng-card', '.who-card',
       ].join(','),
     ).forEach((el) => reveal(el, 'up', 0))
@@ -118,9 +118,6 @@ export default function SiteMotion() {
       reveal(b.querySelector('.pnum'), 'left', 0)
       reveal(b.querySelector('div:last-child'), 'up', 120)
     })
-
-    // narrative numbers
-    q<HTMLElement>('.narr-tag').forEach((t) => reveal(t, 'left', 0))
 
     // pills — shoot in from alternating sides, triggered by the parent block
     q<Target>('.aud').forEach((aud, i) => {
