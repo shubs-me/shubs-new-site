@@ -203,6 +203,12 @@ in the CMS by design — publishing on Substack updates the site automatically.
   goes live, update `base_url` AND the GitHub OAuth App's callback URL to match**
   (see [§8](#8-domain--transfer-checklist)).
 - **Media:** uploads go to `public/images` and are referenced as `/images/...`.
+- **Undo page (`/admin/undo`):** a standalone static page
+  (`public/admin/undo.html`, served via a rewrite in `next.config.ts`) that
+  reuses the same GitHub OAuth. It lists recent *content* commits and lets an
+  editor **Undo** any one — it restores just the files that change touched (to
+  their state before it) as a new commit on top of `master` (no history
+  rewriting, non-destructive). Its `REPO` constant must match `config.yml`.
 - **Who can log in:** there's no separate CMS user list — **access = GitHub
   push access to the repo**. The repo owner (Shubs, once transferred) can always
   log in; anyone else needs to be added as a **collaborator with write access**.
@@ -242,10 +248,12 @@ keep working through the transfer.
 
 What to check/do after transfer:
 
-1. **`config.yml` `repo:`** — currently `samwoodhouse1982/shubs-new-site`. At
-   cutover, change it to **`shubs-me/shubs-new-site`** (the agreed new path).
-   Do this *at* the transfer, not before — the new repo doesn't exist until
-   then. `base_url` stays `https://www.shubs.me`.
+1. **Repo name appears in TWO files** — at cutover change both to
+   **`shubs-me/shubs-new-site`** (the agreed new path), and only *at* the
+   transfer (the new repo doesn't exist until then):
+   - `public/admin/config.yml` → `repo:`
+   - `public/admin/undo.html` → the `REPO` variable in the config block.
+   `base_url` stays `https://www.shubs.me`.
 2. **Vercel env vars** — confirm `OAUTH_GITHUB_CLIENT_ID` /
    `OAUTH_GITHUB_CLIENT_SECRET` are present on the transferred project (they
    usually move with it, but verify). Re-add if missing, then **redeploy**.

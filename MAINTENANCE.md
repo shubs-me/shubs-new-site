@@ -68,6 +68,15 @@ and `base_url` lines to the new owner/domain.
 Until those two secrets are set, use the GitHub method in section 3 below — it
 edits exactly the same files.
 
+### Made a mistake? Undo recent changes (`/admin/undo`)
+
+Go to **https://www.shubs.me/admin/undo** and sign in with the same GitHub
+account. It lists your recent content changes, newest first. Press **Undo** on
+any one to put those files back exactly as they were just before that change —
+the live site refreshes in about a minute. It's safe: each undo is itself just
+another change (you can even undo an undo), and only content edits are listed
+(site/code updates are hidden).
+
 ---
 
 ## 3. Editing content via GitHub directly (no editor needed)
