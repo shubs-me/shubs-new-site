@@ -115,8 +115,9 @@ pages included. You shouldn't need to touch code for wording changes.
 
 Still to be wired (developer tasks — see `HANDOFF.md` for detail):
 
-- **Contact form** — currently shows a success message but does not yet send.
-  Needs an email handler (e.g. Resend, Formspree).
+- **Contact form** — wired to **Web3Forms**. To switch on delivery, add the
+  Web3Forms access key as `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in Vercel and
+  redeploy (see `HANDOFF.md` §10). Until then, submissions show an error.
 - **"Book a call"** — the link is editable in the CMS (Contact page) but still
   points at a placeholder `#`; set it to the real booking link.
 - **Legal details** — `content/legal.json` and `content/cookies.json` contain

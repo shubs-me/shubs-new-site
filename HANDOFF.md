@@ -73,6 +73,7 @@ but the design system is largely bespoke CSS classes like `.wrap`, `.sec-head`,
 |---|---|---|
 | `OAUTH_GITHUB_CLIENT_ID` | **Vercel → Project → Settings → Environment Variables** | Decap CMS GitHub login (step 1). |
 | `OAUTH_GITHUB_CLIENT_SECRET` | **Vercel** env vars (same place) | Decap CMS GitHub login (step 2). |
+| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | **Vercel** env vars | Contact-form delivery via Web3Forms. This is a *public submit key* by design (it ships in client HTML); Web3Forms handles spam + emailing. Get it from a free account at web3forms.com tied to Shubs' email. |
 | GitHub **OAuth App** (the ID/secret above come from here) | **GitHub → Settings → Developer settings → OAuth Apps** | Defines the callback URL + issues the ID/secret. |
 | Git push / automation token | Managed by the CI / Claude Code web environment — **never in the repo** | Pushing commits. Rotate via GitHub if exposed. |
 
@@ -254,21 +255,26 @@ npm run lint
 Ordered by priority. None of these block the *site* from running; they block the
 *CMS login* and two interactive features.
 
-1. **CMS login / OAuth env vars — IN PROGRESS.**
-   - Symptom seen during setup: visiting `/api/auth` returned
-     `{"error":"OAUTH_GITHUB_CLIENT_ID is not configured"}`.
-   - Cause: the two `OAUTH_GITHUB_*` env vars weren't present in the *deployed*
-     build. Fix = add both in Vercel (scoped to **Production**), then **redeploy**.
+1. **CMS login / OAuth — needs the env vars + a matching OAuth App.**
+   - Code is ready: `base_url` in `config.yml` is now `https://www.shubs.me`.
+   - Remaining manual steps:
+     - **GitHub OAuth App** Homepage `https://www.shubs.me`, callback
+       `https://www.shubs.me/api/callback`.
+     - Add `OAUTH_GITHUB_CLIENT_ID` + `OAUTH_GITHUB_CLIENT_SECRET` in Vercel
+       (scope **Production**), then **redeploy**.
    - Then verify `/admin` login end-to-end and a test publish.
-   - "Enable Device Flow" on the GitHub OAuth App is **not** needed (we use the
-     standard web Authorization Code flow via the callback URL).
+   - "Enable Device Flow" on the OAuth App is **not** needed (standard web
+     Authorization Code flow via the callback URL).
 
-2. **Contact form doesn't send.**
-   - `src/app/contact/page.tsx` shows a success state but has a `// TODO: wire to
-     a real submit endpoint` — `handleSubmit` just sets `submitted = true`.
-   - Wire to an email service (Resend, Formspree, or a Next route handler).
-   - The form's labels/placeholders/options are already CMS-editable in
-     `content/contact.json`.
+2. **Contact form — wired to Web3Forms; needs the access key.**
+   - `src/app/contact/page.tsx` POSTs to `https://api.web3forms.com/submit`
+     with all fields + a hidden `access_key`, a subject/from-name, and a
+     honeypot. On success it shows the confirmation; on failure it shows a
+     retry message.
+   - **To switch it on:** create a free Web3Forms account (tied to Shubs'
+     inbox), copy the access key, add `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in
+     Vercel, redeploy. Until then submissions will error.
+   - Labels/placeholders/options are CMS-editable in `content/contact.json`.
 
 3. **"Book a call" link is a placeholder.**
    - In `content/contact.json` the "Prefer to book directly?" row has
@@ -280,7 +286,8 @@ Ordered by priority. None of these block the *site* from running; they block the
    `[INSERT SHARE CAPITAL]`, `[INSERT VAT NUMBER]`, `[INSERT ANALYTICS PROVIDER]`.
    Shubs/SandiQ to supply; editable in the CMS (Legal pages).
 
-5. **Production domain** `www.shubs.me` not yet connected — see [§8](#8-domain--transfer-checklist).
+5. **Production domain** `www.shubs.me` — **connected.** Confirm Vercel is
+   serving it and that `base_url`/OAuth callback both use it (see [§8](#8-domain--transfer-checklist)).
 
 ---
 

@@ -6,8 +6,13 @@ import ExtLink from '@/components/ExtLink'
 import Em from '@/components/Em'
 import contact from '@/../content/contact.json'
 
+// Web3Forms access key — set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in Vercel.
+// It's a public submit key by design (Web3Forms handles spam + delivery).
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? ''
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle')
   const nameRef = useRef<HTMLInputElement>(null)
   const emailRef = useRef<HTMLInputElement>(null)
   const doneRef = useRef<HTMLHeadingElement>(null)
@@ -18,16 +23,32 @@ export default function Contact() {
     if (submitted) doneRef.current?.focus()
   }, [submitted])
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    const form = e.currentTarget
     const name = nameRef.current
     const email = emailRef.current
     if (!name?.value.trim() || !email?.value.trim()) {
       ;(name?.value.trim() ? email : name)?.focus()
       return
     }
-    // TODO: wire to a real submit endpoint / email service in production.
-    setSubmitted(true)
+
+    setStatus('sending')
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      })
+      const data = (await res.json().catch(() => ({}))) as { success?: boolean }
+      if (res.ok && data.success) {
+        setSubmitted(true)
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   const f = contact.form
@@ -56,6 +77,26 @@ export default function Contact() {
             <h2 className="sr-only">Send a message</h2>
             {!submitted ? (
               <form className="form" onSubmit={handleSubmit} noValidate>
+                {/* Web3Forms config + spam honeypot */}
+                <input type="hidden" name="access_key" value={ACCESS_KEY} />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New enquiry via shubs.me"
+                />
+                <input
+                  type="hidden"
+                  name="from_name"
+                  value="shubs.me contact form"
+                />
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden
+                  style={{ display: 'none' }}
+                />
                 <div className="frow">
                   <div className="field">
                     <label htmlFor="name">{f.nameLabel}</label>
@@ -105,9 +146,27 @@ export default function Contact() {
                     placeholder={f.msgPlaceholder}
                   />
                 </div>
-                <button type="submit" className="btn btn-clay">
-                  {f.submitLabel}
+                <button
+                  type="submit"
+                  className="btn btn-clay"
+                  disabled={status === 'sending'}
+                >
+                  {status === 'sending' ? 'Sending…' : f.submitLabel}
                 </button>
+                {status === 'error' && (
+                  <p
+                    role="alert"
+                    style={{
+                      marginTop: 16,
+                      color: 'var(--clay-deep)',
+                      fontSize: 15,
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Something went wrong sending your message. Please try again,
+                    or reach me via LinkedIn.
+                  </p>
+                )}
               </form>
             ) : (
               <div className="cdone" role="status" aria-live="polite">
