@@ -236,9 +236,10 @@ keep working through the transfer.
 
 What to check/do after transfer:
 
-1. **`config.yml` `repo:`** — currently `samwoodhouse1982/shubs-new-site`. After
-   the repo moves, set this to the new `owner/name`. GitHub redirects the old
-   path, but make it explicit. `base_url` stays `https://www.shubs.me`.
+1. **`config.yml` `repo:`** — currently `samwoodhouse1982/shubs-new-site`. At
+   cutover, change it to **`shubs-me/shubs-new-site`** (the agreed new path).
+   Do this *at* the transfer, not before — the new repo doesn't exist until
+   then. `base_url` stays `https://www.shubs.me`.
 2. **Vercel env vars** — confirm `OAUTH_GITHUB_CLIENT_ID` /
    `OAUTH_GITHUB_CLIENT_SECRET` are present on the transferred project (they
    usually move with it, but verify). Re-add if missing, then **redeploy**.
