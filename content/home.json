@@ -145,8 +145,8 @@
     "label": "Outcomes",
     "title": { "pre": "What I've delivered.", "em": "", "post": "" },
     "heroNum": "200K",
-    "heroLead": "Women reached through a single digital health programme.",
-    "heroBody": "Implementation science support helped transform a promising maternal health pilot into a government-endorsed programme. Each figure here is a real person in the system.",
+    "heroLead": "From pilot to scale in 18 months.",
+    "heroBody": "Implementation science support transformed a promising maternal health pilot into a government-endorsed programme reaching 200,000 women.",
     "items": [
       {
         "title": "NHS-grade clinical credibility",
@@ -155,10 +155,6 @@
       {
         "title": "Policy positioning, internationally",
         "body": "Strategic counsel shaped national digital health roadmaps in partnership with ITU and WHO, securing institutional buy-in across multiple health system contexts."
-      },
-      {
-        "title": "From pilot to scale in 18 months",
-        "body": "Implementation science support transformed a promising maternal health pilot into a government-endorsed programme reaching 200,000 women."
       }
     ]
   },
