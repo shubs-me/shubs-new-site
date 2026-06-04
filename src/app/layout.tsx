@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SiteMotion from "@/components/SiteMotion";
 import ContactFab from "@/components/ContactFab";
+import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 
 const archivo = Archivo({
@@ -88,6 +89,7 @@ export default function RootLayout({
         <Footer />
         <ContactFab />
         <SiteMotion />
+        <Analytics />
       </body>
     </html>
   );
