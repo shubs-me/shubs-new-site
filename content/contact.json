@@ -1,7 +1,7 @@
 {
   "hero": {
     "label": "Contact",
-    "title": { "pre": "Let's build something the ", "em": "right way.", "post": "" },
+    "title": { "pre": "Let's build something the", "em": "right way.", "post": "" },
     "sub": "Whether you're building a digital health product that needs to hold up to clinical scrutiny, or investing in the organisations doing that work, every conversation starts by understanding what you're actually trying to achieve."
   },
   "form": {

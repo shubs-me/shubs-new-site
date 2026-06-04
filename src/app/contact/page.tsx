@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState, Fragment } from 'react'
 import Link from 'next/link'
 import ExtLink from '@/components/ExtLink'
-import Em from '@/components/Em'
 import contact from '@/../content/contact.json'
 
 // Web3Forms access key. This is a *public* submit key by design (it ships in
@@ -66,7 +65,10 @@ export default function Contact() {
         <div className="wrap">
           <span className="label">{contact.hero.label}</span>
           <h1>
-            <Em {...contact.hero.title} />
+            {contact.hero.title.pre}
+            <br />
+            <em>{contact.hero.title.em}</em>
+            {contact.hero.title.post}
           </h1>
           <p className="sub">{contact.hero.sub}</p>
         </div>
