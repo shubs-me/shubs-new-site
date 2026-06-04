@@ -10,6 +10,17 @@ const nextConfig: NextConfig = {
       { source: "/admin/undo", destination: "/admin/undo.html" },
     ];
   },
+  async headers() {
+    // Never cache the kill-switch service workers, so stale devices always
+    // fetch the current self-destructing version on their update check.
+    const noStore = [
+      { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+    ];
+    return [
+      { source: "/sw.js", headers: noStore },
+      { source: "/service-worker.js", headers: noStore },
+    ];
+  },
 };
 
 export default nextConfig;
