@@ -32,11 +32,11 @@
       "body": "No pitch, no hard sell. We start by understanding what you're trying to achieve and whether I'm the right person to help."
     },
     {
-      "k": "Prefer to book directly?",
-      "title": "Grab a time that works",
-      "body": "Skip the form and put a slot in the diary.",
-      "linkLabel": "Book a call →",
-      "linkHref": "#"
+      "k": "Prefer to talk?",
+      "title": "Start a conversation",
+      "body": "Tell me a little about what you're working on and we'll find the right way in.",
+      "linkLabel": "Get in touch →",
+      "linkHref": "/contact"
     },
     {
       "k": "Engagements",
