@@ -73,7 +73,7 @@ but the design system is largely bespoke CSS classes like `.wrap`, `.sec-head`,
 |---|---|---|
 | `OAUTH_GITHUB_CLIENT_ID` | **Vercel → Project → Settings → Environment Variables** | Decap CMS GitHub login (step 1). |
 | `OAUTH_GITHUB_CLIENT_SECRET` | **Vercel** env vars (same place) | Decap CMS GitHub login (step 2). |
-| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | **Vercel** env vars | Contact-form delivery via Web3Forms. This is a *public submit key* by design (it ships in client HTML); Web3Forms handles spam + emailing. Get it from a free account at web3forms.com tied to Shubs' email. |
+| Web3Forms access key | **Committed in code** (`src/app/contact/page.tsx`); optional override via `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in Vercel | Contact-form delivery. This is a *public submit key* by design (it ships in client HTML; Web3Forms handles spam + emailing), so committing it is fine. It belongs to Shubs' Web3Forms form → his inbox. |
 | GitHub **OAuth App** (the ID/secret above come from here) | **GitHub → Settings → Developer settings → OAuth Apps** | Defines the callback URL + issues the ID/secret. |
 | Git push / automation token | Managed by the CI / Claude Code web environment — **never in the repo** | Pushing commits. Rotate via GitHub if exposed. |
 
@@ -218,16 +218,46 @@ in the CMS by design — publishing on Substack updates the site automatically.
 
 ## 8. Domain & transfer checklist
 
-When connecting **`www.shubs.me`** (or transferring the repo to a new owner):
+### Domain (done — `www.shubs.me` is connected)
 
-1. **Vercel:** add the custom domain to the project; set DNS as Vercel instructs.
-2. **`src/lib/site.ts`** already defaults `SITE_URL` to `https://www.shubs.me`
-   — or set `NEXT_PUBLIC_SITE_URL` in Vercel to be explicit.
-3. **`public/admin/config.yml`:** change `base_url` to `https://www.shubs.me`
-   (and `repo:` if the owner changed).
-4. **GitHub OAuth App:** update Homepage + Authorization callback URLs to
-   `https://www.shubs.me` and `https://www.shubs.me/api/callback`.
-5. **Redeploy.** Re-test `/admin` login and a test publish.
+`base_url` in `config.yml` and the default `SITE_URL` already use
+`https://www.shubs.me`. If the domain ever changes, update both, update the
+GitHub OAuth App's Homepage + callback (`/api/callback`) URLs, and redeploy.
+
+### Transferring repo + Vercel project to Shubs — what survives, what to redo
+
+**Key idea:** the three OAuth pieces are *independent* of each other —
+(a) the GitHub **OAuth App**, (b) the **Vercel env vars** holding its
+ID/secret, and (c) `config.yml` (`repo:` + `base_url`). The OAuth App is **not**
+tied to the repo or the Vercel project; it's a standalone GitHub entity keyed
+only by its **callback URL** (`https://www.shubs.me/api/callback`). So as long
+as the **domain stays `www.shubs.me`**, the callback never changes and login can
+keep working through the transfer.
+
+What to check/do after transfer:
+
+1. **`config.yml` `repo:`** — currently `samwoodhouse1982/shubs-new-site`. After
+   the repo moves, set this to the new `owner/name`. GitHub redirects the old
+   path, but make it explicit. `base_url` stays `https://www.shubs.me`.
+2. **Vercel env vars** — confirm `OAUTH_GITHUB_CLIENT_ID` /
+   `OAUTH_GITHUB_CLIENT_SECRET` are present on the transferred project (they
+   usually move with it, but verify). Re-add if missing, then **redeploy**.
+3. **Domain** — confirm `www.shubs.me` is still attached to the project and DNS
+   still points at Vercel.
+4. **Repo write access** — whoever logs into `/admin` must have push access to
+   the repo. Once Shubs owns it, his GitHub login works; add collaborators as
+   needed.
+5. **Recommended for a clean handoff (optional):** have **Shubs create his own
+   GitHub OAuth App** (Homepage `https://www.shubs.me`, callback
+   `https://www.shubs.me/api/callback`), generate a fresh Client ID/Secret, and
+   replace the two Vercel env vars with his. This removes any dependency on
+   Sam's GitHub account (otherwise the existing OAuth App keeps working but
+   stays under Sam's ownership — if he deletes it, CMS login breaks).
+6. **Contact form** — no action. The Web3Forms key is **committed in code**
+   (`src/app/contact/page.tsx`) and Shubs' form already points at his inbox, so
+   it travels with the repo and keeps working.
+7. **Redeploy and re-test:** `/admin` login + a test publish, and a test
+   contact-form submission.
 
 ---
 
@@ -266,14 +296,13 @@ Ordered by priority. None of these block the *site* from running; they block the
    - "Enable Device Flow" on the OAuth App is **not** needed (standard web
      Authorization Code flow via the callback URL).
 
-2. **Contact form — wired to Web3Forms; needs the access key.**
+2. **Contact form — DONE (live once deployed).**
    - `src/app/contact/page.tsx` POSTs to `https://api.web3forms.com/submit`
      with all fields + a hidden `access_key`, a subject/from-name, and a
-     honeypot. On success it shows the confirmation; on failure it shows a
-     retry message.
-   - **To switch it on:** create a free Web3Forms account (tied to Shubs'
-     inbox), copy the access key, add `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in
-     Vercel, redeploy. Until then submissions will error.
+     honeypot. On success it shows the confirmation; on failure, a retry message.
+   - Shubs' Web3Forms key is committed as the default (public submit key), so it
+     works without any env var and survives the transfer. Worth one live test
+     submission after deploy to confirm it lands in his inbox.
    - Labels/placeholders/options are CMS-editable in `content/contact.json`.
 
 3. **"Book a call" link is a placeholder.**

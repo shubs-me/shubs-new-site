@@ -6,9 +6,12 @@ import ExtLink from '@/components/ExtLink'
 import Em from '@/components/Em'
 import contact from '@/../content/contact.json'
 
-// Web3Forms access key — set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in Vercel.
-// It's a public submit key by design (Web3Forms handles spam + delivery).
-const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? ''
+// Web3Forms access key. This is a *public* submit key by design (it ships in
+// the page's HTML; Web3Forms handles spam + delivery), so it's safe to commit.
+// Defaults to Shubs' form; override with NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY if needed.
+const ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+  'd47e93fd-5d67-4c44-bb16-41b3876065da'
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)

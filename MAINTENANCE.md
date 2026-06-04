@@ -115,9 +115,9 @@ pages included. You shouldn't need to touch code for wording changes.
 
 Still to be wired (developer tasks — see `HANDOFF.md` for detail):
 
-- **Contact form** — wired to **Web3Forms**. To switch on delivery, add the
-  Web3Forms access key as `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in Vercel and
-  redeploy (see `HANDOFF.md` §10). Until then, submissions show an error.
+- **Contact form** — wired to **Web3Forms** and sending to Shubs' inbox. Worth
+  a test submission after any major change. (Developer note: the access key is
+  in `src/app/contact/page.tsx`; it's a public submit key by design.)
 - **"Book a call"** — the link is editable in the CMS (Contact page) but still
   points at a placeholder `#`; set it to the real booking link.
 - **Legal details** — `content/legal.json` and `content/cookies.json` contain
