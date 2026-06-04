@@ -4,7 +4,6 @@ import ExtLink from '@/components/ExtLink'
 import InlineCTA from '@/components/InlineCTA'
 import StatNumber from '@/components/StatNumber'
 import Em from '@/components/Em'
-import PopulationFigureGraphic from '@/components/PopulationFigureGraphic'
 import { getEssays } from '@/lib/substack'
 import ticker from '@/../content/ticker.json'
 import stats from '@/../content/stats.json'
@@ -267,15 +266,7 @@ export default async function Home() {
             </h2>
           </div>
           <div className="out-hero">
-            <div className="out-figure">
-              <div className="big">{home.outcomes.heroNum}</div>
-              <PopulationFigureGraphic
-                total={120}
-                highlighted={30}
-                cols={12}
-                className="out-people"
-              />
-            </div>
+            <div className="big">{home.outcomes.heroNum}</div>
             <p>
               <b>{home.outcomes.heroLead}</b> {home.outcomes.heroBody}
             </p>

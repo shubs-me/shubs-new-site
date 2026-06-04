@@ -986,17 +986,6 @@ section {
   color: var(--cream);
   font-weight: 600;
 }
-.out-figure {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(16px, 2vw, 24px);
-}
-.out-people {
-  width: 100%;
-  max-width: 340px;
-  height: auto;
-  display: block;
-}
 .out-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
