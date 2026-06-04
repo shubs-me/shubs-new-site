@@ -14,15 +14,34 @@
          Loads from a CDN; commits edits back to GitHub. -->
     <script src="https://unpkg.com/decap-cms@^3.8.4/dist/decap-cms.js"></script>
     <script>
-      // Add a link to the "Undo recent changes" page in the CMS sidebar.
-      if (window.CMS && window.CMS.registerAdditionalLink) {
-        window.CMS.registerAdditionalLink({
-          id: 'undo',
-          title: 'Undo recent changes',
-          data: '/admin/undo',
-          options: { iconName: 'page' },
-        });
-      }
+      // Floating link to the "Undo recent changes" page. Injected directly so it
+      // doesn't depend on Decap internals, and re-added if the CMS re-renders.
+      (function () {
+        function addUndoLink() {
+          if (document.getElementById('undo-fab')) return;
+          if (!document.body) return;
+          var a = document.createElement('a');
+          a.id = 'undo-fab';
+          a.href = '/admin/undo';
+          a.textContent = '↶ Undo recent changes';
+          a.setAttribute('aria-label', 'Undo recent changes');
+          a.style.cssText = [
+            'position:fixed', 'left:16px', 'bottom:16px', 'z-index:99999',
+            'background:#FC5F84', 'color:#15120E',
+            'font:600 13px/1 -apple-system,BlinkMacSystemFont,system-ui,sans-serif',
+            'padding:11px 16px', 'border-radius:100px',
+            'box-shadow:0 6px 20px rgba(21,18,14,0.28)', 'text-decoration:none',
+            'display:inline-flex', 'align-items:center', 'gap:6px',
+          ].join(';');
+          document.body.appendChild(a);
+        }
+        if (document.readyState !== 'loading') addUndoLink();
+        else document.addEventListener('DOMContentLoaded', addUndoLink);
+        // Decap re-renders the app shell; keep the button present.
+        if (document.body) {
+          new MutationObserver(addUndoLink).observe(document.body, { childList: true });
+        }
+      })();
     </script>
   </body>
 </html>
