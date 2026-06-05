@@ -280,6 +280,7 @@ collections:
                   required: false,
                   default: '',
                 }
+              - { name: logo, label: Company logo (optional), widget: image, required: false }
 
       - name: ticker
         label: Scrolling keywords

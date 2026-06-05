@@ -246,9 +246,15 @@ export default async function Home() {
                 <blockquote>“{t.quote}”</blockquote>
                 {t.rating ? <div className="trating">{t.rating}</div> : null}
                 <div className="tcite">
-                  <b>{t.name}</b>
-                  <br />
-                  {t.role}
+                  {t.logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img className="tlogo" src={t.logo} alt={t.role} />
+                  ) : null}
+                  <span className="tcite-text">
+                    <b>{t.name}</b>
+                    <br />
+                    {t.role}
+                  </span>
                 </div>
               </div>
             ))}
