@@ -315,7 +315,9 @@ a {
   top: clamp(88px, 11vw, 150px);
   bottom: 0;
   width: clamp(320px, 33.34vw, 560px);
-  background: var(--clay);
+  /* Matches the animated hero portrait's own pink backdrop so they blend
+     seamlessly (slightly deeper than --clay). */
+  background: #fb4b7b;
   overflow: hidden;
   border-top-left-radius: clamp(130px, 16vw, 230px);
   display: flex;
