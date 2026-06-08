@@ -1908,6 +1908,7 @@ footer {
   max-width: 104px;
   object-fit: contain;
   flex: none;
+  margin-left: auto;
 }
 @media (max-width: 820px) {
   .tst-grid {
