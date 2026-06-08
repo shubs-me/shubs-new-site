@@ -2048,14 +2048,12 @@ footer {
 .hsec .gap-t,
 .hsec .tcite,
 .hsec .quote cite,
-.hsec .who-card .kicker,
-.hsec .pblock .plist span {
+.hsec .who-card .kicker {
   color: var(--t-muted);
 }
 /* cards + surfaces + dividers */
 .hsec .tcard,
-.hsec .work-card,
-.hsec .eng-card {
+.hsec .work-card {
   background: var(--t-card);
 }
 .hsec .gap-col {
@@ -2097,6 +2095,20 @@ footer {
 .hsec .exp-card,
 .hsec .pillar {
   border-color: var(--t-line);
+}
+/* bullet lists (.plist) + top-bordered cards (.eng-card) */
+.hsec .plist {
+  border-top-color: var(--t-line);
+}
+.hsec .plist span {
+  color: var(--t-fg);
+  border-bottom-color: var(--t-line);
+}
+.hsec .eng-card {
+  border-top-color: var(--t-line);
+}
+.hsec .eng-card .en {
+  color: var(--t-accent);
 }
 
 /* ============ SCROLL ANIMATION ============ */
