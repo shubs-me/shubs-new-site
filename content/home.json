@@ -1,26 +1,107 @@
 {
-  "hero": {
-    "label": "Dr Shubs Upadhyay, Digital Health Advisor",
-    "title": { "pre": "", "em": "Clinical rigour", "post": " at product speed." },
-    "lead": "After a decade inside venture-backed digital health, the NHS, and global health agencies, I know what separates the products that hold up from the ones that don't. I help teams ship faster, prove clinical value, and win over the people who decide whether it succeeds.",
-    "ctaPrimaryLabel": "Let's talk →",
-    "ctaPrimaryHref": "/contact",
-    "ctaSecondaryLabel": "How I work →",
-    "ctaSecondaryHref": "/services",
-    "image": "/images/shubs-pink.webp",
-    "imageAlt": "Dr Shubs Upadhyay"
+  "outcomes": {
+    "label": "Outcomes",
+    "title": {
+      "pre": "What I've delivered.",
+      "em": "",
+      "post": ""
+    },
+    "heroNum": "200K",
+    "heroLead": "From pilot to scale in 18 months.",
+    "heroBody": "Implementation science support transformed a promising maternal health pilot into a government-endorsed programme reaching 200,000 women.",
+    "items": [
+      {
+        "title": "NHS-grade clinical credibility",
+        "body": "Embedded clinical leadership helped a Series B digital therapeutics company restructure its evidence strategy, resulting in a successful NHS procurement worth £3.4M."
+      },
+      {
+        "title": "Policy positioning, internationally",
+        "body": "Strategic counsel shaped national digital health roadmaps in partnership with ITU and WHO, securing institutional buy-in across multiple health system contexts."
+      }
+    ]
+  },
+  "cta": {
+    "label": "Let's work together",
+    "title": {
+      "pre": "Ready to build something ",
+      "em": "the right way?",
+      "post": ""
+    },
+    "body": "Whether you're building digital health that has to work in the real world, or backing the people who do, every conversation starts with what you're actually trying to build.",
+    "ctaLabel": "Get in touch →",
+    "ctaHref": "/contact"
+  },
+  "thinkingHead": {
+    "moreHref": "/thinking",
+    "podBody": "Candid conversations with the people reshaping digital health across 60+ countries.",
+    "podLinkHref": "https://gpodh.org",
+    "podTitle": "Global Perspectives on Digital Health",
+    "podImageAlt": "Shubs, host",
+    "label": "From Shubs",
+    "podLinkLabel": "Listen on gpodh.org →",
+    "podImage": "/images/shubs-pink.webp",
+    "podKicker": "Hosted by Dr Shubs Upadhyay · The GPODH Podcast",
+    "title": {
+      "pre": "Notes from the field.",
+      "em": "",
+      "post": ""
+    },
+    "moreLabel": "Read all insights →"
+  },
+  "engagements": {
+    "label": "How I work · Three formats",
+    "title": {
+      "pre": "Three ways to level up your impact.",
+      "em": "",
+      "post": ""
+    },
+    "cards": [
+      {
+        "num": "01",
+        "title": "Retainer Advisory",
+        "body": "Ongoing senior counsel to founders and leadership teams. On-site presence where it matters, in the real decisions: board conversations, clinical-product reviews, evidence strategy, commercial alignment."
+      },
+      {
+        "num": "02",
+        "title": "Three-Month Sprint",
+        "body": "A focused intensive designed to resolve a specific strategic or operational challenge. Defined scope, clear deliverables, and a concrete output your team can run with."
+      },
+      {
+        "num": "03",
+        "title": "Workshop & Keynote",
+        "body": "A single high-impact session for leadership teams, boards, or investor portfolios. I run workshops and keynotes at companies and conferences across Europe."
+      }
+    ]
+  },
+  "testimonialsHead": {
+    "label": "Testimonials",
+    "title": {
+      "pre": "What it's like to work with me.",
+      "em": "",
+      "post": ""
+    }
   },
   "gap": {
     "label": "Why this matters",
-    "title": { "pre": "The gap I keep seeing.", "em": "", "post": "" },
+    "title": {
+      "pre": "The gap I keep seeing.",
+      "em": "",
+      "post": ""
+    },
     "rows": [
       {
         "n": "01",
         "tag": "The Problem",
         "heading": "What it costs when clinical comes in too late.",
         "paras": [
-          { "lead": "", "text": "The digital health industry celebrates the wrong signals. Accuracy scores, engagement metrics, adoption curves. Easy to report, and none of it the same as health outcomes." },
-          { "lead": "", "text": "Most products are built by smart, motivated people. The problem isn't technology or intent, it's that the definition of value gets decided too late, in the wrong room, by people who aren't equipped to make it. Clinical input arrives at the end to sign off rather than at the start to shape decisions." }
+          {
+            "lead": "",
+            "text": "The digital health industry celebrates the wrong signals. Accuracy scores, engagement metrics, adoption curves. Easy to report, and none of it the same as health outcomes."
+          },
+          {
+            "lead": "",
+            "text": "Most products are built by smart, motivated people. The problem isn't technology or intent, it's that the definition of value gets decided too late, in the wrong room, by people who aren't equipped to make it. Clinical input arrives at the end to sign off rather than at the start to shape decisions."
+          }
         ]
       },
       {
@@ -28,8 +109,14 @@
         "tag": "The Cost",
         "heading": "What it costs when this goes wrong.",
         "paras": [
-          { "lead": "Builders and teams.", "text": "Deals stall in procurement because the clinical story wasn't built into the product from the start. Safety and quality incidents surface late and expensively. Regulatory submissions take three times as long as they should." },
-          { "lead": "Funders and investors.", "text": "Portfolio companies report impressive activity metrics while missing the clinical outcomes that determine whether a health system buys, renews, or recommends. The gap between what was pitched and what actually works tends to stay hidden, until a renewal, audit or safety review brings it into the open." }
+          {
+            "lead": "Builders and teams.",
+            "text": "Deals stall in procurement because the clinical story wasn't built into the product from the start. Safety and quality incidents surface late and expensively. Regulatory submissions take three times as long as they should."
+          },
+          {
+            "lead": "Funders and investors.",
+            "text": "Portfolio companies report impressive activity metrics while missing the clinical outcomes that determine whether a health system buys, renews, or recommends. The gap between what was pitched and what actually works tends to stay hidden, until a renewal, audit or safety review brings it into the open."
+          }
         ]
       },
       {
@@ -37,15 +124,56 @@
         "tag": "The Solution",
         "heading": "There's a better way to work, and I can help you build it.",
         "paras": [
-          { "lead": "", "text": "Clinical rigour and product velocity are not opposites. They are a function of how clinical, product, commercial, and regulatory work is set up to happen together. When I come in early, shaping product decisions rather than reviewing them at the end, teams ship faster, build stronger evidence, and arrive at conversations with commissioners, regulators, and investors with a case that stands up." },
-          { "lead": "", "text": "I work with founders, product leaders, and medical leaders to build that way of working, tuned to where your organisation actually is, not lifted from a framework." }
+          {
+            "lead": "",
+            "text": "Clinical rigour and product velocity are not opposites. They are a function of how clinical, product, commercial, and regulatory work is set up to happen together. When I come in early, shaping product decisions rather than reviewing them at the end, teams ship faster, build stronger evidence, and arrive at conversations with commissioners, regulators, and investors with a case that stands up."
+          },
+          {
+            "lead": "",
+            "text": "I work with founders, product leaders, and medical leaders to build that way of working, tuned to where your organisation actually is, not lifted from a framework."
+          }
         ]
       }
     ]
   },
+  "lived": {
+    "label": "Why work with me",
+    "title": {
+      "pre": "Lived, ",
+      "em": "not lifted.",
+      "post": ""
+    },
+    "paras": [
+      "I'm a physician who has spent a decade at the point where these problems actually get solved. As senior clinical and medical director at a venture-backed digital health company deploying regulated AI across multiple markets, my work was defining what good looked like, for which patients, against what counterfactual, and then building the practices that could deliver it at the pace the business demanded.",
+      "That work has continued since. Co-chairing a WHO working group on AI evaluation. Clinical practice across different health systems. Keynotes for senior tech and product audiences at companies like Doctolib, the Wellcome Trust, and conferences across Europe.",
+      "I don't bring an old playbook. I apply hard-won lessons from having lived your challenges, and fluently direct the conversation and translate that into dynamic actions that can support every discipline in the room."
+    ],
+    "tag": "Physician · Advisor · Host",
+    "image": "/images/shubs-keynote.jpg",
+    "imageAlt": "Dr Shubs Upadhyay delivering a keynote"
+  },
+  "hero": {
+    "ctaPrimaryLabel": "Let's talk →",
+    "imageAlt": "Dr Shubs Upadhyay",
+    "ctaSecondaryHref": "/services",
+    "ctaSecondaryLabel": "How I work →",
+    "label": "Dr Shubs Upadhyay, Trusted Digital Health Advisor",
+    "title": {
+      "pre": "",
+      "em": "Clinical rigour",
+      "post": " at product speed."
+    },
+    "image": "/images/shubs-pink.webp",
+    "lead": "After a decade inside venture-backed digital health, the NHS, and global health agencies, I know what separates the products that hold up from the ones that don't. I help teams ship faster, prove clinical value, and win over the people who decide whether it succeeds.",
+    "ctaPrimaryHref": "/contact"
+  },
   "practice": {
     "label": "What I do",
-    "title": { "pre": "Where I focus.", "em": "", "post": "" },
+    "title": {
+      "pre": "Where I focus.",
+      "em": "",
+      "post": ""
+    },
     "blocks": [
       {
         "num": "01",
@@ -71,9 +199,19 @@
       }
     ]
   },
+  "quote": {
+    "label": "In my words",
+    "pre": "Very few advisors can hold all of those conversations. That is why founders, product leaders, and the investors who back them ",
+    "em": "bring me in.",
+    "cite": "Dr Shubs Upadhyay"
+  },
   "who": {
     "label": "Who I work with",
-    "title": { "pre": "I work directly with you.", "em": "", "post": "" },
+    "title": {
+      "pre": "I work directly with you.",
+      "em": "",
+      "post": ""
+    },
     "cards": [
       {
         "kicker": "People building",
@@ -97,85 +235,5 @@
         "moreHref": "/services"
       }
     ]
-  },
-  "engagements": {
-    "label": "How I work · Three formats",
-    "title": { "pre": "Three ways to level up your impact.", "em": "", "post": "" },
-    "cards": [
-      {
-        "num": "01",
-        "title": "Retainer Advisory",
-        "body": "Ongoing senior counsel to founders and leadership teams. On-site presence where it matters, in the real decisions: board conversations, clinical-product reviews, evidence strategy, commercial alignment."
-      },
-      {
-        "num": "02",
-        "title": "Three-Month Sprint",
-        "body": "A focused intensive designed to resolve a specific strategic or operational challenge. Defined scope, clear deliverables, and a concrete output your team can run with."
-      },
-      {
-        "num": "03",
-        "title": "Workshop & Keynote",
-        "body": "A single high-impact session for leadership teams, boards, or investor portfolios. I run workshops and keynotes at companies and conferences across Europe."
-      }
-    ]
-  },
-  "lived": {
-    "label": "Why work with me",
-    "title": { "pre": "Lived, ", "em": "not lifted.", "post": "" },
-    "paras": [
-      "I'm a physician who has spent a decade at the point where these problems actually get solved. As senior clinical and medical director at a venture-backed digital health company deploying regulated AI across multiple markets, my work was defining what good looked like, for which patients, against what counterfactual, and then building the practices that could deliver it at the pace the business demanded.",
-      "That work has continued since. Co-chairing a WHO working group on AI evaluation. Clinical practice across different health systems. Keynotes for senior tech and product audiences at companies like Doctolib, the Wellcome Trust, and conferences across Europe.",
-      "I don't bring an old playbook. I apply hard-won lessons from having lived your challenges, and fluently direct the conversation and translate that into dynamic actions that can support every discipline in the room."
-    ],
-    "tag": "Physician · Advisor · Host",
-    "image": "/images/shubs-keynote.jpg",
-    "imageAlt": "Dr Shubs Upadhyay delivering a keynote"
-  },
-  "quote": {
-    "label": "In my words",
-    "pre": "Very few advisors can hold all of those conversations. That is why founders, product leaders, and the investors who back them ",
-    "em": "bring me in.",
-    "cite": "Dr Shubs Upadhyay"
-  },
-  "testimonialsHead": {
-    "label": "Testimonials",
-    "title": { "pre": "What it's like to work with me.", "em": "", "post": "" }
-  },
-  "outcomes": {
-    "label": "Outcomes",
-    "title": { "pre": "What I've delivered.", "em": "", "post": "" },
-    "heroNum": "200K",
-    "heroLead": "From pilot to scale in 18 months.",
-    "heroBody": "Implementation science support transformed a promising maternal health pilot into a government-endorsed programme reaching 200,000 women.",
-    "items": [
-      {
-        "title": "NHS-grade clinical credibility",
-        "body": "Embedded clinical leadership helped a Series B digital therapeutics company restructure its evidence strategy, resulting in a successful NHS procurement worth £3.4M."
-      },
-      {
-        "title": "Policy positioning, internationally",
-        "body": "Strategic counsel shaped national digital health roadmaps in partnership with ITU and WHO, securing institutional buy-in across multiple health system contexts."
-      }
-    ]
-  },
-  "thinkingHead": {
-    "label": "From Shubs",
-    "title": { "pre": "Notes from the field.", "em": "", "post": "" },
-    "moreLabel": "Read all insights →",
-    "moreHref": "/thinking",
-    "podImage": "/images/shubs-pink.webp",
-    "podImageAlt": "Shubs, host",
-    "podKicker": "Hosted by Dr Shubs Upadhyay · The GPODH Podcast",
-    "podTitle": "Global Perspectives on Digital Health",
-    "podBody": "Candid conversations with the people reshaping digital health across 60+ countries.",
-    "podLinkLabel": "Listen on gpodh.org →",
-    "podLinkHref": "https://gpodh.org"
-  },
-  "cta": {
-    "label": "Let's work together",
-    "title": { "pre": "Ready to build something ", "em": "the right way?", "post": "" },
-    "body": "Whether you're building digital health that has to work in the real world, or backing the people who do, every conversation starts with what you're actually trying to build.",
-    "ctaLabel": "Get in touch →",
-    "ctaHref": "/contact"
   }
 }
