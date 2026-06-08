@@ -117,6 +117,67 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* OUTCOMES */}
+      <section>
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">{home.outcomes.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.outcomes.title} />
+            </h2>
+          </div>
+          <div className="out-hero">
+            <div className="big">{home.outcomes.heroNum}</div>
+            <p>
+              <b>{home.outcomes.heroLead}</b> {home.outcomes.heroBody}
+            </p>
+          </div>
+          <div className="out-list">
+            {home.outcomes.items.map((item) => (
+              <div className="out-item" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="light">
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">{home.testimonialsHead.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.testimonialsHead.title} />
+            </h2>
+          </div>
+          <div className="tst-grid">
+            {TESTIMONIALS.map((t, i) => (
+              <div className="tcard" key={i}>
+                <blockquote>“{t.quote}”</blockquote>
+                {t.rating ? <div className="trating">{t.rating}</div> : null}
+                <div className="tcite">
+                  <span className="tcite-text">
+                    <b>{t.name}</b>
+                    <br />
+                    {t.role}
+                  </span>
+                  {t.logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      className={`tlogo${t.logoBig ? ' tlogo-lg' : ''}`}
+                      src={t.logo}
+                      alt={t.role}
+                    />
+                  ) : null}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PRACTICE */}
       <section id="practice">
         <div className="wrap">
@@ -236,67 +297,6 @@ export default async function Home() {
             <em>{home.quote.em}”</em>
           </blockquote>
           <cite>{home.quote.cite}</cite>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="light">
-        <div className="wrap">
-          <div className="sec-head">
-            <span className="label">{home.testimonialsHead.label}</span>
-            <h2 className="sec-title">
-              <Em {...home.testimonialsHead.title} />
-            </h2>
-          </div>
-          <div className="tst-grid">
-            {TESTIMONIALS.map((t, i) => (
-              <div className="tcard" key={i}>
-                <blockquote>“{t.quote}”</blockquote>
-                {t.rating ? <div className="trating">{t.rating}</div> : null}
-                <div className="tcite">
-                  <span className="tcite-text">
-                    <b>{t.name}</b>
-                    <br />
-                    {t.role}
-                  </span>
-                  {t.logo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      className={`tlogo${t.logoBig ? ' tlogo-lg' : ''}`}
-                      src={t.logo}
-                      alt={t.role}
-                    />
-                  ) : null}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* OUTCOMES */}
-      <section>
-        <div className="wrap">
-          <div className="sec-head">
-            <span className="label">{home.outcomes.label}</span>
-            <h2 className="sec-title">
-              <Em {...home.outcomes.title} />
-            </h2>
-          </div>
-          <div className="out-hero">
-            <div className="big">{home.outcomes.heroNum}</div>
-            <p>
-              <b>{home.outcomes.heroLead}</b> {home.outcomes.heroBody}
-            </p>
-          </div>
-          <div className="out-list">
-            {home.outcomes.items.map((item) => (
-              <div className="out-item" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
