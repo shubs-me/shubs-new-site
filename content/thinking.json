@@ -1,4 +1,9 @@
 {
+  "layout": [
+    { "id": "insights", "theme": "light" },
+    { "id": "podcast", "theme": "dark" },
+    { "id": "cta", "theme": "dark" }
+  ],
   "hero": {
     "label": "Thinking",
     "title": { "pre": "The industry talks to itself. ", "em": "I don't.", "post": "" },

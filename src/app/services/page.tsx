@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { cloneElement, type ReactElement } from 'react'
 import Link from 'next/link'
 import InlineCTA from '@/components/InlineCTA'
 import Em from '@/components/Em'
@@ -15,21 +16,9 @@ export const metadata: Metadata = {
 const PROCESS = process.items
 
 export default function Services() {
-  return (
-    <>
-      {/* HERO */}
-      <header className="page-hero">
-        <div className="wrap">
-          <span className="label">{services.hero.label}</span>
-          <h1>
-            <Em {...services.hero.title} />
-          </h1>
-          <p className="sub">{services.hero.sub}</p>
-        </div>
-      </header>
-
-      {/* WHO */}
-      <section className="light">
+  const sections: Record<string, ReactElement> = {
+    who: (
+      <section className="hsec">
         <div className="wrap">
           <div className="sec-head">
             <span className="label">{services.who.label}</span>
@@ -56,9 +45,10 @@ export default function Services() {
           ))}
         </div>
       </section>
+    ),
 
-      {/* PILLARS */}
-      <section>
+    pillars: (
+      <section className="hsec">
         <div className="wrap">
           <div className="sec-head">
             <span className="label">{services.pillarsHead.label}</span>
@@ -87,12 +77,10 @@ export default function Services() {
           ))}
         </div>
       </section>
+    ),
 
-      {/* INLINE CTA */}
-      <InlineCTA text={services.cta1.text} cta={services.cta1.cta} />
-
-      {/* QUOTE */}
-      <section className="quote">
+    quote: (
+      <section className="hsec quote">
         <div className="wrap">
           <span className="label" style={{ marginBottom: 30 }}>
             {services.quote.label}
@@ -104,9 +92,10 @@ export default function Services() {
           <cite>{services.quote.cite}</cite>
         </div>
       </section>
+    ),
 
-      {/* PROCESS */}
-      <section className="light">
+    process: (
+      <section className="hsec">
         <div className="wrap">
           <div className="sec-head">
             <span className="label">{services.processHead.label}</span>
@@ -125,9 +114,10 @@ export default function Services() {
           </div>
         </div>
       </section>
+    ),
 
-      {/* CTA */}
-      <section className="contact">
+    cta: (
+      <section className="hsec contact">
         <div className="wrap">
           <span className="label">{services.cta.label}</span>
           <h2>
@@ -155,6 +145,38 @@ export default function Services() {
           </Link>
         </div>
       </section>
+    ),
+  }
+
+  return (
+    <>
+      {/* HERO (fixed page header) */}
+      <header className="page-hero">
+        <div className="wrap">
+          <span className="label">{services.hero.label}</span>
+          <h1>
+            <Em {...services.hero.title} />
+          </h1>
+          <p className="sub">{services.hero.sub}</p>
+        </div>
+      </header>
+
+      {/* Sections, ordered + themed by the CMS (services.layout) */}
+      {services.layout.map((s, i) => {
+        if (s.id === 'inlinecta')
+          return (
+            <InlineCTA
+              key={`inlinecta-${i}`}
+              text={services.cta1.text}
+              cta={services.cta1.cta}
+            />
+          )
+        const el = sections[s.id] as
+          | ReactElement<Record<string, unknown>>
+          | undefined
+        if (!el) return null
+        return cloneElement(el, { key: `${s.id}-${i}`, 'data-theme': s.theme })
+      })}
     </>
   )
 }

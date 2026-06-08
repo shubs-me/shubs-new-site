@@ -2067,6 +2067,37 @@ footer {
 .hsec .stat {
   border-color: var(--t-line);
 }
+/* additional element coverage for About / Services / Thinking sections */
+.hsec .aud .ak,
+.hsec .pillar .pa,
+.hsec .pillar .idl-label,
+.hsec .feat .date,
+.hsec .pod .k,
+.hsec .exp-card .kicker {
+  color: var(--t-accent);
+}
+.hsec h2,
+.hsec .pillar .plead,
+.hsec .prose p b,
+.hsec .prose p strong,
+.hsec .exp-card li b {
+  color: var(--t-fg);
+}
+.hsec .prose p,
+.hsec .aud .ab,
+.hsec .idl-grid span,
+.hsec .exp-card li,
+.hsec .think-row .date {
+  color: var(--t-muted);
+}
+.hsec .feat,
+.hsec .pod {
+  background: var(--t-card);
+}
+.hsec .exp-card,
+.hsec .pillar {
+  border-color: var(--t-line);
+}
 
 /* ============ SCROLL ANIMATION ============ */
 .reveal {

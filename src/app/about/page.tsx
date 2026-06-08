@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fragment } from 'react'
+import { Fragment, cloneElement, type ReactElement } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
@@ -15,21 +15,9 @@ export const metadata: Metadata = {
 }
 
 export default function About() {
-  return (
-    <>
-      {/* HERO */}
-      <header className="page-hero">
-        <div className="wrap">
-          <span className="label">{about.hero.label}</span>
-          <h1>
-            <Em {...about.hero.title} />
-          </h1>
-          <p className="sub">{about.hero.sub}</p>
-        </div>
-      </header>
-
-      {/* FOUNDED */}
-      <section className="light">
+  const sections: Record<string, ReactElement> = {
+    founded: (
+      <section className="hsec">
         <div className="wrap founded">
           <div>
             <div className="sec-head">
@@ -49,9 +37,10 @@ export default function About() {
           </div>
         </div>
       </section>
+    ),
 
-      {/* EXPERIENCE */}
-      <section>
+    experience: (
+      <section className="hsec">
         <div className="wrap">
           <div className="sec-head">
             <span className="label">{about.experience.label}</span>
@@ -78,12 +67,10 @@ export default function About() {
           </div>
         </div>
       </section>
+    ),
 
-      {/* INLINE CTA */}
-      <InlineCTA text={about.cta1.text} cta={about.cta1.cta} />
-
-      {/* PERSON */}
-      <section className="light">
+    person: (
+      <section className="hsec">
         <div className="wrap lived">
           <div>
             <div className="photo-card">
@@ -143,9 +130,10 @@ export default function About() {
           </div>
         </div>
       </section>
+    ),
 
-      {/* MANIFESTO */}
-      <section>
+    manifesto: (
+      <section className="hsec">
         <div className="wrap">
           <div className="sec-head">
             <span className="label">{about.manifesto.label}</span>
@@ -164,9 +152,10 @@ export default function About() {
           </div>
         </div>
       </section>
+    ),
 
-      {/* CTA */}
-      <section className="contact">
+    cta: (
+      <section className="hsec contact">
         <div className="wrap">
           <span className="label">{about.cta.label}</span>
           <h2>
@@ -191,6 +180,38 @@ export default function About() {
           </Link>
         </div>
       </section>
+    ),
+  }
+
+  return (
+    <>
+      {/* HERO (fixed page header) */}
+      <header className="page-hero">
+        <div className="wrap">
+          <span className="label">{about.hero.label}</span>
+          <h1>
+            <Em {...about.hero.title} />
+          </h1>
+          <p className="sub">{about.hero.sub}</p>
+        </div>
+      </header>
+
+      {/* Sections, ordered + themed by the CMS (about.layout) */}
+      {about.layout.map((s, i) => {
+        if (s.id === 'inlinecta')
+          return (
+            <InlineCTA
+              key={`inlinecta-${i}`}
+              text={about.cta1.text}
+              cta={about.cta1.cta}
+            />
+          )
+        const el = sections[s.id] as
+          | ReactElement<Record<string, unknown>>
+          | undefined
+        if (!el) return null
+        return cloneElement(el, { key: `${s.id}-${i}`, 'data-theme': s.theme })
+      })}
     </>
   )
 }

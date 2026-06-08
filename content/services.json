@@ -1,4 +1,12 @@
 {
+  "layout": [
+    { "id": "who", "theme": "light" },
+    { "id": "pillars", "theme": "dark" },
+    { "id": "inlinecta", "theme": "dark" },
+    { "id": "quote", "theme": "dark" },
+    { "id": "process", "theme": "light" },
+    { "id": "cta", "theme": "dark" }
+  ],
   "hero": {
     "label": "Services",
     "title": { "pre": "Clinical expertise, deployed where it ", "em": "counts.", "post": "" },

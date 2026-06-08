@@ -1,4 +1,12 @@
 {
+  "layout": [
+    { "id": "founded", "theme": "light" },
+    { "id": "experience", "theme": "dark" },
+    { "id": "inlinecta", "theme": "dark" },
+    { "id": "person", "theme": "light" },
+    { "id": "manifesto", "theme": "dark" },
+    { "id": "cta", "theme": "dark" }
+  ],
   "hero": {
     "label": "About",
     "title": { "pre": "The thinking behind ", "em": "the practice.", "post": "" },

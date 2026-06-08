@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { cloneElement, type ReactElement } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ExtLink from '@/components/ExtLink'
@@ -18,33 +19,9 @@ export default async function Thinking() {
   const featured = essays[0]
   const archive = essays.slice(1)
 
-  return (
-    <>
-      {/* HERO */}
-      <header className="page-hero">
-        <div className="wrap think-hero">
-          <div>
-            <span className="label">{thinking.hero.label}</span>
-            <h1>
-              <Em {...thinking.hero.title} />
-            </h1>
-            <p className="sub">{thinking.hero.sub}</p>
-          </div>
-          <div className="think-hero-photo">
-            <Image
-              src={thinking.hero.image}
-              alt={thinking.hero.imageAlt}
-              fill
-              loading="lazy"
-              sizes="(max-width: 860px) 70vw, 34vw"
-              style={{ objectFit: 'cover', objectPosition: 'center top' }}
-            />
-          </div>
-        </div>
-      </header>
-
-      {/* INSIGHTS */}
-      <section className="light">
+  const sections: Record<string, ReactElement> = {
+    insights: (
+      <section className="hsec">
         <div className="wrap">
           <div className="sec-head">
             <span className="label">{thinking.insightsHead.label}</span>
@@ -90,9 +67,10 @@ export default async function Thinking() {
           )}
         </div>
       </section>
+    ),
 
-      {/* PODCAST */}
-      <section>
+    podcast: (
+      <section className="hsec">
         <div className="wrap">
           <div className="sec-head">
             <span className="label">{thinking.podcast.label}</span>
@@ -118,9 +96,10 @@ export default async function Thinking() {
           </div>
         </div>
       </section>
+    ),
 
-      {/* KEEP IN TOUCH */}
-      <section className="contact">
+    cta: (
+      <section className="hsec contact">
         <div className="wrap">
           <span className="label">{thinking.cta.label}</span>
           <h2>
@@ -145,6 +124,42 @@ export default async function Thinking() {
           </Link>
         </div>
       </section>
+    ),
+  }
+
+  return (
+    <>
+      {/* HERO (fixed page header) */}
+      <header className="page-hero">
+        <div className="wrap think-hero">
+          <div>
+            <span className="label">{thinking.hero.label}</span>
+            <h1>
+              <Em {...thinking.hero.title} />
+            </h1>
+            <p className="sub">{thinking.hero.sub}</p>
+          </div>
+          <div className="think-hero-photo">
+            <Image
+              src={thinking.hero.image}
+              alt={thinking.hero.imageAlt}
+              fill
+              loading="lazy"
+              sizes="(max-width: 860px) 70vw, 34vw"
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            />
+          </div>
+        </div>
+      </header>
+
+      {/* Sections, ordered + themed by the CMS (thinking.layout) */}
+      {thinking.layout.map((s, i) => {
+        const el = sections[s.id] as
+          | ReactElement<Record<string, unknown>>
+          | undefined
+        if (!el) return null
+        return cloneElement(el, { key: `${s.id}-${i}`, 'data-theme': s.theme })
+      })}
     </>
   )
 }

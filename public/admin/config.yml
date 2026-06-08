@@ -356,6 +356,31 @@ collections:
         file: content/about.json
         description: Every heading, paragraph and image on the about page.
         fields:
+          - name: layout
+            label: "Page layout — drag to reorder, set each section's theme"
+            label_singular: Section
+            widget: list
+            summary: "{{fields.id}} · {{fields.theme}}"
+            hint: "Drag to reorder. Remove a row to hide that section. Theme sets background + text colour."
+            fields:
+              - name: id
+                label: Section
+                widget: select
+                options:
+                  - { label: "Why I exist", value: founded }
+                  - { label: "Experience grid", value: experience }
+                  - { label: "Mid-page CTA band", value: inlinecta }
+                  - { label: "The person behind it", value: person }
+                  - { label: "Manifesto", value: manifesto }
+                  - { label: "Closing contact CTA", value: cta }
+              - name: theme
+                label: Theme
+                widget: select
+                default: dark
+                options:
+                  - { label: "Light — cream background, dark text", value: light }
+                  - { label: "Dark — ink background, cream text", value: dark }
+                  - { label: "Pink — clay background, dark text", value: pink }
           - name: hero
             label: Hero (top of page)
             widget: object
@@ -470,6 +495,31 @@ collections:
         file: content/services.json
         description: Every heading, paragraph and list on the services page.
         fields:
+          - name: layout
+            label: "Page layout — drag to reorder, set each section's theme"
+            label_singular: Section
+            widget: list
+            summary: "{{fields.id}} · {{fields.theme}}"
+            hint: "Drag to reorder. Remove a row to hide that section. Theme sets background + text colour."
+            fields:
+              - name: id
+                label: Section
+                widget: select
+                options:
+                  - { label: "Who I work with", value: who }
+                  - { label: "Practice areas (pillars)", value: pillars }
+                  - { label: "Mid-page CTA band", value: inlinecta }
+                  - { label: "Pull quote", value: quote }
+                  - { label: "Process steps", value: process }
+                  - { label: "Closing contact CTA", value: cta }
+              - name: theme
+                label: Theme
+                widget: select
+                default: dark
+                options:
+                  - { label: "Light — cream background, dark text", value: light }
+                  - { label: "Dark — ink background, cream text", value: dark }
+                  - { label: "Pink — clay background, dark text", value: pink }
           - name: hero
             label: Hero (top of page)
             widget: object
@@ -661,6 +711,28 @@ collections:
         file: content/thinking.json
         description: Headings and images on the thinking page. The article list is pulled from Substack automatically.
         fields:
+          - name: layout
+            label: "Page layout — drag to reorder, set each section's theme"
+            label_singular: Section
+            widget: list
+            summary: "{{fields.id}} · {{fields.theme}}"
+            hint: "Drag to reorder. Remove a row to hide that section. Theme sets background + text colour."
+            fields:
+              - name: id
+                label: Section
+                widget: select
+                options:
+                  - { label: "Insights (Shubstack feed)", value: insights }
+                  - { label: "Podcast", value: podcast }
+                  - { label: "Closing contact CTA", value: cta }
+              - name: theme
+                label: Theme
+                widget: select
+                default: dark
+                options:
+                  - { label: "Light — cream background, dark text", value: light }
+                  - { label: "Dark — ink background, cream text", value: dark }
+                  - { label: "Pink — clay background, dark text", value: pink }
           - name: hero
             label: Hero (top of page)
             widget: object
