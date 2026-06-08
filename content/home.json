@@ -1,25 +1,4 @@
 {
-  "layout": [
-    { "id": "gap", "theme": "light" },
-    { "id": "stats", "theme": "pink" },
-    { "id": "practice", "theme": "dark" },
-    { "id": "work", "theme": "light" },
-    { "id": "outcomes", "theme": "dark" },
-    { "id": "testimonials", "theme": "light" },
-    { "id": "who", "theme": "light" },
-    { "id": "inlinecta", "theme": "dark" },
-    { "id": "quote", "theme": "dark" },
-    { "id": "contact", "theme": "dark" }
-  ],
-  "work": {
-    "label": "Case studies",
-    "title": { "pre": "My work.", "em": "", "post": "" },
-    "cards": [
-      { "num": "01", "body": "Built and implemented medical quality and outcomes frameworks for Series B + companies" },
-      { "num": "02", "body": "Delivered keynotes to Tech and Product executive leadership to drive strategy and direction" },
-      { "num": "03", "body": "Unified commercial narrative and impact evidence generation for a scaling clinical AI company" }
-    ]
-  },
   "outcomes": {
     "label": "Outcomes",
     "title": {
@@ -41,6 +20,48 @@
       }
     ]
   },
+  "layout": [
+    {
+      "id": "contact",
+      "theme": "dark"
+    },
+    {
+      "id": "gap",
+      "theme": "light"
+    },
+    {
+      "id": "stats",
+      "theme": "pink"
+    },
+    {
+      "id": "practice",
+      "theme": "dark"
+    },
+    {
+      "id": "work",
+      "theme": "light"
+    },
+    {
+      "id": "outcomes",
+      "theme": "dark"
+    },
+    {
+      "id": "testimonials",
+      "theme": "light"
+    },
+    {
+      "id": "who",
+      "theme": "light"
+    },
+    {
+      "id": "inlinecta",
+      "theme": "dark"
+    },
+    {
+      "id": "quote",
+      "theme": "dark"
+    }
+  ],
   "cta": {
     "label": "Let's work together",
     "title": {
@@ -68,6 +89,28 @@
       "post": ""
     },
     "moreLabel": "Read all insights →"
+  },
+  "work": {
+    "label": "Case studies",
+    "title": {
+      "pre": "My work.",
+      "em": "",
+      "post": ""
+    },
+    "cards": [
+      {
+        "num": "01",
+        "body": "Built and implemented medical quality and outcomes frameworks for Series B + companies"
+      },
+      {
+        "num": "02",
+        "body": "Delivered keynotes to Tech and Product executive leadership to drive strategy and direction"
+      },
+      {
+        "num": "03",
+        "body": "Unified commercial narrative and impact evidence generation for a scaling clinical AI company"
+      }
+    ]
   },
   "engagements": {
     "label": "How I work · Three formats",
