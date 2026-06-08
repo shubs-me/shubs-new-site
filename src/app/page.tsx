@@ -102,6 +102,35 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* PRACTICE */}
+      <section id="practice">
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">{home.practice.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.practice.title} />
+            </h2>
+          </div>
+          {home.practice.blocks.map((block) => (
+            <div className="pblock" key={block.num}>
+              <div className="pnum">{block.num}</div>
+              <div>
+                <h3>{block.title}</h3>
+                <p>{block.body}</p>
+                <div className="plist">
+                  {block.list.map((item, i) => (
+                    <span key={i}>{item}</span>
+                  ))}
+                </div>
+                <Link href={block.moreHref} className="more">
+                  {block.moreLabel}
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* STATS */}
       <section className="stats">
         <div className="wrap">
@@ -175,35 +204,6 @@ export default async function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* PRACTICE */}
-      <section id="practice">
-        <div className="wrap">
-          <div className="sec-head">
-            <span className="label">{home.practice.label}</span>
-            <h2 className="sec-title">
-              <Em {...home.practice.title} />
-            </h2>
-          </div>
-          {home.practice.blocks.map((block) => (
-            <div className="pblock" key={block.num}>
-              <div className="pnum">{block.num}</div>
-              <div>
-                <h3>{block.title}</h3>
-                <p>{block.body}</p>
-                <div className="plist">
-                  {block.list.map((item, i) => (
-                    <span key={i}>{item}</span>
-                  ))}
-                </div>
-                <Link href={block.moreHref} className="more">
-                  {block.moreLabel}
-                </Link>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
