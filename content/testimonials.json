@@ -5,28 +5,32 @@
       "name": "Dr Claire Novorol",
       "role": "Ada Health",
       "rating": "",
-      "logo": "/images/ada-health.png"
+      "logo": "/images/ada-health.png",
+      "logoBig": true
     },
     {
       "quote": "Shubs helped us bring clarity and focus to both our value messaging and evidence generation strategy. We highly recommend working with Shubs.",
       "name": "CEO",
       "role": "Sanome",
       "rating": "",
-      "logo": "/images/sanome.png"
+      "logo": "/images/sanome.png",
+      "logoBig": false
     },
     {
       "quote": "Your work was valued across our clinical, product, AI scientist and engineering leaders. We now use the ‘clinical value’ and ‘measure what matters’ framework in our day to day work.",
       "name": "Medical Leader",
       "role": "Doctolib",
       "rating": "Rated 5/5 · Value delivered, professionalism, clarity, quality",
-      "logo": "/images/Doctolib_Dark_Blue.png"
+      "logo": "/images/Doctolib_Dark_Blue.png",
+      "logoBig": false
     },
     {
       "quote": "Shubs helped shape a clear narrative drawing on first-hand experience and real-world implementation, one that we can take away into our discussions with researchers, policy makers, and other funders and that will inform our investment strategy going forwards.",
       "name": "Guy Parsons",
       "role": "Technology Lead, Wellcome Trust",
       "rating": "",
-      "logo": "/images/wellcome-trust.png"
+      "logo": "/images/wellcome-trust.png",
+      "logoBig": true
     }
   ]
 }

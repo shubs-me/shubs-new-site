@@ -1910,6 +1910,10 @@ footer {
   flex: none;
   margin-left: auto;
 }
+.tcard .tlogo-lg {
+  height: 40px;
+  max-width: 184px;
+}
 @media (max-width: 820px) {
   .tst-grid {
     grid-template-columns: 1fr;

@@ -281,6 +281,7 @@ collections:
                   default: '',
                 }
               - { name: logo, label: Company logo (optional), widget: image, required: false }
+              - { name: logoBig, label: Show logo larger, widget: boolean, required: false, default: false }
 
       - name: ticker
         label: Scrolling keywords

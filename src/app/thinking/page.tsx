@@ -35,7 +35,6 @@ export default async function Thinking() {
               src={thinking.hero.image}
               alt={thinking.hero.imageAlt}
               fill
-              unoptimized
               loading="lazy"
               sizes="(max-width: 860px) 70vw, 34vw"
               style={{ objectFit: 'cover', objectPosition: 'center top' }}

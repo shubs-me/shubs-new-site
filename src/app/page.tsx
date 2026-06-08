@@ -41,9 +41,10 @@ export default async function Home() {
           <Image
             src={home.hero.image}
             alt={home.hero.imageAlt}
-            width={640}
-            height={640}
+            width={760}
+            height={801}
             priority
+            unoptimized
             sizes="(max-width: 820px) 82vw, 34vw"
           />
         </div>
@@ -253,7 +254,11 @@ export default async function Home() {
                   </span>
                   {t.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img className="tlogo" src={t.logo} alt={t.role} />
+                    <img
+                      className={`tlogo${t.logoBig ? ' tlogo-lg' : ''}`}
+                      src={t.logo}
+                      alt={t.role}
+                    />
                   ) : null}
                 </div>
               </div>
