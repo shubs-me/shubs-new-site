@@ -105,6 +105,25 @@ collections:
                   - { name: list, label: Bullet points, widget: list, field: { name: item, label: Point, widget: string } }
                   - { name: moreLabel, label: Link text, widget: string }
                   - { name: moreHref, label: Link target, widget: string }
+          # ---- My work ----
+          - name: work
+            label: "Section: My work (case studies)"
+            widget: object
+            fields:
+              - { name: label, label: Eyebrow label, widget: string }
+              - name: title
+                label: Section heading
+                widget: object
+                fields:
+                  - { name: pre, label: Heading start, widget: string, required: false }
+                  - { name: em, label: Highlighted part (pink italic), widget: string, required: false }
+                  - { name: post, label: Heading end, widget: string, required: false }
+              - name: cards
+                label: Case study cards
+                widget: list
+                fields:
+                  - { name: num, label: Number, widget: string }
+                  - { name: body, label: Description, widget: text }
           # ---- Who ----
           - name: who
             label: "Section: Who I work with"

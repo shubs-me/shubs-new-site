@@ -131,6 +131,26 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* MY WORK */}
+      <section className="light">
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">{home.work.label}</span>
+            <h2 className="sec-title">
+              <Em {...home.work.title} />
+            </h2>
+          </div>
+          <div className="work-grid">
+            {home.work.cards.map((card) => (
+              <div className="work-card" key={card.num}>
+                <div className="wnum">{card.num}</div>
+                <p>{card.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* STATS */}
       <section className="stats">
         <div className="wrap">

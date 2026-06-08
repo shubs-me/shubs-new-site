@@ -105,7 +105,7 @@ export default function SiteMotion() {
     ).forEach((el) => reveal(el, 'up', 0))
 
     // staggered grid children
-    q<HTMLElement>('.stats-grid, .three, .plinks, .cinfo, .idl-grid, .tst-grid').forEach(
+    q<HTMLElement>('.stats-grid, .three, .plinks, .cinfo, .idl-grid, .tst-grid, .work-grid').forEach(
       (grp) => {
         Array.from(grp.children).forEach((ch, i) =>
           reveal(ch as HTMLElement, 'up', i * 70),

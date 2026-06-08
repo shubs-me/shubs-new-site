@@ -1,4 +1,13 @@
 {
+  "work": {
+    "label": "Case studies",
+    "title": { "pre": "My work.", "em": "", "post": "" },
+    "cards": [
+      { "num": "01", "body": "Built and implemented medical quality and outcomes frameworks for Series B + companies" },
+      { "num": "02", "body": "Delivered keynotes to Tech and Product executive leadership to drive strategy and direction" },
+      { "num": "03", "body": "Unified commercial narrative and impact evidence generation for a scaling clinical AI company" }
+    ]
+  },
   "outcomes": {
     "label": "Outcomes",
     "title": {
