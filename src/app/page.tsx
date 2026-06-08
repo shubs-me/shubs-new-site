@@ -102,6 +102,21 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* STATS */}
+      <section className="stats">
+        <div className="wrap">
+          <p className="stats-intro">{stats.intro}</p>
+          <div className="stats-grid">
+            {STATS.map(({ number, label }) => (
+              <div className="stat" key={number + label}>
+                <StatNumber value={number} />
+                <div className="l">{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PRACTICE */}
       <section id="practice">
         <div className="wrap">
@@ -145,21 +160,6 @@ export default async function Home() {
               <div className="work-card" key={card.num}>
                 <div className="wnum">{card.num}</div>
                 <p>{card.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="stats">
-        <div className="wrap">
-          <p className="stats-intro">{stats.intro}</p>
-          <div className="stats-grid">
-            {STATS.map(({ number, label }) => (
-              <div className="stat" key={number + label}>
-                <StatNumber value={number} />
-                <div className="l">{label}</div>
               </div>
             ))}
           </div>
