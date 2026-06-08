@@ -16,6 +16,9 @@ const TESTIMONIALS = testimonials.items
 
 export default async function Home() {
   const essays = await getEssays(3)
+  // Homepage sections kept in the code but hidden from view for now.
+  // Flip a flag to true to show that section again.
+  const SECTIONS = { engagements: false, lived: false, thinking: false }
   return (
     <>
       {/* HERO */}
@@ -167,7 +170,8 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ENGAGEMENTS */}
+      {/* ENGAGEMENTS — hidden (kept in code; this content also appears on the Services page) */}
+      {SECTIONS.engagements && (
       <section>
         <div className="wrap">
           <div className="sec-head">
@@ -187,11 +191,13 @@ export default async function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* INLINE CTA */}
       <InlineCTA />
 
-      {/* LIVED */}
+      {/* LIVED — hidden (kept in code) */}
+      {SECTIONS.lived && (
       <section className="light">
         <div className="wrap lived">
           <div className="lived-body">
@@ -217,6 +223,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* QUOTE */}
       <section className="quote quote-compact">
@@ -293,7 +300,8 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* THINKING */}
+      {/* THINKING — hidden (kept in code) */}
+      {SECTIONS.thinking && (
       <section className="light" id="thinking">
         <div className="wrap">
           <div className="sec-head">
@@ -335,6 +343,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* CONTACT */}
       <section className="contact" id="contact">
