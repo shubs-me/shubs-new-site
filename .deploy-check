@@ -1,6 +1,0 @@
-Deploy pipeline test marker.
-
-This file exists only to verify that pushes to the GitHub repo trigger a
-Vercel deployment after the repo transfer. Safe to delete.
-
-Last test: 2026-06-08T13:51:18Z
