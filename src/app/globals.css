@@ -1957,6 +1957,117 @@ footer {
   }
 }
 
+/* ============ SECTION THEMES (homepage, CMS-controlled) ============
+   Each homepage <section class="hsec" data-theme="light|dark|pink"> drives its
+   own background, text, accent and card colours from theme variables. Defaults
+   reproduce the original look; switching a section's theme re-skins it.
+   Scoped to .hsec so the other pages (which still use .light) are untouched. */
+.hsec {
+  background: var(--t-bg);
+  color: var(--t-fg);
+}
+.hsec[data-theme='light'] {
+  --t-bg: var(--cream);
+  --t-fg: var(--ink);
+  --t-muted: var(--muted-d);
+  --t-accent: var(--clay-ink);
+  --t-card: var(--cream-2);
+  --t-line: var(--line-l);
+}
+.hsec[data-theme='dark'] {
+  --t-bg: var(--ink);
+  --t-fg: var(--cream);
+  --t-muted: var(--muted);
+  --t-accent: var(--clay);
+  --t-card: var(--ink-2);
+  --t-line: var(--line-d);
+}
+.hsec[data-theme='pink'] {
+  --t-bg: var(--clay);
+  --t-fg: var(--ink);
+  --t-muted: rgba(21, 18, 14, 0.74);
+  --t-accent: var(--ink);
+  --t-card: rgba(255, 255, 255, 0.16);
+  --t-line: rgba(21, 18, 14, 0.2);
+}
+/* eyebrow labels + pink-highlight ems + link/marker accents */
+.hsec .label {
+  color: var(--t-accent);
+}
+.hsec .label::before {
+  background: var(--t-accent);
+}
+.hsec h1 em,
+.hsec h2 em,
+.hsec h3 em,
+.hsec blockquote em {
+  color: var(--t-accent);
+}
+.hsec .more,
+.hsec .sec-more,
+.hsec .think-row .go,
+.hsec .trating,
+.hsec .work-card .wnum,
+.hsec .gap-more,
+.hsec .gap-n,
+.hsec .out-hero .big {
+  color: var(--t-accent);
+}
+.hsec .plist span::before {
+  color: var(--t-accent);
+}
+/* headings + emphasised/strong text take the foreground colour */
+.hsec .sec-title,
+.hsec h3,
+.hsec .stats-intro,
+.hsec .gap-col h3,
+.hsec .work-card p,
+.hsec .out-item h3,
+.hsec .tcard blockquote,
+.hsec .lived-body h2,
+.hsec .quote blockquote,
+.hsec .out-hero p b,
+.hsec .gap-col-body p b,
+.hsec .pblock p b,
+.hsec .pblock h3,
+.hsec .who-card h3,
+.hsec .eng-card h3,
+.hsec .tcite b {
+  color: var(--t-fg);
+}
+/* body / supporting copy takes the muted colour */
+.hsec p,
+.hsec .gap-col-body p,
+.hsec .out-hero p,
+.hsec .out-item p,
+.hsec .who-card p,
+.hsec .pblock p,
+.hsec .eng-card p,
+.hsec .lived-body p,
+.hsec .stat .l,
+.hsec .gap-t,
+.hsec .tcite,
+.hsec .quote cite,
+.hsec .who-card .kicker,
+.hsec .pblock .plist span {
+  color: var(--t-muted);
+}
+/* cards + surfaces + dividers */
+.hsec .tcard,
+.hsec .work-card,
+.hsec .eng-card {
+  background: var(--t-card);
+}
+.hsec .gap-col {
+  border-color: var(--t-line);
+  background: color-mix(in srgb, var(--t-fg) 3%, transparent);
+}
+.hsec .out-hero,
+.hsec .out-item,
+.hsec .stat {
+  border-color: var(--t-line);
+}
+
 /* ============ SCROLL ANIMATION ============ */
 .reveal {
   opacity: 0;

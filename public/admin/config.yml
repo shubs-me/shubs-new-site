@@ -36,6 +36,39 @@ collections:
         file: content/home.json
         description: Every heading, paragraph and image on the home page.
         fields:
+          # ---- Page layout: order, show/hide and theme of each section ----
+          - name: layout
+            label: "Page layout — drag to reorder, set each section's theme"
+            label_singular: Section
+            widget: list
+            summary: "{{fields.id}} · {{fields.theme}}"
+            hint: "Drag to reorder. Remove a row to hide that section. Theme sets background + text colour."
+            fields:
+              - name: id
+                label: Section
+                widget: select
+                options:
+                  - { label: "The gap", value: gap }
+                  - { label: "Stats band", value: stats }
+                  - { label: "Where I focus", value: practice }
+                  - { label: "My work (case studies)", value: work }
+                  - { label: "What I've delivered (Outcomes)", value: outcomes }
+                  - { label: "Testimonials", value: testimonials }
+                  - { label: "Who I work with", value: who }
+                  - { label: "Mid-page CTA band", value: inlinecta }
+                  - { label: "Pull quote", value: quote }
+                  - { label: "Three ways (Engagements)", value: engagements }
+                  - { label: "Lived, not lifted", value: lived }
+                  - { label: "Notes from the field (Thinking)", value: thinking }
+                  - { label: "Closing contact CTA", value: contact }
+              - name: theme
+                label: Theme
+                widget: select
+                default: dark
+                options:
+                  - { label: "Light — cream background, dark text", value: light }
+                  - { label: "Dark — ink background, cream text", value: dark }
+                  - { label: "Pink — clay background, dark text", value: pink }
           # ---- Hero ----
           - name: hero
             label: Hero (top of page)

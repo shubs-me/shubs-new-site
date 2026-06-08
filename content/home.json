@@ -1,4 +1,16 @@
 {
+  "layout": [
+    { "id": "gap", "theme": "light" },
+    { "id": "stats", "theme": "pink" },
+    { "id": "practice", "theme": "dark" },
+    { "id": "work", "theme": "light" },
+    { "id": "outcomes", "theme": "dark" },
+    { "id": "testimonials", "theme": "light" },
+    { "id": "who", "theme": "light" },
+    { "id": "inlinecta", "theme": "dark" },
+    { "id": "quote", "theme": "dark" },
+    { "id": "contact", "theme": "dark" }
+  ],
   "work": {
     "label": "Case studies",
     "title": { "pre": "My work.", "em": "", "post": "" },
