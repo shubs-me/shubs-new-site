@@ -1966,6 +1966,13 @@ footer {
   background: var(--t-bg);
   color: var(--t-fg);
 }
+/* When two neighbouring sections share a theme, drop the second one's top
+   padding so the gap between them isn't doubled. */
+.hsec[data-theme='light'] + .hsec[data-theme='light'],
+.hsec[data-theme='dark'] + .hsec[data-theme='dark'],
+.hsec[data-theme='pink'] + .hsec[data-theme='pink'] {
+  padding-top: 0;
+}
 .hsec[data-theme='light'] {
   --t-bg: var(--cream);
   --t-fg: var(--ink);
