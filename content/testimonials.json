@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "quote": "Working with Shubs was great. He has a way of connecting clinical thinking to product decisions that isn't common, and it showed in how quickly our teams started asking different questions and making better calls.\n\nWhat made it land was that he wasn't speaking from theory. He'd shipped clinical AI at scale, led the teams, dealt with the tradeoffs. That credibility came through in every session.\n\nHis keynotes were some of the highest-rated we've had at Doctolib. More importantly, the frameworks he introduced are still in use, still shaping how we think about quality and clinical impact.\n\nHe was a real trusted partner and a genuinely brilliant collaborator.\n",
+      "name": "Medical Leader",
+      "role": "Doctolib",
+      "rating": "Rated 5/5 · Value delivered, professionalism, clarity, quality",
+      "logo": "/images/Doctolib_Dark_Blue.png",
+      "logoBig": false
+    },
+    {
+      "quote": "Shubs helped shape a clear narrative drawing on first-hand experience and real-world implementation, one that we can take away into our discussions with researchers, policy makers, and other funders and that will inform our investment strategy going forwards.",
+      "name": "Guy Parsons",
+      "role": "Technology Lead, Wellcome Trust",
+      "rating": "",
+      "logo": "/images/wellcome-trust.png",
+      "logoBig": true
+    },
+    {
       "quote": "Shubs always brings a huge amount of positive energy and enthusiasm to his work, is a strong connector and collaborator, a creative thinker, and a wonderful culture contributor.",
       "name": "Dr Claire Novorol",
       "role": "Ada Health",
@@ -15,22 +31,6 @@
       "rating": "",
       "logo": "/images/sanome.png",
       "logoBig": false
-    },
-    {
-      "quote": "Your work was valued across our clinical, product, AI scientist and engineering leaders. We now use the ‘clinical value’ and ‘measure what matters’ framework in our day to day work.",
-      "name": "Medical Leader",
-      "role": "Doctolib",
-      "rating": "Rated 5/5 · Value delivered, professionalism, clarity, quality",
-      "logo": "/images/Doctolib_Dark_Blue.png",
-      "logoBig": false
-    },
-    {
-      "quote": "Shubs helped shape a clear narrative drawing on first-hand experience and real-world implementation, one that we can take away into our discussions with researchers, policy makers, and other funders and that will inform our investment strategy going forwards.",
-      "name": "Guy Parsons",
-      "role": "Technology Lead, Wellcome Trust",
-      "rating": "",
-      "logo": "/images/wellcome-trust.png",
-      "logoBig": true
     }
   ]
 }
