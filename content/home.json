@@ -244,9 +244,9 @@
         "title": "Clinical and Product Integration",
         "body": "Level up how clinical, product, QARA, data science, and engineering teams make decisions together. The pre-deployment work on product quality and robust monitoring lets you ship at pace and catch the right things proactively, without becoming a bottleneck or safety becoming an afterthought.",
         "list": [
-          "Pre-deployment quality and QARA that keeps you moving",
-          "Monitoring frameworks that catch the right things proactively",
-          "Workshops for tech and product leadership"
+          "Sharp, fast focus towards clinical outcomes for product teams",
+          "Proactive quality monitoring after deployment",
+          "Workshops on medical value and risk for tech and product leadership"
         ],
         "moreLabel": "Learn more →",
         "moreHref": "/services"
