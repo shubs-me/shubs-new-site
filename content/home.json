@@ -1,25 +1,4 @@
 {
-  "layout": [
-    { "id": "gap", "theme": "light" },
-    { "id": "stats", "theme": "pink" },
-    { "id": "practice", "theme": "dark" },
-    { "id": "work", "theme": "light" },
-    { "id": "outcomes", "theme": "dark" },
-    { "id": "testimonials", "theme": "light" },
-    { "id": "who", "theme": "light" },
-    { "id": "inlinecta", "theme": "dark" },
-    { "id": "quote", "theme": "dark" },
-    { "id": "contact", "theme": "dark" }
-  ],
-  "work": {
-    "label": "Case studies",
-    "title": { "pre": "My work.", "em": "", "post": "" },
-    "cards": [
-      { "num": "01", "body": "Built and implemented medical quality and outcomes frameworks for Series B + companies" },
-      { "num": "02", "body": "Delivered keynotes to Tech and Product executive leadership to drive strategy and direction" },
-      { "num": "03", "body": "Unified commercial narrative and impact evidence generation for a scaling clinical AI company" }
-    ]
-  },
   "outcomes": {
     "label": "Outcomes",
     "title": {
@@ -28,19 +7,61 @@
       "post": ""
     },
     "heroNum": "200K",
-    "heroLead": "From pilot to scale in 18 months.",
-    "heroBody": "Implementation science support transformed a promising maternal health pilot into a government-endorsed programme reaching 200,000 women.",
+    "heroLead": "Clinical outcomes in underserved settings",
+    "heroBody": "Implementation and clinical quality leadership transformed a promising maternal health pilot into a government-endorsed program reaching 200,000 women with real clinical outcomes. ",
     "items": [
       {
-        "title": "NHS-grade clinical credibility",
-        "body": "Embedded clinical leadership helped a Series B digital therapeutics company restructure its evidence strategy, resulting in a successful NHS procurement worth £3.4M."
+        "title": "Making clinical outcomes tangible for product teams",
+        "body": "Established and implemented a clinical outcomes, risk and quality framework that levelled up the product development life cycle at one of Europe's largest health tech companies. "
       },
       {
-        "title": "Policy positioning, internationally",
-        "body": "Strategic counsel shaped national digital health roadmaps in partnership with ITU and WHO, securing institutional buy-in across multiple health system contexts."
+        "title": "Clinical leadership that supports business outcomes",
+        "body": "Fast embedding helped a UK startup restructure its evidence generation strategy, resulting in a successful funding round, regulatory certification and NHS procurement success. "
       }
     ]
   },
+  "layout": [
+    {
+      "id": "gap",
+      "theme": "light"
+    },
+    {
+      "id": "stats",
+      "theme": "pink"
+    },
+    {
+      "id": "practice",
+      "theme": "dark"
+    },
+    {
+      "id": "work",
+      "theme": "light"
+    },
+    {
+      "id": "outcomes",
+      "theme": "dark"
+    },
+    {
+      "id": "testimonials",
+      "theme": "light"
+    },
+    {
+      "id": "who",
+      "theme": "light"
+    },
+    {
+      "id": "inlinecta",
+      "theme": "dark"
+    },
+    {
+      "id": "quote",
+      "theme": "dark"
+    },
+    {
+      "id": "contact",
+      "theme": "dark"
+    }
+  ],
   "cta": {
     "label": "Let's work together",
     "title": {
@@ -68,6 +89,28 @@
       "post": ""
     },
     "moreLabel": "Read all insights →"
+  },
+  "work": {
+    "label": "Case studies",
+    "title": {
+      "pre": "My work.",
+      "em": "",
+      "post": ""
+    },
+    "cards": [
+      {
+        "num": "01",
+        "body": "Built and implemented medical quality and outcomes frameworks for Series B + companies"
+      },
+      {
+        "num": "02",
+        "body": "Delivered keynotes to Tech and Product executive leadership to drive strategy and direction"
+      },
+      {
+        "num": "03",
+        "body": "Unified commercial narrative and impact evidence generation for a scaling clinical AI company"
+      }
+    ]
   },
   "engagements": {
     "label": "How I work · Three formats",
@@ -223,15 +266,15 @@
     ]
   },
   "quote": {
-    "label": "In my words",
-    "pre": "Very few advisors can hold all of those conversations. That is why founders, product leaders, and the investors who back them ",
-    "em": "bring me in.",
+    "label": "What it boils down to",
+    "pre": "Build the right thing. Build the thing right. ",
+    "em": "thing right",
     "cite": "Dr Shubs Upadhyay"
   },
   "who": {
     "label": "Who I work with",
     "title": {
-      "pre": "I work directly with you.",
+      "pre": "I work with people who focus on what matters in healthcare",
       "em": "",
       "post": ""
     },
