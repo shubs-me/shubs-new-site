@@ -6,7 +6,7 @@
       "em": "",
       "post": ""
     },
-    "heroNum": "3 continents",
+    "heroNum": "13M + users",
     "heroLead": "Delivering clinical impact across multiple contexts globally",
     "heroBody": "Led product delivery teams integrating regulatory certified clinical AI into health systems in US, Europe and Africa",
     "items": [
@@ -34,16 +34,16 @@
       "theme": "dark"
     },
     {
+      "id": "testimonials",
+      "theme": "light"
+    },
+    {
       "id": "work",
       "theme": "light"
     },
     {
       "id": "outcomes",
       "theme": "dark"
-    },
-    {
-      "id": "testimonials",
-      "theme": "light"
     },
     {
       "id": "who",
